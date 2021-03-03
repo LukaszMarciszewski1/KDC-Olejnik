@@ -1,0 +1,22 @@
+{
+  "name": "printinghouse-calculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LukaszMarciszewski1/PrintingHouse-calculator.git"
+  },
+  "author": "Łukasz Marciszewski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LukaszMarciszewski1/PrintingHouse-calculator/issues"
+  },
+  "homepage": "https://github.com/LukaszMarciszewski1/PrintingHouse-calculator#readme",
+  "dependencies": {
+    "node-modules": "^1.0.1"
+  }
+}
