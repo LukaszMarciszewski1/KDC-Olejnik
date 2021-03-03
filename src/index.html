@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PrintingHouse-calculator</title>
+    <script type="module" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.esm.js"></script>
 </head>
 
 <body>
@@ -16,16 +17,29 @@
                     <div id="logo"><img src="assets/logo.png" alt="logo"><h1 class="logo-h1">Olejnik</h1></div>
                     <div class="select-print-container">
                         <button class="select-print-item">
-                            <img src="assets/books.png" alt="books">
+                            <img src="assets/open-book.svg" alt="books">Książki, <br> broszury, itp.
                         </button>
                         <button class="select-print-item">
-                            <img src="assets/job-vacancies.png" alt="books">
+                            <img src="assets/menu.svg" alt="books">Druki akcydensowe
                         </button>
                     </div>
                 </div>
                 <div class="price-container"></div>
             </div>
-            <div class="bottom-panel"></div>
+            <div class="bottom-panel">
+                <button class="mail bottom-panel-btn">
+                    <ion-icon class="icon" name="mail-open-outline"></ion-icon>
+                </button>
+                <button class="calendar bottom-panel-btn">
+                    <ion-icon class="icon" name="calendar-outline"></ion-icon>
+                </button>
+                <button class="calendar bottom-panel-btn">
+                    <ion-icon class="icon" name="reader-outline"></ion-icon>
+                </button>
+                <div class="clock">
+                    <h2></h2>
+                </div>
+            </div>
         </div>
     </div>
 </body>

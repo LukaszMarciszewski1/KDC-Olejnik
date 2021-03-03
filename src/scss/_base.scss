@@ -11,7 +11,7 @@
 
 body{
     font-family: 'Roboto', sans-serif;
-    letter-spacing: .08rem;
+    letter-spacing: 1px;
 }
 button{
     background-color: transparent;
@@ -19,6 +19,8 @@ button{
     cursor: pointer;
     opacity: .8;
     transition: .2s;
+    line-height: 1.2rem;
+    letter-spacing: 1px;
 }
 button:focus{
     border: none;
@@ -27,13 +29,7 @@ button:focus{
 button:hover{
     opacity: 1;
 }
-// button:active{
-//     border: none;
-//     outline: none;
-// }
-// button::selection{
-//     border: none;
-// }
+
 #calculator{
     background-color: $background;
     width: 100%;
@@ -91,25 +87,36 @@ button:hover{
     flex: 1;
     display: flex;
     flex-direction: column;
-    border-top: 2px solid $background;
     padding: 20px 0;
 }
 .select-print-item{
-    width: 140px;
-    height: 140px;
-    padding: 10px;
+    width: auto;
+    padding: 15px 20px;
+    @include price-container-shadow;
+    @include flexCenter;
+    justify-content: flex-start;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    color: $font-color;
+    font-size: 17px;
+    text-align: left;
+    opacity: .6;
+    background-color: $buttonBg;
     img{
-        border-radius: 20px;
-        width: 95%;
-        height: 95%;
-        @include price-container-shadow
+        width: 60px;
+        height: 60px;
+        margin-right: 20px;
     }
+}
+.select-print-item:hover{
+    opacity: .8;
 }
 .price-container{
     flex-grow: 1;
     margin-left: 30px;
     height: 100%;
     @include price-container;
+    @include price-container-shadow;
 }
 .bottom-panel{
     margin-top: 30px;
@@ -119,4 +126,39 @@ button:hover{
     min-height: 70px;
     @include price-container-shadow;
     background-color: $containerBg;
+    display: flex;
+    align-items: center;
+    padding: 10px 40px;
+    position: relative;
 }
+.bottom-panel-btn{
+    margin-right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    padding: 10px;
+    @include flexCenter;
+    @include price-container-shadow;
+}
+.icon{
+    font-size: 32px;
+    color: $font-color; 
+}
+
+.clock {
+    width: auto;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: $containerBg;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    @include price-container-shadow;
+    h2 {
+      font-size: 25px;
+      user-select: none;
+      color: $font-color;
+    }
+  }
