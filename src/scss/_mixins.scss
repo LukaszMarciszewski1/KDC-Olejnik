@@ -1,6 +1,6 @@
 @import "_variables";
 
-@mixin  flexCenter {
+@mixin flexCenter {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,11 +13,17 @@
 
 @mixin price-container {
     background-color: $lightBg;
-    @include price-container-shadow;
     border-radius: 20px;
 }
+
 @mixin img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+@mixin shadow-input {
+    -webkit-box-shadow: 2px 2px 5px 0px rgba(163, 163, 163, 0.15);
+    -moz-box-shadow: 2px 2px 5px 0px rgba(163, 163, 163, 0.15);
+    box-shadow: 2px 2px 5px 0px rgba(163, 163, 163, 0.15);
 }

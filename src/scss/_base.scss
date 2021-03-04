@@ -3,40 +3,44 @@
 @import "_animations";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     font-family: 'Roboto', sans-serif;
     letter-spacing: 1px;
 }
-button{
+
+button {
     background-color: transparent;
     border: none;
     cursor: pointer;
-    opacity: .8;
     transition: .2s;
     line-height: 1.2rem;
     letter-spacing: 1px;
 }
-button:focus{
-    border: none;
+
+button:focus {
     outline: none;
 }
-button:hover{
-    opacity: 1;
+button:active {
+    outline: none;
+}
+button::selection {
+    outline: none;
 }
 
-#calculator{
+#app {
     background-color: $background;
     width: 100%;
     height: 100vh;
     @include flexCenter;
 }
-.container{
+
+.calculator {
     width: 100%;
     height: 100%;
     max-width: 1400px;
@@ -50,24 +54,30 @@ button:hover{
     padding: 30px;
     @include price-container-shadow;
 }
-.calculator-content{
+
+.calculator-container {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: space-between;
     background-color: $background;
 }
-.nav-calculator{
+
+//nav panel container ----------------------//
+
+.nav-calculator {
     width: 300px;
+    min-width: 300px;
     height: 100%;
     background-color: $containerBg;
     border-radius: 20px;
     @include price-container-shadow;
-    padding:30px 20px;
+    padding: 30px 20px;
     display: flex;
     flex-direction: column;
 }
-#logo{
+
+#logo {
     max-width: 35px;
     display: flex;
     align-items: center;
@@ -75,21 +85,26 @@ button:hover{
     opacity: .7;
     user-select: none;
     margin-bottom: 30px;
-    .logo-h1{
+
+    .logo-h1 {
         font-size: 27px;
     }
-    img{
+
+    img {
         @include img;
         margin-right: 10px;
     }
 }
-.select-print-container{
+
+.select-print-container {
     flex: 1;
     display: flex;
     flex-direction: column;
     padding: 20px 0;
+    position: relative;
 }
-.select-print-item{
+
+.select-print-item {
     width: auto;
     padding: 15px 20px;
     @include price-container-shadow;
@@ -100,25 +115,189 @@ button:hover{
     color: $font-color;
     font-size: 17px;
     text-align: left;
-    opacity: .6;
     background-color: $buttonBg;
-    img{
+    border: 1px solid $standard;
+    
+    img {
         width: 60px;
         height: 60px;
         margin-right: 20px;
     }
 }
-.select-print-item:hover{
-    opacity: .8;
+
+.select-print-item--active {
+    background-color: $standard;
 }
-.price-container{
+
+.select-print-item:hover {
+    background-color: $standard;
+}
+
+// calculator price container----------------------------------------------------//
+.price-list {
     flex-grow: 1;
+    min-width: 800px;
     margin-left: 30px;
     height: 100%;
+    overflow: hidden;
     @include price-container;
     @include price-container-shadow;
 }
-.bottom-panel{
+
+.price-list-container {
+    position: relative;
+    display: flex;
+    transition: 0.6s;
+    width: 100%;
+    height: 100%;
+}
+
+.product {
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    transition: .6s ease-in-out;
+    padding: 20px 30px;
+    background-color: $lightBg;
+}
+
+//form calculator ----------------------------------------------------//
+
+.form-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.form-inner{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-family: 'Roboto', sans-serif;
+}
+
+.form-item{
+    margin: 10px 15px;
+    label{
+        font-weight: lighter;
+    }
+}
+
+.select-price {
+    outline: none;
+    border: 1px solid #89bad3c7;
+    font-size: 14px;
+    padding: 0 6px;
+    border-radius: 3px;
+    background-color: #ebebeb;
+    width: 230px;
+    height: 35px;
+    color: #4e4e4e;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 3px;
+}
+
+.checkbox {
+    padding: 10px;
+    min-width: 230px;
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: flex-end;
+    margin-left: 10px;
+    label{
+        font-weight: lighter;
+    }
+}
+.select-checkbox{
+    width: 20px;
+    height: 20px;
+    justify-self: flex-end;
+    cursor: pointer;
+}
+
+.inner-pages-count{
+    max-width: 150px;
+}
+.inner-pages{
+    max-width: 100px;
+}
+.inner-pages-black{
+    background-color: darken(#ebebeb, 3%);
+}
+
+
+
+
+
+
+
+.price-sum {
+    padding: 20px;
+    color: $standard;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    border-top: 1px solid rgb(209, 209, 209);
+    margin: 30px 12px 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    .price-sum-result{
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        h3{
+            font-weight: 400;
+            margin-right: 40px;
+            span{
+                font-size: 2rem;
+            }
+        }
+        .reset{
+            background-color: $standard;
+            border: none;
+            padding: 5px 20px;
+            border-radius: 5px;
+            color: $lightBg;
+            height: 30px;
+            cursor: pointer;
+        }
+        .reset:hover{
+            background-color: lighten( $standard, 5% )
+        }
+    }
+    .price-sum-desc{
+        font-size: 15px;
+        color: $font-color-dark;
+        letter-spacing: 1px;
+        font-weight: lighter;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.bottom-panel {
     margin-top: 30px;
     border-radius: 20px;
     width: 100%;
@@ -131,7 +310,8 @@ button:hover{
     padding: 10px 40px;
     position: relative;
 }
-.bottom-panel-btn{
+
+.bottom-panel-btn {
     margin-right: 20px;
     width: 60px;
     height: 60px;
@@ -139,10 +319,12 @@ button:hover{
     padding: 10px;
     @include flexCenter;
     @include price-container-shadow;
+    // border: 1px solid $standard;
 }
-.icon{
+
+.icon {
     font-size: 32px;
-    color: $font-color; 
+    color: $font-color;
 }
 
 .clock {
@@ -156,9 +338,10 @@ button:hover{
     top: 50%;
     transform: translateY(-50%);
     @include price-container-shadow;
+
     h2 {
-      font-size: 25px;
-      user-select: none;
-      color: $font-color;
+        font-size: 25px;
+        user-select: none;
+        color: $font-color;
     }
-  }
+}
