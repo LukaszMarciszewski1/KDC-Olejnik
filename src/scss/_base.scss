@@ -12,6 +12,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     letter-spacing: 1px;
+    line-height: 1.3rem;
 }
 
 button {
@@ -37,6 +38,7 @@ button::selection {
     background-color: $background;
     width: 100%;
     height: 100vh;
+    padding: 20px;
     @include flexCenter;
 }
 
@@ -44,7 +46,7 @@ button::selection {
     width: 100%;
     height: 100%;
     max-width: 1400px;
-    max-height: 85%;
+    max-height: 90%;
     border: solid 10px $standard;
     background-color: $background;
     border-radius: 50px;
@@ -78,7 +80,8 @@ button::selection {
 }
 
 #logo {
-    max-width: 35px;
+    width: 35px;
+    height: 35px;
     display: flex;
     align-items: center;
     color: $lightBg;
@@ -97,7 +100,6 @@ button::selection {
 }
 
 .select-print-container {
-    flex: 1;
     display: flex;
     flex-direction: column;
     padding: 20px 0;
@@ -106,6 +108,7 @@ button::selection {
 
 .select-print-item {
     width: auto;
+    max-width: 300px;
     padding: 15px 20px;
     @include price-container-shadow;
     @include flexCenter;
@@ -121,6 +124,7 @@ button::selection {
     img {
         width: 60px;
         height: 60px;
+        object-fit: cover;
         margin-right: 20px;
     }
 }
@@ -136,9 +140,8 @@ button::selection {
 // calculator price container----------------------------------------------------//
 .price-list {
     flex-grow: 1;
-    min-width: 800px;
-    margin-left: 30px;
     height: 100%;
+    margin-left: 30px;
     overflow: hidden;
     @include price-container;
     @include price-container-shadow;
@@ -148,7 +151,7 @@ button::selection {
     position: relative;
     display: flex;
     transition: 0.6s;
-    width: 100%;
+    width: 1000px;
     height: 100%;
 }
 
@@ -226,19 +229,14 @@ button::selection {
     max-width: 150px;
 }
 .inner-pages{
-    max-width: 100px;
+    max-width: 105px;
 }
 .inner-pages-black{
     background-color: darken(#ebebeb, 3%);
 }
 
-
-
-
-
-
-
 .price-sum {
+    max-width: 750px;
     padding: 20px;
     color: $standard;
     font-size: 1.5rem;
@@ -279,23 +277,6 @@ button::selection {
         font-weight: lighter;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .bottom-panel {
     margin-top: 30px;
@@ -344,4 +325,240 @@ button::selection {
         user-select: none;
         color: $font-color;
     }
+}
+
+//media queries-----------------------//
+
+@media screen and (max-width: 1300px){
+    .calculator{
+        padding: 25px;
+    }
+    .nav-calculator {
+        width: 270px;
+        min-width: 270px;
+    }
+    .select-print-item {
+        padding: 15px;
+        border-radius: 12px;
+        font-size: 15px;
+        img {
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+        }
+    }
+    .bottom-panel {
+        margin-top: 25px;
+    }
+    //form----------//
+    .price-list {
+        margin-left: 25px;
+    }
+    .product{
+        padding:20px;
+    }
+    .form-item{
+        margin: 10px 7px;
+    }
+    .select-price {
+        width: 210px;
+    }
+    .checkbox {
+        min-width: 210px;
+        margin-left: 10px;
+    }
+    .form-container {
+        width: 800px;
+    }
+    .price-sum{
+        max-width: 650px;
+    }
+}
+
+@media screen and (max-width: 1140px){
+    .calculator{
+        padding: 20px;
+    }
+    .bottom-panel {
+        margin-top: 20px;
+    }
+    .price-list {
+        margin-left: 20px;
+    }
+    .nav-calculator {
+        width: 250px;
+        min-width: 250px;
+    }
+    .product{
+        padding:20px 10px;
+    }
+    //form------------//@include    
+    .form-container {
+        width: 700px;
+    }
+    .form-item{
+        label{
+            font-size: 14px;
+        }
+    }
+    .select-price {
+        width: 190px;
+        font-size: 14px;
+    }
+
+    .checkbox {
+        min-width: 190px;
+        margin-left: 0;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 1024px){
+    #app {
+        width: 100%;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .calculator-container {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .nav-calculator {
+        width: 100%;
+        height: 120px;
+        padding: 20px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    #logo{
+        margin-bottom: 0;
+    }
+
+    .price-list {
+        margin-left: 0;
+    }
+    .select-print-container {
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    
+    .select-print-item {
+        width: 200px;
+        max-width: 200px; 
+        margin-left: 20px;
+        margin-bottom: 0;
+        padding: 12px;
+    }
+    .form-container {
+        width: 800px;
+    }
+    .form-item{
+        margin: 8px 12px;
+    }
+    .select-price {
+        width: 210px;
+    }
+
+    .checkbox {
+        min-width: 210px;
+    }
+}
+@media screen and (max-width: 848px){
+    .form-item{
+        margin: 8px;
+    }
+    .select-price {
+        width: 190px;
+    }
+    .checkbox {
+        min-width: 190px;
+    }
+}
+@media screen and (max-width: 748px){
+    .nav-calculator {
+        width: 100%;
+        height: 180px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    #logo{
+        justify-content: flex-start;
+    }
+  .form-container {
+        width: 500px;
+    }
+    .price-sum{
+        max-width: 500px;
+    }
+    .select-print-container{
+        padding: 0;
+
+    }
+    .select-print-item {
+        width: 190px;
+        max-width: 190px; 
+        font-size: 14px;
+        margin-left: 15px;
+    }
+    .select-print-item:first-child{
+        margin-left: 0;
+    }
+    .select-price {
+        width: 230px;
+    }
+    .checkbox {
+        min-width: 230px;
+    }
+}
+@media screen and (max-width: 648px){
+    .select-price {
+        width: 190px;
+    }
+    .checkbox {
+        min-width: 190px;
+    }
+}
+
+@media screen and (max-width: 548px){
+    .form-container {
+        width: 400px;
+        // height: auto;
+    }
+    #logo{
+        justify-content: center;
+    }
+    .nav-calculator {
+        align-items: center;
+    }
+    .form-inner{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .checkbox {
+        align-self: flex-start;
+    }
+    .select-price {
+        width: 230px;
+    }
+    .checkbox {
+        min-width: 230px;
+    }
+    .select-print-item {
+        width: auto;
+        max-width: a; 
+        p{
+            display: none;
+        }
+    }
+    // .price-list {
+    //     height: auto
+    // }
+    // .price-list-container {
+    //     width: auto;
+    //     height: auto;
+    // }
 }

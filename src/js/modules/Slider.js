@@ -20,3 +20,33 @@ export class Slider {
         this.productPosition()
     }
 }
+
+// function nextSlide() {
+//     if (index == slides.length - 1) {
+//       index = 0;
+//     } else {
+//       index++;
+//     }
+//     changeSlide();
+//   }
+
+//   function changeSlide() {
+//     for (let i = 0; i < slides.length; i++) {
+//       slides[i].classList.remove("header-slider__items--active");
+//     }
+
+//     slides[index].classList.add("header-slider__items--active");
+//   }
+
+//   function resetTimer(){
+//     clearInterval(timer);
+//     timer=setInterval(autoPlay, time);
+// }
+
+//   function autoPlay() {
+//     nextSlide();
+//     updatePagination()
+
+//   }
+// let timer = setInterval(autoPlay, time);
+// }
