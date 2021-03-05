@@ -206,7 +206,7 @@ class Product2 {
     }
 }
 
-export class Products {
+export class Calculator {
     constructor() {
         this.product1 = new Product1()
         this.product2 = new Product2()

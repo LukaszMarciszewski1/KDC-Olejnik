@@ -1,6 +1,6 @@
 export class Time {
-    constructor(nowTime) {
-        this.nowTime = nowTime;
+    constructor() {
+        this.nowTime = document.querySelector('.clock h2');;
         this.getTime()
     }
     // time at the local clock

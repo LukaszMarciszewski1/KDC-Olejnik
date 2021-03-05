@@ -1,7 +1,7 @@
 export class Slider {
-    constructor(selectPrint, productContainer) {
-        this.selectPrint = selectPrint
-        this.productContainer = productContainer
+    constructor() {
+        this.selectPrint = [...document.querySelectorAll('.select-print-item')]
+        this.productContainer = [...document.querySelectorAll('.product')]
 
         this.selectPrint.forEach(select => select.addEventListener('click', () => this.addClassBtn(select)))
     }
