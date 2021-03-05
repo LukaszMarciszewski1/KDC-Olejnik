@@ -1,6 +1,7 @@
 export class Time {
     constructor(nowTime) {
         this.nowTime = nowTime;
+        this.getTime()
     }
     // time at the local clock
     getTime() {

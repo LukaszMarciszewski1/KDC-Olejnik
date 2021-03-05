@@ -1,6 +1,6 @@
-import {Time} from './Time.js';
-import {Slider} from './Slider.js';
-import {Products} from './Products.js';
+import {Time} from './accessories/Time.js';
+import {Slider} from './accessories/Slider.js';
+import {Products} from './calculation/Products.js';
 
 export class Calculator {
     constructor() {
@@ -11,8 +11,6 @@ export class Calculator {
 
         this.slider = new Slider(this.selectPrintBtn, this.productContainer)
         this.time = new Time(this.clock);
-        this.time.getTime()
-        
         this.products = new Products()
     }
 
