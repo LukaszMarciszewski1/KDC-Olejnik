@@ -224,7 +224,9 @@ button::selection {
     justify-self: flex-end;
     cursor: pointer;
 }
-
+.inner-pages-container{
+    max-width: 600px;
+}
 .inner-pages-count{
     max-width: 150px;
 }
@@ -329,7 +331,7 @@ button::selection {
 
 //media queries-----------------------//
 
-@media screen and (max-width: 1300px){
+@media screen and (max-width: 1280px){
     .calculator{
         padding: 25px;
     }
@@ -375,7 +377,7 @@ button::selection {
     }
 }
 
-@media screen and (max-width: 1140px){
+@media screen and (max-width: 1124px){
     .calculator{
         padding: 20px;
     }
@@ -411,9 +413,12 @@ button::selection {
         margin-left: 0;
         font-size: 14px;
     }
+    .price-sum{
+        max-width: 600px;
+    }
 }
 
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1025px){
     #app {
         width: 100%;
         height: auto;
@@ -466,8 +471,11 @@ button::selection {
     .checkbox {
         min-width: 210px;
     }
+    .price-sum{
+        max-width: 650px;
+    }
 }
-@media screen and (max-width: 848px){
+@media screen and (max-width: 830px){
     .form-item{
         margin: 8px;
     }
@@ -476,6 +484,9 @@ button::selection {
     }
     .checkbox {
         min-width: 190px;
+    }
+    .price-sum{
+        max-width: 600px;
     }
 }
 @media screen and (max-width: 748px){
@@ -491,9 +502,7 @@ button::selection {
   .form-container {
         width: 500px;
     }
-    .price-sum{
-        max-width: 500px;
-    }
+
     .select-print-container{
         padding: 0;
 
@@ -513,6 +522,9 @@ button::selection {
     .checkbox {
         min-width: 230px;
     }
+    .price-sum{
+        max-width:450px;
+    }
 }
 @media screen and (max-width: 648px){
     .select-price {
@@ -521,44 +533,110 @@ button::selection {
     .checkbox {
         min-width: 190px;
     }
+    .price-sum{
+        max-width: 380px;
+    }
 }
 
 @media screen and (max-width: 548px){
+    #app {
+        padding: 15px;
+    }
+    
+    .calculator {
+        border: solid 5px $standard;
+        padding: 15px;
+    }
+    .form-item{
+        margin: 5px;
+    }
     .form-container {
-        width: 400px;
-        // height: auto;
+        width: 380px;
     }
     #logo{
-        justify-content: center;
+        justify-content: flex-start;
     }
     .nav-calculator {
-        align-items: center;
-    }
-    .form-inner{
-        flex-direction: column;
         align-items: flex-start;
     }
+    .form-inner{
+        // flex-direction: column;
+        align-items: flex-start;
+    }
+    
     .checkbox {
         align-self: flex-start;
     }
     .select-price {
-        width: 230px;
+        width: 170px;
     }
     .checkbox {
-        min-width: 230px;
+        min-width: 170px;
+        font-size: 12px;
     }
     .select-print-item {
         width: auto;
-        max-width: a; 
+        padding: 15px;
         p{
             display: none;
         }
+        img {
+            margin-right: 0;
+        }
     }
-    // .price-list {
-    //     height: auto
-    // }
-    // .price-list-container {
-    //     width: auto;
-    //     height: auto;
-    // }
+    .price-sum{
+        max-width: 350px;
+    }
+}
+@media screen and (max-width: 470px){
+    #app {
+        padding: 20px;
+    }
+    .calculator {
+        border: none;
+        padding: 0;
+    }
+    .product{
+        padding: 20px;
+    }
+    .form-container {
+        width: 300px;
+    }
+    .select-price {
+        width: 250px;
+    }
+    .checkbox {
+        min-width: 200px;
+        font-size: 14px;
+    }
+    .inner-pages-container{
+        max-width: 600px;
+    }
+    .inner-pages-count{
+        max-width: 145px;
+    }
+    .inner-pages{
+        max-width: 90px;
+    }
+    .price-sum{
+       padding:20px 0;
+        margin-left: 0;
+        align-items: flex-start;
+        max-width: 250px;
+        .price-sum-desc{
+            font-size: 13px;
+        }
+    }
+    .price-sum-result{
+        flex-direction: column;
+        .reset{
+            margin-top: 20px;
+            align-self: flex-start;
+        }
+    }
+}
+@media screen and (max-width: 360px){
+    .product{
+        padding: 20px 15px;
+    }
 }
