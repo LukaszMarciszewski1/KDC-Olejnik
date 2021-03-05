@@ -1,54 +1,45 @@
-import {
-    priceList
-} from './prices/productPriceList.js';
-import {
-    Foil
-} from './Foil.js';
-import {
-    PrintStandard
-} from './PrintStandard.js';
-import {
-    PrintInner
-} from './PrintInner.js';
-
+import {priceList} from './prices/productPriceList.js';
+import {Foil} from './Foil.js';
+import {PrintStandard} from './PrintStandard.js';
+import {PrintInner} from './PrintInner.js';
 
 class Product1 {
     constructor() {
         this.theFormProduct = document.forms['product-1'];
         this.printStandard = new PrintStandard(this.theFormProduct, 'product-1-print', 'product-1-c1', 'product-1-c2', 'product-1-c3', 'product-1-c4', 'product-1-c5', 'product-1-c6', 'product-1-c7', 'product-1-c8')
         this.foil = new Foil(this.theFormProduct, 'product-1-foil', 'product-1-d1', 'product-1-d2', 'product-1-d3', 'product-1-d4', 'product-1-d5', 'product-1-d6', 'product-1-d7')
-        this.count = document.getElementById('product-1-count').addEventListener('change', this.getProduct_Price.bind(this))
-        this.size = document.getElementById('product-1-size').addEventListener('change', this.getProduct_Price.bind(this))
-        this.material = document.getElementById('product-1-material').addEventListener('change', this.getProduct_Price.bind(this))
-        this.sheets = document.getElementById('product-1-sheets').addEventListener('change', this.getProduct_Price.bind(this))
-        this.crease = document.getElementById('product-1-crease').addEventListener('change', this.getProduct_Price.bind(this))
-        this.corners = document.getElementById('card-corners').addEventListener('click', this.getProduct_Price.bind(this))
-        this.printPrice = document.getElementById('product-1-print').addEventListener('change', this.getProduct_Price.bind(this));
-        this.foilPrice = document.getElementById('product-1-foil').addEventListener('change', this.getProduct_Price.bind(this));
+        this.count = document.getElementById('product-1-count').addEventListener('change', this.getProductPrice.bind(this))
+        this.size = document.getElementById('product-1-size').addEventListener('change', this.getProductPrice.bind(this))
+        this.material = document.getElementById('product-1-material').addEventListener('change', this.getProductPrice.bind(this))
+        this.sheets = document.getElementById('product-1-sheets').addEventListener('change', this.getProductPrice.bind(this))
+        this.crease = document.getElementById('product-1-crease').addEventListener('change', this.getProductPrice.bind(this))
+        this.corners = document.getElementById('card-corners').addEventListener('click', this.getProductPrice.bind(this))
+        this.printPrice = document.getElementById('product-1-print').addEventListener('change', this.getProductPrice.bind(this));
+        this.foilPrice = document.getElementById('product-1-foil').addEventListener('change', this.getProductPrice.bind(this));
         this.result = document.querySelector('.product-1-price-result span')
         this.refreshPage()
-        this.getProduct_Price()
+        this.getProductPrice()
     }
-    getProduct_Count() {
+    getProductCount() {
         let count = parseInt(document.getElementById('product-1-count').value);
         return count
     }
-    getProduct_Size() {
+    getProductSize() {
         let selected = this.theFormProduct.elements['product-1-size'];
         let price = priceList.productSize[selected.value];
         return price
     }
-    getProduct_Material() {
+    getProductMaterial() {
         let selected = this.theFormProduct.elements['product-1-material'];
         let price = priceList.productMaterial[selected.value];
         return price
     }
-    getProduct_Crease() {
+    getProductCrease() {
         let selected = this.theFormProduct.elements['product-1-crease'];
         let price = priceList.productCrease[selected.value];
         return price;
     }
-    getProduct_Sheets() {
+    getProductSheets() {
         let selected = this.theFormProduct.elements['product-1-sheets'];
         let price = priceList.productSheets[selected.value];
         return price;
@@ -65,12 +56,12 @@ class Product1 {
         return cornersPrice;
     }
 
-    getProduct_Price() {
-        const count = this.getProduct_Count()
-        const sizeProd = this.getProduct_Size()
-        const materialProd = this.getProduct_Material()
-        const creaseProd = this.getProduct_Crease()
-        const sheetsProd = this.getProduct_Sheets()
+    getProductPrice() {
+        const count = this.getProductCount()
+        const sizeProd = this.getProductSize()
+        const materialProd = this.getProductMaterial()
+        const creaseProd = this.getProductCrease()
+        const sheetsProd = this.getProductSheets()
         const cornersProd = this.getCardCorners()
         const printProd = this.printStandard.getPricePrint(count, sizeProd)
         const foilProd = this.foil.getPriceFoil(count, sizeProd)
@@ -94,38 +85,38 @@ class Product2 {
         this.printStandard = new PrintStandard(this.theFormProduct, 'product-2-print', 'product-2-c1', 'product-2-c2', 'product-2-c3', 'product-2-c4', 'product-2-c5', 'product-2-c6')
         this.foil = new Foil(this.theFormProduct, 'product-2-foil', 'product-2-d1', 'product-2-d2', 'product-2-d3', 'product-2-d4', 'product-2-d5', 'product-2-d6', 'product-2-d7')
 
-        this.pages = document.getElementById('product-2-pages-count').addEventListener('change', this.getProduct_Price.bind(this));
-        this.pagesBlack = document.getElementById('product-2-pages-black').addEventListener('change', this.getProduct_Price.bind(this));
-        this.pagesColor = document.getElementById('product-2-pages-color').addEventListener('change', this.getProduct_Price.bind(this));
-        this.pagesEmpty = document.getElementById('product-2-pages-empty').addEventListener('change', this.getProduct_Price.bind(this));
-        this.sheetsForInner = document.getElementById('product-2-sheets-inner').addEventListener('change', this.getProduct_Price.bind(this));
+        this.pages = document.getElementById('product-2-pages-count').addEventListener('change', this.getProductPrice.bind(this));
+        this.pagesBlack = document.getElementById('product-2-pages-black').addEventListener('change', this.getProductPrice.bind(this));
+        this.pagesColor = document.getElementById('product-2-pages-color').addEventListener('change', this.getProductPrice.bind(this));
+        this.pagesEmpty = document.getElementById('product-2-pages-empty').addEventListener('change', this.getProductPrice.bind(this));
+        this.sheetsForInner = document.getElementById('product-2-sheets-inner').addEventListener('change', this.getProductPrice.bind(this));
 
-        this.count = document.getElementById('product-2-count').addEventListener('change', this.getProduct_Price.bind(this))
-        this.size = document.getElementById('product-2-size').addEventListener('change', this.getProduct_Price.bind(this))
-        this.material = document.getElementById('product-2-material').addEventListener('change', this.getProduct_Price.bind(this))
-        this.cover = document.getElementById('product-2-cover').addEventListener('change', this.getProduct_Price.bind(this))
-        this.printStandardPrice = document.getElementById('product-2-print').addEventListener('change', this.getProduct_Price.bind(this));
-        this.sheetsForCover = document.getElementById('product-2-sheets-cover').addEventListener('change', this.getProduct_Price.bind(this))
-        this.foilPrice = document.getElementById('product-2-foil').addEventListener('change', this.getProduct_Price.bind(this))
-        this.binding = document.getElementById('product-2-binding').addEventListener('change', this.getProduct_Price.bind(this))
-        this.wings = document.getElementById('product-2-wings').addEventListener('click', this.getProduct_Price.bind(this))
+        this.count = document.getElementById('product-2-count').addEventListener('change', this.getProductPrice.bind(this))
+        this.size = document.getElementById('product-2-size').addEventListener('change', this.getProductPrice.bind(this))
+        this.material = document.getElementById('product-2-material').addEventListener('change', this.getProductPrice.bind(this))
+        this.cover = document.getElementById('product-2-cover').addEventListener('change', this.getProductPrice.bind(this))
+        this.printStandardPrice = document.getElementById('product-2-print').addEventListener('change', this.getProductPrice.bind(this));
+        this.sheetsForCover = document.getElementById('product-2-sheets-cover').addEventListener('change', this.getProductPrice.bind(this))
+        this.foilPrice = document.getElementById('product-2-foil').addEventListener('change', this.getProductPrice.bind(this))
+        this.binding = document.getElementById('product-2-binding').addEventListener('change', this.getProductPrice.bind(this))
+        this.wings = document.getElementById('product-2-wings').addEventListener('click', this.getProductPrice.bind(this))
 
         this.result = document.querySelector('.product-2-price-result span')
         this.resetPage()
-        this.getProduct_Price()
+        this.getProductPrice()
     }
 
-    getProduct_Count() {
+    getProductCount() {
         let count = parseInt(document.getElementById('product-2-count').value);
         return count
     }
-    getProduct_Size() {
+    getProductSize() {
         let selected = this.theFormProduct.elements['product-2-size'];
         let price = priceList.productSize[selected.value];
         console.log()
         return price
     }
-    getProduct_Material() {
+    getProductMaterial() {
         const enableSheets = document.querySelector('.enable-sheets')
         let selected = this.theFormProduct.elements['product-2-material'];
         let price = priceList.productMaterial[selected.value];
@@ -139,12 +130,12 @@ class Product2 {
         }
         return price
     }
-    getProduct_Cover() {
+    getProductCover() {
         let selected = this.theFormProduct.elements['product-2-cover'];
         let price = priceList.productCover[selected.value];
         return price
     }
-    getProduct_Binding() {
+    getProductBinding() {
         let selected = this.theFormProduct.elements['product-2-binding'];
         let price = priceList.productBinding[selected.value];
         return price
@@ -183,14 +174,14 @@ class Product2 {
         return price;
     }
 
-    getProduct_Price() {
-        const count = this.getProduct_Count()
-        const sizeProd = this.getProduct_Size()
-        const materialProd = this.getProduct_Material()
-        const coverMaterial = this.getProduct_Cover()
+    getProductPrice() {
+        const count = this.getProductCount()
+        const sizeProd = this.getProductSize()
+        const materialProd = this.getProductMaterial()
+        const coverMaterial = this.getProductCover()
         const sheetsForCover = this.getProductSheetsForCover()
         const sheetsForInner = this.getProductSheetsForInner()
-        const binding = this.getProduct_Binding()
+        const binding = this.getProductBinding()
         const printForCover = this.printStandard.getPricePrint(count, (sizeProd * 2))
         const foilForCover = this.foil.getPriceFoil(count, (sizeProd * 2))
         const wings = this.getProductWings(count, sizeProd, coverMaterial, (printForCover / 2), sheetsForCover, (foilForCover / 2))

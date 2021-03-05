@@ -2,299 +2,326 @@
 <html lang="pl">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PrintingHouse calculator</title>
-    <script type="module" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.esm.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PrintingHouse calculator</title>
+  <script type="module" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.esm.js"></script>
 </head>
 
 <body>
-    <div id="app">
-        <div class="calculator">
-            <div class="calculator-container">
-                <div class="nav-calculator">
-                    <div id="logo"><img src="assets/logo.png" alt="logo">
-                        <h1 class="logo-h1">Olejnik</h1>
-                    </div>
-                    <div class="select-print-container">
-                        <button class="select-print-item select-print-item--active">
-                            <img src="assets/open-book.svg" alt="books"> <p>Książki, <br> broszury, itp.</p>
-                        </button>
-                        <button class="select-print-item">
-                            <img src="assets/menu.svg" alt="books"><p>Druki akcydensowe</p>
-                        </button>
-                    </div>
-                </div>
-                <div class="price-list">
-                    <div class="price-list-container">
-                      <div class="product">
-                        <form action="" id="product-2"class="standard">
-                            <div class="form-container">
-                              <div class="form-inner form-inner-prod2">
-                                <p class="form-item">
-                                  <label for="product-2-count">ilość sztuk</label><br>
-                                  <input type="number" min="0" max="999999" id="product-2-count" value="1" class="select-price">
-                                </p>
-                                <p class="form-item">
-                                  <label for="product-2-size">format</label><br>
-                                  <select name="product-2-size" id="product-2-size" class="select-price">
-                                    <option value="product-2-a1" selected>A4 (210 x 297 mm)</option>
-                                    <option value="product-2-a2">A5 (148 x 210 mm)</option>
-                                    <option value="product-2-a3">A6 (105 x 148 mm)</option>
-                                    <option value="product-2-a4">B4 (250 x 353 mm)</option>
-                                    <option value="product-2-a5">B5 (176 x 250 mm)</option>
-                                    <option value="product-2-a6">B6 (125 x 176 mm)</option>
-                                  </select>
-                                </p>
-                                <p class="form-item">
-                                  <label for="product-2-material">media środek</label><br>
-                                  <select name="product-2-material" id="product-2-material" class="select-price">
-                                    <option value="product-2-b1" class="enable" selected="selected">creamy 60g</option>
-                                    <option value="product-2-b2" class="enable">creamy 70g</option>
-                                    <option value="product-2-b3" class="enable">creamy 80g</option>
-                                    <option value="product-2-b4" class="enable">lux cream 70g</option>
-                                    <option value="product-2-b5" class="enable">lux cream 80g</option>
-                                    <option value="product-2-b6" class="enable">lux cream 90g</option>
-                                    <option value="product-2-b7" class="enable">offset 70g</option>
-                                    <option value="product-2-b8" class="enable">offset 80g</option>
-                                    <option value="product-2-b9" class="enable">offset 90g</option>
-                                    <option value="product-2-b10" class="enable">offset 100g</option>
-                                    <option value="product-2-b11">kreda 90g</option>
-                                    <option value="product-2-b12">kreda 100g</option>
-                                    <option value="product-2-b13">kreda 115g</option>
-                                    <option value="product-2-b14">kreda 130g</option>
-                                    <option value="product-2-b15">kreda 150g</option>
-                                    <option value="product-2-b16">satyna 90g</option>
-                                    <option value="product-2-b17">satyna 100g</option>
-                                    <option value="product-2-b18">satyna 120g</option>
-                                    <option value="product-2-b19">satyna 160g</option>
-                                  </select>
-                                </p>
-                                <p class="form-item">
-                                  <label for="product-2-cover">media okładka</label><br>
-                                  <select name="product-2-cover" id="product-2-cover" class="select-price">
-                                    <option value="product-2-h1" selected>brak</option>
-                                    <option value="product-2-h2">karton GC1 230g</option>
-                                    <option value="product-2-h3">karton GC1 250g</option>
-                                    <option value="product-2-h4">karton GC1 300g</option>
-                                    <option value="product-2-h5">kreda 200g</option>
-                                    <option value="product-2-h6">kreda 250g</option>
-                                    <option value="product-2-h7">kreda 300g</option>
-                                    <option value="product-2-h8">kreda 350g</option>
-                                    <option value="product-2-h10">satyna 200g</option>
-                                    <option value="product-2-h11">satyna 250g</option>
-                                    <option value="product-2-h12">satyna 300g</option>
-                                    <option value="product-2-h13">satyna 350g</option>
-                                  </select>
-                                </p>
-                                <p class="form-item">
-                                  <label for="product-2-print">druk okładki</label><br>
-                                  <select name="product-2-print" id="product-2-print" class="select-price">
-                                    <option value="product-2-c1" selected="selected">brak</option>
-                                    <option value="product-2-c2">4 + 0 kolor</option>
-                                    <option value="product-2-c3">4 + 1 kolor</option>
-                                    <option value="product-2-c4">4 + 4 kolor</option>
-                                    <option value="product-2-c5">1 + 0</option>
-                                    <option value="product-2-c6">1 + 1</option>
-                                  </select>
-                                </p>
-                                <p class="form-item">
-                                  <label for="product-2-foil">foliowanie okładki</label><br>
-                                  <select name="product-2-foil" id="product-2-foil" class="select-price">
-                                    <option value="product-2-d1" selected="selected">brak</option>
-                                    <option value="product-2-d2">folia błysk (jednostronnie)</option>
-                                    <option value="product-2-d3">folia mat (jednostronnie)</option>
-                                    <option value="product-2-d4">folia soft-tuch (jednostronnie)</option>
-                                    <option value="product-2-d5">folia błysk (dwustronnie)</option>
-                                    <option value="product-2-d6">folia mat (dwustronnie)</option>
-                                    <option value="product-2-d7">folia soft-tuch (dwustronnie)</option>
-                                  </select>
-                                </p>
-                                <p class="form-item">
-                                  <label for="product-2-binding">oprawa</label><br>
-                                  <select name="product-2-binding" id="product-2-binding" class="select-price">
-                                    <option value="product-2-e1" selected>brak</option>
-                                    <option value="product-2-e2">zeszytowa</option>
-                                    <option value="product-2-e3">klejona</option>
-                                    <option value="product-2-e4">spiralna</option>
-                                  </select>
-                                </p>
-                                <p class="form-item">
-                                  <label for="product-2-sheets-cover">arkusze okładka</label><br>
-                                  <select name="product-2-sheets-cover" id="product-2-sheets-cover" class="select-price">
-                                    <option value="product-2-g1" selected="selected">SRA3</option>
-                                    <option value="product-2-g2">arkusz B1</option>
-                                    <option value="product-2-g3">arkusz A1</option>
-                                  </select>
-                                </p>
-                                <p class="form-item">
-                                  <label for="product-2-sheets-inner">arkusze środek</label><br>
-                                  <select name="product-2-sheets-inner" id="product-2-sheets-inner" class="select-price">
-                                    <option value="product-2-f1" class="enable-sheets">SRA3</option>
-                                    <option value="product-2-f2" selected="selected">arkusz B1</option>
-                                    <option value="product-2-f3">arkusz A1</option>
-                                  </select>
-                                </p>
-                                <p class="checkbox">
-                                  <label for='product-2-wings' class="product-2-wings">
-                                    Skrzydełka okładka</label>
-                                  <input type="checkbox" id="product-2-wings" name='product-2-wings' class="select-checkbox">
-                                </p>
-                              </div>
-                              <div class="form-inner form-inner-prod2 inner-pages-container">
-                                <p class="form-item">
-                                  <label for="product-2-pages-count">ilość stron środka</label><br>
-                                  <input type="number" min="0" max="10000" id="product-2-pages-count" value="0" class="select-price inner-pages-count">
-                                </p>
-                                <p class="form-item">
-                                  <label for="product-2-pages-black">czrno-białe</label><br>
-                                  <input type="number" min="0" max="10000" id="product-2-pages-black" value="0" class="select-price inner-pages inner-pages-black" disabled>
-                                </p>
-                                <p class="form-item">
-                                  <label for="product-2-pages-color">kolorowe</label><br>
-                                  <input type="number" min="0" max="10000" id="product-2-pages-color" value="0" class="select-price inner-pages">
-                                </p>
-                                <p class="form-item">
-                                  <label for="product-2-pages-empty">puste</label><br>
-                                  <input type="number" min="0" max="10000" id="product-2-pages-empty" value="0" class="select-price inner-pages">
-                                </p>
-                              </div>
-                            </div>
-                            <div class="product-2-price price-sum">
-                              <div class="price-sum-result product-2-price-result">
-                                <h3>Razem: <span>0</span> zł</h3> 
-                                <input type="reset" class="reset"></input>
-                              </div>
-                              <p class="price-sum-desc">Ceny wygenerowane przez kalkulator są cenami orientacyjnymi</p>
-                            </div>
-                            </form>
-                          </div>
-                          <div class="product">
-                            <form action="" id="product-1" data-option="standard" class="standard">
-                                  <div class="form-container">
-                                    <div class="form-inner">
-                                      <p class="form-item">
-                                        <label for="product-1-count">ilość sztuk</label><br>
-                                        <input type="number" min="1" max="10000" id="product-1-count" value="1" class="select-price">
-                                      </p>
-                                      <p class="form-item">
-                                        <label for="product-1-size">format</label><br>
-                                        <select name="product-1-size" id="product-1-size" class="select-price">
-                                          <option value="product-1-a1" selected>A3 (420 x 297) mm</option>
-                                          <option value="product-1-a2">A4 (210 x 297) mm</option>
-                                          <option value="product-1-a3">A5 (148 x 210) mm</option>
-                                          <option value="product-1-a4">A6 (105 x 148) mm</option>
-                                          <option value="product-1-a5">DL (99 x 210) mm</option>
-                                          <option value="product-1-a6">B4 (250 x 353) mm</option>
-                                          <option value="product-1-a7">B5 (176 x 250) mm</option>
-                                          <option value="product-1-a8">wizytówki (90 x 50) mm</option>
-                                        </select>
-                                      </p>
-                                      <p class="form-item">
-                                        <label for="product-1-material">media</label><br>
-                                        <select name="product-1-material" id="product-1-material" class="select-price">
-                                          <option value="product-1-b1" selected="selected">kreda 100 g</option>
-                                          <option value="product-1-b2">kreda 115 g</option>
-                                          <option value="product-1-b3">kreda 130 g</option>
-                                          <option value="product-1-b4">kreda 150 g</option>
-                                          <option value="product-1-b5">kreda 170 g</option>
-                                          <option value="product-1-b6">kreda 200 g</option>
-                                          <option value="product-1-b7">kreda 250 g</option>
-                                          <option value="product-1-b8">kreda 300 g</option>
-                                          <option value="product-1-b9">kreda 350 g</option>
-                                          <option value="product-1-b10">satyna 90 g</option>
-                                          <option value="product-1-b11">satyna 100 g</option>
-                                          <option value="product-1-b12">satyna 120 g</option>
-                                          <option value="product-1-b13">satyna 160 g</option>
-                                          <option value="product-1-b14">satyna 200 g</option>
-                                          <option value="product-1-b15">satyna 250 g</option>
-                                          <option value="product-1-b16">satyna 300 g</option>
-                                          <option value="product-1-b17">satyna 350 g</option>
-                                          <option value="product-1-b18">DNS 300 g</option>
-                                        </select>
-                                      </p>
-                                      <p class="form-item">
-                                        <label for="product-1-print">druk</label><br>
-                                        <select name="product-1-print" id="product-1-print" class="select-price">
-                                          <option value="product-1-c1" selected="selected">brak</option>
-                                          <option value="product-1-c2">4 + 0 kolor</option>
-                                          <option value="product-1-c3">4 + 1 kolor</option>
-                                          <option value="product-1-c4">4 + 4 kolor</option>
-                                          <option value="product-1-c5">1 + 0 kolor</option>
-                                          <option value="product-1-c6">1 + 1 kolor</option>
-                                          <option value="product-1-c7">1 + 0 czarno-biały</option>
-                                          <option value="product-1-c8">1 + 1 czarno-biały</option>
-                                        </select>
-                                      </p>
-                                      <p class="form-item">
-                                        <label for="product-1-foil">foliowanie</label><br>
-                                        <select name="product-1-foil" id="product-1-foil" class="select-price">
-                                          <option value="product-1-d1" selected="selected">brak</option>
-                                          <option value="product-1-d2">folia błysk (jednostronnie)</option>
-                                          <option value="product-1-d3">folia mat (jednostronnie)</option>
-                                          <option value="product-1-d4">folia soft-tuch (jednostronnie)</option>
-                                          <option value="product-1-d5">folia błysk (dwustronnie)</option>
-                                          <option value="product-1-d6">folia mat (dwustronnie)</option>
-                                          <option value="product-1-d7">folia soft-tuch (dwustronnie)</option>
-                                        </select>
-                                      </p>
-                                      <p class="form-item">
-                                        <label for="product-1-crease">bigowanie</label><br>
-                                        <select name="product-1-crease" id="product-1-crease" class="select-price">
-                                          <option value="product-1-e1" selected="selected">brak</option>
-                                          <option value="product-1-e2">bigowanie x 1</option>
-                                          <option value="product-1-e3">bigowanie x 2</option>
-                                          <option value="product-1-e4">bigowanie x 3</option>
-                                          <option value="product-1-e5">bigowanie x 4</option>
-                                          <option value="product-1-e6">bigowanie x 5</option>
-                                        </select>
-                                      </p>
-                                      <p class="form-item">
-                                        <label for="product-1-sheets">arkusze</label><br>
-                                        <select name="product-1-sheets" id="product-1-sheets" class="select-price">
-                                          <option value="product-1-f1" selected="selected">SRA3</option>
-                                          <option value="product-1-f2">arkusz B1</option>
-                                          <option value="product-1-f3">arkusz A1</option>
-                                        </select>
-                                      </p>
-                                      <p class="checkbox">
-                                        <label for='card-corners' class="card-corners">
-                                          Zaokrąglanie rogów</label>
-                                        <input type="checkbox" id="card-corners" name='card-corners' class="select-checkbox">
-                                      </p>
-                                    </div>
-                                  </div>
-                                  <div class="product-1-price price-sum">
-                                    <div class="price-sum-result product-1-price-result">
-                                      <h3>Razem: <span>0</span> zł</h3> 
-                                      <input type="reset" class="reset"></input>
-                                    </div>
-                                    <p class="price-sum-desc">Ceny wygenerowane przez kalkulator są cenami orientacyjnymi</p>
-                                  </div>
-                              </form>
-                          </div>
-                    </div>
-                </div>
+  <div id="app">
+    <div class="calculator">
+      <div class="calculator-container">
+        <div class="navigation">
+          <div class="nav-container logo-container">
+            <a href="#" id="logo">
+              <img src="assets/logo.png" alt="logo">
+              <h1 class="logo-h1">Olejnik</h1>
+            </a>
+          </div>
+          <div class="navigation-buttons-container">
+            <div class="nav-container nav-container-print">
+              <div class="select-print-container">
+                <button class="select-print-item select-print-item--active">
+                  <img src="assets/open-book.svg" alt="books">
+                  <p>Książki, <br> broszury, itp.</p>
+                </button>
+                <button class="select-print-item">
+                  <img src="assets/menu.svg" alt="books">
+                  <p>Druki akcydensowe</p>
+                </button>
+              </div>
             </div>
-
-            <!-- //bottom panel----------------------------->
-            <div class="bottom-panel">
-                <button class="mail bottom-panel-btn">
-                    <ion-icon class="icon" name="mail-open-outline"></ion-icon>
+            <div class="nav-container container-icons">
+              <div class="container-icons-wrap">
+                <button class="mail icon-panel-btn">
+                  <ion-icon class="icon" name="mail-open-outline"></ion-icon>
                 </button>
-                <button class="calendar bottom-panel-btn">
-                    <ion-icon class="icon" name="calendar-outline"></ion-icon>
+                <button class="calendar icon-panel-btn">
+                  <ion-icon class="icon" name="calendar-outline"></ion-icon>
                 </button>
-                <button class="calendar bottom-panel-btn">
-                    <ion-icon class="icon" name="reader-outline"></ion-icon>
+              </div>
+              <div class="container-icons-wrap">
+                <button class="calendar icon-panel-btn">
+                  <ion-icon class="icon" name="reader-outline"></ion-icon>
                 </button>
-                <div class="clock">
-                    <h2></h2>
-                </div>
+                <button class="info icon-panel-btn">
+                  <ion-icon name="information-outline" class="icon"></ion-icon>
+                </button>
+              </div>
             </div>
+          </div>
         </div>
+        <div class="price-list">
+          <div class="price-list-container">
+            <div class="product">
+              <form action="" id="product-2" class="standard">
+                <div class="form-container">
+                  <h2 class="title form-item">Książki, broszury, itp.</h2>
+                  <div class="form-inner form-inner-prod2">
+                    <p class="form-item">
+                      <label for="product-2-count">ilość sztuk</label><br>
+                      <input type="number" min="0" max="999999" id="product-2-count" value="1" class="select-price">
+                    </p>
+                    <p class="form-item">
+                      <label for="product-2-size">format</label><br>
+                      <select name="product-2-size" id="product-2-size" class="select-price">
+                        <option value="product-2-a1" selected>A4 (210 x 297 mm)</option>
+                        <option value="product-2-a2">A5 (148 x 210 mm)</option>
+                        <option value="product-2-a3">A6 (105 x 148 mm)</option>
+                        <option value="product-2-a4">B4 (250 x 353 mm)</option>
+                        <option value="product-2-a5">B5 (176 x 250 mm)</option>
+                        <option value="product-2-a6">B6 (125 x 176 mm)</option>
+                      </select>
+                    </p>
+                    <p class="form-item">
+                      <label for="product-2-material">media środek</label><br>
+                      <select name="product-2-material" id="product-2-material" class="select-price">
+                        <option value="product-2-b1" class="enable" selected="selected">creamy 60g</option>
+                        <option value="product-2-b2" class="enable">creamy 70g</option>
+                        <option value="product-2-b3" class="enable">creamy 80g</option>
+                        <option value="product-2-b4" class="enable">lux cream 70g</option>
+                        <option value="product-2-b5" class="enable">lux cream 80g</option>
+                        <option value="product-2-b6" class="enable">lux cream 90g</option>
+                        <option value="product-2-b7" class="enable">offset 70g</option>
+                        <option value="product-2-b8" class="enable">offset 80g</option>
+                        <option value="product-2-b9" class="enable">offset 90g</option>
+                        <option value="product-2-b10" class="enable">offset 100g</option>
+                        <option value="product-2-b11">kreda 90g</option>
+                        <option value="product-2-b12">kreda 100g</option>
+                        <option value="product-2-b13">kreda 115g</option>
+                        <option value="product-2-b14">kreda 130g</option>
+                        <option value="product-2-b15">kreda 150g</option>
+                        <option value="product-2-b16">satyna 90g</option>
+                        <option value="product-2-b17">satyna 100g</option>
+                        <option value="product-2-b18">satyna 120g</option>
+                        <option value="product-2-b19">satyna 160g</option>
+                      </select>
+                    </p>
+                    <p class="form-item">
+                      <label for="product-2-cover">media okładka</label><br>
+                      <select name="product-2-cover" id="product-2-cover" class="select-price">
+                        <option value="product-2-h1" selected>brak</option>
+                        <option value="product-2-h2">karton GC1 230g</option>
+                        <option value="product-2-h3">karton GC1 250g</option>
+                        <option value="product-2-h4">karton GC1 300g</option>
+                        <option value="product-2-h5">kreda 200g</option>
+                        <option value="product-2-h6">kreda 250g</option>
+                        <option value="product-2-h7">kreda 300g</option>
+                        <option value="product-2-h8">kreda 350g</option>
+                        <option value="product-2-h10">satyna 200g</option>
+                        <option value="product-2-h11">satyna 250g</option>
+                        <option value="product-2-h12">satyna 300g</option>
+                        <option value="product-2-h13">satyna 350g</option>
+                      </select>
+                    </p>
+                    <p class="form-item">
+                      <label for="product-2-print">druk okładki</label><br>
+                      <select name="product-2-print" id="product-2-print" class="select-price">
+                        <option value="product-2-c1" selected="selected">brak</option>
+                        <option value="product-2-c2">4 + 0 kolor</option>
+                        <option value="product-2-c3">4 + 1 kolor</option>
+                        <option value="product-2-c4">4 + 4 kolor</option>
+                        <option value="product-2-c5">1 + 0</option>
+                        <option value="product-2-c6">1 + 1</option>
+                      </select>
+                    </p>
+                    <p class="form-item">
+                      <label for="product-2-foil">foliowanie okładki</label><br>
+                      <select name="product-2-foil" id="product-2-foil" class="select-price">
+                        <option value="product-2-d1" selected="selected">brak</option>
+                        <option value="product-2-d2">folia błysk (jednostronnie)</option>
+                        <option value="product-2-d3">folia mat (jednostronnie)</option>
+                        <option value="product-2-d4">folia soft-tuch (jednostronnie)</option>
+                        <option value="product-2-d5">folia błysk (dwustronnie)</option>
+                        <option value="product-2-d6">folia mat (dwustronnie)</option>
+                        <option value="product-2-d7">folia soft-tuch (dwustronnie)</option>
+                      </select>
+                    </p>
+                    <p class="form-item">
+                      <label for="product-2-binding">oprawa</label><br>
+                      <select name="product-2-binding" id="product-2-binding" class="select-price">
+                        <option value="product-2-e1" selected>brak</option>
+                        <option value="product-2-e2">zeszytowa</option>
+                        <option value="product-2-e3">klejona</option>
+                        <option value="product-2-e4">spiralna</option>
+                      </select>
+                    </p>
+                    <p class="form-item">
+                      <label for="product-2-sheets-cover">arkusze okładka</label><br>
+                      <select name="product-2-sheets-cover" id="product-2-sheets-cover" class="select-price">
+                        <option value="product-2-g1" selected="selected">SRA3</option>
+                        <option value="product-2-g2">arkusz B1</option>
+                        <option value="product-2-g3">arkusz A1</option>
+                      </select>
+                    </p>
+                    <p class="form-item">
+                      <label for="product-2-sheets-inner">arkusze środek</label><br>
+                      <select name="product-2-sheets-inner" id="product-2-sheets-inner" class="select-price">
+                        <option value="product-2-f1" class="enable-sheets">SRA3</option>
+                        <option value="product-2-f2" selected="selected">arkusz B1</option>
+                        <option value="product-2-f3">arkusz A1</option>
+                      </select>
+                    </p>
+                    <p class="checkbox">
+                      <label for='product-2-wings' class="product-2-wings">
+                        Skrzydełka okładka</label>
+                      <input type="checkbox" id="product-2-wings" name='product-2-wings' class="select-checkbox">
+                    </p>
+                  </div>
+                  <div class="form-inner form-inner-prod2 inner-pages-container">
+                    <p class="form-item">
+                      <label for="product-2-pages-count">ilość stron środka</label><br>
+                      <input type="number" min="0" max="10000" id="product-2-pages-count" value="0"
+                        class="select-price inner-pages-count">
+                    </p>
+                    <p class="form-item">
+                      <label for="product-2-pages-black">śr. czrno-białe</label><br>
+                      <input type="number" min="0" max="10000" id="product-2-pages-black" value="0"
+                        class="select-price inner-pages inner-pages-black" disabled>
+                    </p>
+                    <p class="form-item">
+                      <label for="product-2-pages-color">śr. kolorowe</label><br>
+                      <input type="number" min="0" max="10000" id="product-2-pages-color" value="0"
+                        class="select-price inner-pages">
+                    </p>
+                    <p class="form-item">
+                      <label for="product-2-pages-empty">śr. puste</label><br>
+                      <input type="number" min="0" max="10000" id="product-2-pages-empty" value="0"
+                        class="select-price inner-pages">
+                    </p>
+                  </div>
+                </div>
+                <div class="product-2-price price-sum">
+                  <div class="price-sum-result product-2-price-result">
+                    <h3>Razem: <span>0</span> zł</h3>
+                    <input type="reset" class="reset"></input>
+                  </div>
+                  <p class="price-sum-desc">Ceny wygenerowane przez kalkulator są cenami orientacyjnymi</p>
+                </div>
+              </form>
+            </div>
+            <div class="product">
+              <form action="" id="product-1" data-option="standard" class="standard">
+                <div class="form-container">
+                  <h2 class="title form-item">Druk akcydensów</h2>
+                  <div class="form-inner">
+                    <p class="form-item">
+                      <label for="product-1-count">ilość sztuk</label><br>
+                      <input type="number" min="1" max="10000" id="product-1-count" value="1" class="select-price">
+                    </p>
+                    <p class="form-item">
+                      <label for="product-1-size">format</label><br>
+                      <select name="product-1-size" id="product-1-size" class="select-price">
+                        <option value="product-1-a1" selected>A3 (420 x 297) mm</option>
+                        <option value="product-1-a2">A4 (210 x 297) mm</option>
+                        <option value="product-1-a3">A5 (148 x 210) mm</option>
+                        <option value="product-1-a4">A6 (105 x 148) mm</option>
+                        <option value="product-1-a5">DL (99 x 210) mm</option>
+                        <option value="product-1-a6">B4 (250 x 353) mm</option>
+                        <option value="product-1-a7">B5 (176 x 250) mm</option>
+                        <option value="product-1-a8">wizytówki (90 x 50) mm</option>
+                      </select>
+                    </p>
+                    <p class="form-item">
+                      <label for="product-1-material">media</label><br>
+                      <select name="product-1-material" id="product-1-material" class="select-price">
+                        <option value="product-1-b1" selected="selected">kreda 100 g</option>
+                        <option value="product-1-b2">kreda 115 g</option>
+                        <option value="product-1-b3">kreda 130 g</option>
+                        <option value="product-1-b4">kreda 150 g</option>
+                        <option value="product-1-b5">kreda 170 g</option>
+                        <option value="product-1-b6">kreda 200 g</option>
+                        <option value="product-1-b7">kreda 250 g</option>
+                        <option value="product-1-b8">kreda 300 g</option>
+                        <option value="product-1-b9">kreda 350 g</option>
+                        <option value="product-1-b10">satyna 90 g</option>
+                        <option value="product-1-b11">satyna 100 g</option>
+                        <option value="product-1-b12">satyna 120 g</option>
+                        <option value="product-1-b13">satyna 160 g</option>
+                        <option value="product-1-b14">satyna 200 g</option>
+                        <option value="product-1-b15">satyna 250 g</option>
+                        <option value="product-1-b16">satyna 300 g</option>
+                        <option value="product-1-b17">satyna 350 g</option>
+                        <option value="product-1-b18">DNS 300 g</option>
+                      </select>
+                    </p>
+                    <p class="form-item">
+                      <label for="product-1-print">druk</label><br>
+                      <select name="product-1-print" id="product-1-print" class="select-price">
+                        <option value="product-1-c1" selected="selected">brak</option>
+                        <option value="product-1-c2">4 + 0 kolor</option>
+                        <option value="product-1-c3">4 + 1 kolor</option>
+                        <option value="product-1-c4">4 + 4 kolor</option>
+                        <option value="product-1-c5">1 + 0 kolor</option>
+                        <option value="product-1-c6">1 + 1 kolor</option>
+                        <option value="product-1-c7">1 + 0 czarno-biały</option>
+                        <option value="product-1-c8">1 + 1 czarno-biały</option>
+                      </select>
+                    </p>
+                    <p class="form-item">
+                      <label for="product-1-foil">foliowanie</label><br>
+                      <select name="product-1-foil" id="product-1-foil" class="select-price">
+                        <option value="product-1-d1" selected="selected">brak</option>
+                        <option value="product-1-d2">folia błysk (jednostronnie)</option>
+                        <option value="product-1-d3">folia mat (jednostronnie)</option>
+                        <option value="product-1-d4">folia soft-tuch (jednostronnie)</option>
+                        <option value="product-1-d5">folia błysk (dwustronnie)</option>
+                        <option value="product-1-d6">folia mat (dwustronnie)</option>
+                        <option value="product-1-d7">folia soft-tuch (dwustronnie)</option>
+                      </select>
+                    </p>
+                    <p class="form-item">
+                      <label for="product-1-crease">bigowanie</label><br>
+                      <select name="product-1-crease" id="product-1-crease" class="select-price">
+                        <option value="product-1-e1" selected="selected">brak</option>
+                        <option value="product-1-e2">bigowanie x 1</option>
+                        <option value="product-1-e3">bigowanie x 2</option>
+                        <option value="product-1-e4">bigowanie x 3</option>
+                        <option value="product-1-e5">bigowanie x 4</option>
+                        <option value="product-1-e6">bigowanie x 5</option>
+                      </select>
+                    </p>
+                    <p class="form-item">
+                      <label for="product-1-sheets">arkusze</label><br>
+                      <select name="product-1-sheets" id="product-1-sheets" class="select-price">
+                        <option value="product-1-f1" selected="selected">SRA3</option>
+                        <option value="product-1-f2">arkusz B1</option>
+                        <option value="product-1-f3">arkusz A1</option>
+                      </select>
+                    </p>
+                    <p class="checkbox">
+                      <label for='card-corners' class="card-corners">
+                        Zaokrąglanie rogów</label>
+                      <input type="checkbox" id="card-corners" name='card-corners' class="select-checkbox">
+                    </p>
+                  </div>
+                </div>
+                <div class="product-1-price price-sum">
+                  <div class="price-sum-result product-1-price-result">
+                    <h3>Razem: <span>0</span> zł</h3>
+                    <input type="reset" class="reset"></input>
+                  </div>
+                  <p class="price-sum-desc">Ceny wygenerowane przez kalkulator są cenami orientacyjnymi</p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- //bottom panel----------------------------->
+      <div class="bottom-panel">
+        <div class="description-app">
+          <h1 class="description-app-h1">KALKULATOR CEN FIRMY OLEJNIK</h1>
+        </div>
+        <div class="clock">
+          <h2></h2>
+        </div>
+      </div>
     </div>
+  </div>
 </body>
 
 </html>
