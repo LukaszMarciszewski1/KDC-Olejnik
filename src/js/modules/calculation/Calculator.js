@@ -67,14 +67,14 @@ class Product1 {
         const foilProd = this.foil.getPriceFoil(count, sizeProd)
 
         const productPrice = ((((sizeProd * materialProd) * sheetsProd) + creaseProd + cornersProd) * count) + printProd + foilProd;
-        this.result.textContent = productPrice.toFixed(3)
+        this.result.textContent = productPrice.toFixed(2)
     }
     refreshPage() {
         let priceSize = priceList.productSize['product-1-a1'];
         let priceMaterial = priceList.productMaterial['product-1-b1'];
         let result = priceSize * priceMaterial
         const reset = document.querySelectorAll('.reset')
-        reset.forEach(res => res.addEventListener('click', () => this.result.textContent = result.toFixed(3)))
+        reset.forEach(res => res.addEventListener('click', () => this.result.textContent = result.toFixed(2)))
     }
 }
 

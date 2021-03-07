@@ -1,6 +1,6 @@
-import {
-  printingCost
-} from './prices/printingCost.js';
+import 
+printPrice
+ from './prices/printPrice.js';
 
 export class PrintStandard {
     constructor(theProductForm, selectForm, prodC1, prodC2, prodC3, prodC4, prodC5, prodC6, prodC7, prodC8) {
@@ -14,7 +14,7 @@ export class PrintStandard {
       this.prodC8 = prodC8 //1 + 1 black and white
       this.theProductForm = theProductForm
       this.selected = this.theProductForm.elements[selectForm]
-      this.pricePrint = printingCost.cover
+      // this.pricePrint = pricePrint
     }
     getPricePrint(countEl, sizeEl) {
       let price = 0
@@ -27,62 +27,62 @@ export class PrintStandard {
 
       modifier = numberEl * countEl
       if (this.selected.value === this.prodC1) {
-        price = this.pricePrint.nonePrint
+        price = printPrice.nonePrint
       }
       //color 4 + 0
       else if (this.selected.value === this.prodC2) {
         if (numberEl <= 0.5) {
-          price = this.pricePrint.SRA3_colorOneSided * modifier
+          price = printPrice.SRA3_colorOneSided * modifier
         } else if (numberEl > 0.5) {
-          price = this.pricePrint.SRA3_colorOneSided * countEl
+          price = printPrice.SRA3_colorOneSided * countEl
         }
       }
       //color 4 + 1
       else if (this.selected.value === this.prodC3) {
         if (numberEl <= 0.5) {
-          price = this.pricePrint.SRA3_colorAndBlack * modifier
+          price = printPrice.SRA3_colorAndBlack * modifier
         } else if (numberEl > 0.5) {
-          price = this.pricePrint.SRA3_colorAndBlack * countEl
+          price = printPrice.SRA3_colorAndBlack * countEl
         }
       }
       //color 4 + 4
       else if (this.selected.value === this.prodC4) {
         if (numberEl <= 0.5) {
-          price = this.pricePrint.SRA3_colorAndColor * modifier
+          price = printPrice.SRA3_colorAndColor * modifier
         } else if (numberEl > 0.5) {
-          price = this.pricePrint.SRA3_colorAndColor * countEl
+          price = printPrice.SRA3_colorAndColor * countEl
         }
       }
       //color 1 + 0
       else if (this.selected.value === this.prodC5) {
         if (numberEl <= 0.5) {
-          price = this.pricePrint.SRA3_blackOneSided * modifier
+          price = printPrice.SRA3_blackOneSided * modifier
         } else if (numberEl > 0.5) {
-          price = this.pricePrint.SRA3_blackOneSided * countEl
+          price = printPrice.SRA3_blackOneSided * countEl
         }
       }
       //color 1 + 1
       else if (this.selected.value === this.prodC6) {
         if (numberEl <= 0.5) {
-          price = this.pricePrint.SRA3_blackAndBlack * modifier
+          price = printPrice.SRA3_blackAndBlack * modifier
         } else if (numberEl > 0.5) {
-          price = this.pricePrint.SRA3_blackAndBlack * countEl
+          price = printPrice.SRA3_blackAndBlack * countEl
         }
       }
       //black 1 + 0 
       else if (this.selected.value === this.prodC7) {
         if (numberEl <= 0.5) {
-          price = this.pricePrint.SRA3_blackOneSidedBlack * modifier
+          price = printPrice.SRA3_blackOneSidedBlack * modifier
         } else if (numberEl > 0.5) {
-          price = this.pricePrint.SRA3_blackOneSidedBlack * countEl
+          price = printPrice.SRA3_blackOneSidedBlack * countEl
         }
       }
       //black 1 + 1
       else if (this.selected.value === this.prodC8) {
         if (numberEl < 0.5) {
-          price = this.pricePrint.SRA3_blackDubleSideBlack * modifier
+          price = printPrice.SRA3_blackDubleSideBlack * modifier
         } else if (numberEl > 0.5) {
-          price = this.pricePrint.SRA3_blackDubleSideBlack * countEl
+          price = printPrice.SRA3_blackDubleSideBlack * countEl
         }
       }
        else {

@@ -1,6 +1,4 @@
-import {
-  printingCost
-} from './prices/printingCost.js';
+import printPrice from './prices/printPrice.js';
 
 export class PrintInner {
   constructor(pages, black, color, empty) {
@@ -9,7 +7,7 @@ export class PrintInner {
     this.pagesBlack = document.getElementById(black)
     this.pagesColor = document.getElementById(color)
     this.pagesEmpty = document.getElementById(empty)
-    this.pricePrint = printingCost.inner
+    // this.pricePrint = pricePrint
   }
 
   getPriceInnerPrint(countEl, sizeEl, materialEl, sheetsEL) {
@@ -36,11 +34,11 @@ export class PrintInner {
       this.pagesColor.max = count
 
       if (numberEl >= 1) {
-        priceBlack = this.pricePrint.A4_blackOneSide * countBlack
-        priceColor = (this.pricePrint.SRA3_colorOneSided / 2) * countColor
+        priceBlack = printPrice.A4_blackOneSide * countBlack
+        priceColor = (printPrice.SRA3_colorOneSided / 2) * countColor
       } else if (numberEl < 1) {
-        priceBlack = this.pricePrint.A4_blackOneSide * modifierBlack
-        priceColor = (this.pricePrint.SRA3_colorOneSided / 2) * modifierColor
+        priceBlack = printPrice.A4_blackOneSide * modifierBlack
+        priceColor = (printPrice.SRA3_colorOneSided / 2) * modifierColor
       }
 
       //quantity conditions

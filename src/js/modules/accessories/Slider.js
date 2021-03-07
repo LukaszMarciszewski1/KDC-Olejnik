@@ -3,7 +3,7 @@ export class Slider {
         this.selectPrint = [...document.querySelectorAll('.select-print-item')]
         this.productContainer = [...document.querySelectorAll('.product')]
 
-        this.selectPrint.forEach(select => select.addEventListener('click', () => this.addClassBtn(select)))
+        this.selectPrint.forEach(select => select.addEventListener('click', () => this.activeSlide(select)))
     }
 
     productPosition() {
@@ -14,7 +14,7 @@ export class Slider {
         })
     }
 
-    addClassBtn(select) {
+    activeSlide(select) {
         this.selectPrint.forEach(select => select.classList.remove('select-print-item--active'))
         select.classList.add('select-print-item--active')
         this.productPosition()
