@@ -13,6 +13,20 @@ body {
     font-family: 'Roboto', sans-serif;
     letter-spacing: 1px;
     line-height: 1.3rem;
+
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: $font-color;
+  transition: background-color 5000s ease-in-out 0s;
 }
 
 button {
@@ -26,6 +40,9 @@ button {
 
 a {
     text-decoration: none;
+}
+input:focus {
+    outline: none;
 }
 
 // p::-moz-selection, input::-moz-selection, textarea::-moz-selection {
@@ -58,7 +75,6 @@ button::selection {
 }
 
 .calculator {
-    box-sizing: content-box;
     position: relative;
     width: 100%;
     height: auto;
@@ -132,10 +148,12 @@ button::selection {
     border-radius: 12px;
     padding: 10px;
     @include flexCenter;
-    @include price-container-shadow;
+    @include list-item-shadow;
+    // @include price-container-shadow;
     margin-right: 20px;
     border: $border-standard;
     font-size: 35px;
+    background-color: $containerBg;
 }
 
 .icon-panel-btn:last-child {
@@ -184,7 +202,8 @@ button::selection {
     width: auto;
     max-width: 300px;
     padding: 15px 20px;
-    @include price-container-shadow;
+    // @include price-container-shadow;
+    @include list-item-shadow;
     @include flexCenter;
     justify-content: flex-start;
     border-radius: 15px;
@@ -192,7 +211,7 @@ button::selection {
     color: $font-color;
     font-size: 17px;
     text-align: left;
-    background-color: $buttonBg;
+    background-color: $containerBg;;
     border: $border-standard;
 
     img {
@@ -241,6 +260,7 @@ button::selection {
     transition: .6s ease-in-out;
     padding: 20px 30px;
     background-color: $lightBg;
+    // background-color: $lightBg;
 }
 
 //form calculator ----------------------------------------------------//
@@ -383,6 +403,7 @@ button::selection {
     background-color: $containerBg;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 10px 40px;
     position: relative;
 }
@@ -392,26 +413,99 @@ button::selection {
     font-size: 20px;
     letter-spacing: 2px;
 }
-
-.clock {
-    width: auto;
-    padding: 15px 20px;
-    border-radius: 10px;
-    text-align: center;
-    background-color: $containerBg;
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
+.info-btn{
     @include price-container-shadow;
-
-    h2 {
-        font-size: 22px;
-        user-select: none;
+    @include flexCenter;
+    width: 45px;
+    height: 45px;
+    border: 1px solid lighten($standard, 5%);
+    border-radius: 50%;
+    background-color: $buttonBg;
+    .icon-info{
+        font-size: 32px;
         color: $font-color;
     }
 }
+.info-btn:hover{
+background-color: $standard;
+}
+.info-btn--active{
+    background-color: $standard;
+}
 
+.info-container{
+    @include shadow-info;
+    position: absolute;
+    right: 115px;
+    bottom: 10px;
+    background-color: $lightBg;
+    width: 600px;
+    height: auto;
+    z-index: 998;
+    border-radius: 10px;
+    color: $font-color-dark;
+    display: none;
+}
+.info-container::before{
+    content:'';
+    position: absolute;
+    right: -12px;
+    bottom: 32px;
+    width: 24px;
+    height: 24px;
+    background-color: $lightBg;
+    transform:rotate(45deg);
+    z-index: -1;
+}
+.info-content{
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    background-color: $lightBg;
+    z-index: 999;
+    padding: 15px;
+    .info-topbar{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+        color: $standard;
+        .info-close{
+            @include flexCenter;
+            color: $standard;
+            .close-icon{
+                font-size: 30px;
+            }
+        }
+        .info-close:active{
+            transform: scale(1.1);
+        }
+    }
+    .info-text-container{
+        max-height: 400px;
+        overflow-y: scroll;
+        padding-right: 10px;
+        &::-webkit-scrollbar {
+            width: 8px;
+            background-color: darken($lightBg, 7%);
+            border-radius: 10px;
+            cursor: pointer;
+          }
+        
+          &::-webkit-scrollbar-thumb {
+            background-color: darken($lightBg, 14%);
+            border-radius: 10px;
+            
+          }
+          .info-txt{
+            font-size: 14px;
+        }
+    }
+}
+
+.info-container--active{
+    display: block;
+}
 ///////////////////////////////////////////////////
 ///////////////////////////////////////////////////
 //media queries-----------------------//
@@ -784,10 +878,6 @@ button::selection {
     .bottom-panel {
         justify-content: center;
     }
-
-    .clock {
-        display: none;
-    }
 }
 
 @media screen and (max-width: 600px) {
@@ -1001,9 +1091,9 @@ button::selection {
     @include price-container-shadow;
     @include price-container;
     position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 900;
+    left:50px;
+    top: 150px;
+    z-index: 999;
     width: 500px;
     min-width: 350px;
     height: auto;
@@ -1020,8 +1110,6 @@ button::selection {
         display: flex;
         align-items: center;
         position: relative;
-        // justify-content: space-between;
-        
         .notes-title {
             font-weight: lighter;
             // user-select: none;
@@ -1097,6 +1185,9 @@ button::selection {
         // transform: translateX(0);
         width: 450px;
     }
+    .top-bar:hover {
+       cursor: auto;
+    }
 }
 @media screen and (max-width: 548px){
     .notes-container {
@@ -1111,3 +1202,187 @@ button::selection {
         min-height: 350px;
     }
 }
+
+.suppliers-container{
+    @include nav-container;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: -100%;
+    top: 30px;
+    width: 1001px;
+    min-width: 400px;
+    height: 610px;
+    overflow: hidden;
+    color: gray;
+    transition: .7s ease-in-out;
+    padding:20px;
+    // background-color: lighten($buttonBg, 2%);
+    // display: none;
+}
+.suppliers-container--active{
+    // transform: translateX(0);
+    // max-width: 100%;
+    left: 30px;
+}
+.suppliers-btn--active{
+    background-color: $standard;
+}
+.suppliers-topbar{
+    width: 100%;
+    height: 60px;
+    // border-bottom: $border-standard;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    .suppliers-close{
+        @include price-container-shadow;
+        font-size: 40px;
+        color: $font-color;
+        padding: 5px;
+        border-radius: 10px;
+        background-color: $buttonBg;
+    }
+    .suppliers-close:hover{
+        opacity: .8;
+    }
+    .suppliers-close:active{
+        transform: scale(1.1);
+    }
+    
+}
+.suppliers-add{
+    @include nav-container;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 12px;
+    // background-color: darken($containerBg, 2%);
+}
+.suppliers-form{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    padding: 3px;
+
+    label {
+        font-size: 14px;
+        font-weight: lighter;
+        color: gray
+      }
+      input {
+        border-radius: 5px;
+        padding: 10px;
+        background-color: darken($containerBg, 1%);
+        border: 1px solid darken($standard, 10%);
+        margin-top: 3px;
+        // box-shadow: none;
+        margin-right: 10px;
+        color: $font-color;
+        @include shadow-info;
+        @include list-inside-shadow;
+        
+      }
+      input:focus{
+        background-color: darken($containerBg, 1%);
+      }
+      .add-to-list{
+        height: 40px;
+        width: 100px;
+        background-color: $buttonBg;
+        @include price-container-shadow;
+        border-radius: 7px;
+        align-self: flex-end;
+        margin-left: 10px;
+        color: $font-color;
+      }
+      .add-to-list:hover{
+        background-color: lighten($buttonBg, 4%)
+      }
+}
+.suppliers-list-container{
+    @include list-inside-shadow;
+    margin-top: 15px;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    background-color: #222222;
+    padding: 15px;
+    overflow-y: scroll;
+    color: darken($font-color, 23%);
+    &::-webkit-scrollbar {
+        width: 10px;
+        background-color: grey;
+        border-radius: 10px;
+      }
+    
+      &::-webkit-scrollbar-thumb {
+        background-color: darken(grey, 20%);
+        border-radius: 10px;
+      }
+}
+.suppliers-list-item{
+    @include list-item-shadow;
+    width: 100%;
+    height: auto;
+    background-color: darken($containerBg, 3%);
+    margin-bottom: 10px;
+    padding: 15px;
+    font-size: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+}
+.suppliers-list-item:last-child{
+    margin-bottom: 0;
+}
+.name-company-item{
+    border-radius: 5px;
+    margin-right: 10px;
+    padding:  8px 10px;
+    min-width: 150px;
+    background-color: lighten($buttonBg, 2%);
+    @include flexCenter;
+    @include list-item-shadow;
+    cursor: pointer;
+    overflow-x: scroll;
+    transition: .2;
+    &::-webkit-scrollbar {
+        display: none;
+      }
+    
+      &::-webkit-scrollbar-thumb {
+        display: none
+        
+      }
+}
+.name-company-item:hover{
+    background-color: lighten($buttonBg, 8%); 
+}
+.delete-item{
+    @include list-item-shadow;
+    font-size: 20px;
+    color: $font-color;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: $buttonBg;
+    color: orangered;
+    margin-left: 10px;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.delete-item:hover{
+    background-color: lighten($buttonBg, 4%)
+  }
+

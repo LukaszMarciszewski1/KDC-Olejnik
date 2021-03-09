@@ -166,7 +166,7 @@ class Product2 {
     getProductWings(count, size, material, print, sheetsForCover, foil) {
         let price = 0;
         let selected = this.theFormProduct.elements['product-2-wings'];
-        if (selected.checked == true && this.getProduct_Cover() > 0) {
+        if (selected.checked == true && this.getProductCover() > 0) {
             price = (((size * material) * sheetsForCover) * count) + print + foil
         } else {
             price = 0;

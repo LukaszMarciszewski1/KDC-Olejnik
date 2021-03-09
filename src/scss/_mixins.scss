@@ -16,11 +16,10 @@
     border-radius: 20px;
 }
 
-// @mixin img {
-//     width: 100%;
-//     height: 100%;
-//     object-fit: cover;
-// }
+@mixin shadow-info{
+    -webkit-box-shadow: 0px 0px 6px -1px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 0px 6px -1px rgba(0, 0, 0, 0.4);
+}
 
 @mixin shadow-input {
     -webkit-box-shadow: 2px 2px 5px 0px rgba(163, 163, 163, 0.15);
@@ -35,4 +34,26 @@
     @include price-container-shadow;
     padding: 30px 20px;
     display: flex;
+}
+@mixin scroll-bar{
+    &::-webkit-scrollbar {
+        width: 10px;
+        background-color: darken($lightBg, 7%);
+        border-radius: 0 0 10px 10px;
+        cursor: pointer;
+      }
+    
+      &::-webkit-scrollbar-thumb {
+        background-color: darken($lightBg, 14%);
+        border-radius: 0 0 10px 10px;
+        
+      }
+}
+@mixin list-inside-shadow {
+    -webkit-box-shadow: inset 0px 0px 7px -4px #000000;
+    box-shadow: inset 0px 0px 7px -4px #000000;
+}
+@mixin list-item-shadow {
+    -webkit-box-shadow: 0px 1px 5px -1px rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 1px 5px -1px rgba(0, 0, 0, 0.8);
 }

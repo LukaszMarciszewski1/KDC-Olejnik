@@ -31,25 +31,24 @@ export class Notes {
         if(innerWidth > 820){
             this.xOffset = 0;
             this.yOffset = 0;
-            this.dragElement.style.transform = `translate3d(${110}px, ${100}px, 0)`;
+            this.dragElement.style.transform = `translate3d(${0}px, ${0}px, 0)`;
         }
     }
-    openNotes(e) {
+    openNotes() {
         this.dragElement.classList.add('notes-container--active')
         this.notesBtn.classList.add('notes-btn--active')
-        // this.positionNotes()
     }
 
     closeNotes() {
         this.notesBtn.classList.remove('notes-btn--active')
         this.dragElement.classList.remove('notes-container--active')
-    //     this.positionNotes()
+        this.positionNotes()
     }
 
     dragStart(e) {
         this.initialX = e.clientX - this.xOffset;
         this.initialY = e.clientY - this.yOffset;
-        if (e.target === this.dragItem) {
+        if (e.target === this.dragItem && innerWidth > 820) {
             this.active = true;
             this.dragItem.classList.add('top-bar--active')
         }
@@ -75,28 +74,28 @@ export class Notes {
             const containerWidth = this.container.clientWidth
             const notesContainerHeight = this.dragElement.clientHeight
             const containerHeight = this.container.clientHeight
-
+            const left = 50 // draw the element in the position from the left side
+            const top = 150 // draw the element in the position from the top side
             //left side
-            if(this.currentX < 0){
-                this.currentX = 0
+            if(this.currentX < -left){
+                this.currentX = -left
             }
 
             //top side
-            if(this.currentY < 0){
-                this.currentY = 0
+            if(this.currentY < -top){
+                this.currentY = -top
             }
 
             // right side
-            if(this.currentX + notesContainerWidth > containerWidth){
-                this.currentX = containerWidth - notesContainerWidth 
+            if(this.currentX + notesContainerWidth > containerWidth - left){
+                this.currentX = containerWidth - notesContainerWidth - left
             }
 
             // bottom side
-            if(this.currentY + notesContainerHeight > containerHeight){
-                this.currentY = containerHeight - notesContainerHeight
+            if(this.currentY + notesContainerHeight > containerHeight - top){
+                this.currentY = containerHeight - notesContainerHeight - top
             }
 
-            // this.setTranslate(this.currentX , this.currentY, this.dragElement);
             this.dragElement.style.transform = `translate3d(${this.currentX}px, ${this.currentY}px, 0)`;
         }
         

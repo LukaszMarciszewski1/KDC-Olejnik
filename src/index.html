@@ -35,10 +35,11 @@
             </div>
             <div class="nav-container container-icons">
               <div class="container-icons-wrap">
-                  <a href="mailto:example@olejnik.com.pl" class="mail icon-panel-btn">
-                    <ion-icon class="icon" name="mail-open-outline"></ion-icon>
-                  </a>
-                <a href="https://calendar.google.com/calendar/u/0/r?pli=1" target="_blank" class="calendar icon-panel-btn">
+                <a href="mailto:example@olejnik.com.pl" class="icon-panel-btn">
+                  <ion-icon class="icon" name="mail-open-outline"></ion-icon>
+                </a>
+                <a href="https://calendar.google.com/calendar/u/0/r?pli=1" target="_blank"
+                  class="calendar icon-panel-btn">
                   <ion-icon class="icon" name="calendar-outline"></ion-icon>
                 </a>
               </div>
@@ -46,8 +47,8 @@
                 <button class="notes-btn icon-panel-btn">
                   <ion-icon class="icon" name="reader-outline"></ion-icon>
                 </button>
-                <button class="info icon-panel-btn">
-                  <ion-icon name="information-outline" class="icon"></ion-icon>
+                <button class="suppliers-btn icon-panel-btn">
+                  <ion-icon class="icon" name="people-outline"></ion-icon>
                 </button>
               </div>
             </div>
@@ -316,18 +317,122 @@
         <div class="description-app">
           <h1 class="description-app-h1">KALKULATOR CEN FIRMY OLEJNIK</h1>
         </div>
-        <div class="clock">
-          <h2></h2>
+        <button class="info-btn">
+          <ion-icon name="information-outline" class="icon-info"></ion-icon>
+        </button>
+        <!-- //info container----------------------------->
+        <div class="info-container">
+          <div class="info-content">
+            <div class="info-topbar">
+              <h3 class="info-title">Informacje</h3>
+              <button class="info-close">
+                <ion-icon name="close-circle-outline" class="close-icon"></ion-icon>
+              </button>
+            </div>
+            <div class="info-text-container">
+              <p class="info-txt">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis ipsam assumenda excepturi pariatur
+                quam. Cupiditate, laudantium magni dolore est saepe, architecto molestiae ipsum ad repellendus dolorum,
+                atque dolorem commodi? Fugiat.
+                Asperiores autem ad totam exercitationem quibusdam doloremque recusandae labore eius molestias,
+                repellendus laboriosam iusto corporis libero quam doloribus quisquam veritatis soluta quis dolore
+                explicabo? Placeat distinctio atque at praesentium quam.
+                Hic itaque soluta, aspernatur reprehenderit eaque fugiat sapiente maiores saepe ducimus velit architecto
+                tempora. Enim aut cum dolor mollitia aperiam nostrum, aliquam eveniet magni et alias odio iure suscipit
+                placeat.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis ipsam assumenda excepturi pariatur
+                quam. Cupiditate, laudantium magni dolore est saepe, architecto molestiae ipsum ad repellendus dolorum,
+                atque dolorem commodi? Fugiat.
+                Asperiores autem ad totam exercitationem quibusdam doloremque recusandae labore eius molestias,
+                repellendus laboriosam iusto corporis libero quam doloribus quisquam veritatis soluta quis dolore
+                explicabo? Placeat distinctio atque at praesentium quam.
+                Hic itaque soluta, aspernatur reprehenderit eaque fugiat sapiente maiores saepe ducimus velit architecto
+                tempora. Enim aut cum dolor mollitia aperiam nostrum, aliquam eveniet magni et alias odio iure suscipit
+                placeat.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
       <!-- //notes container----------------------------->
       <div class="notes-container">
         <div class="top-bar">
           <h3 class="notes-title">Notatki</h3>
-          <button class="save-notes"><ion-icon name="save-outline" class="save-icon"></ion-icon></button> 
-          <button class="close"><ion-icon name="close-circle-outline" class="close-icon"></ion-icon></button>
+          <button class="save-notes">
+            <ion-icon name="save-outline" class="save-icon"></ion-icon>
+          </button>
+          <button class="close">
+            <ion-icon name="close-circle-outline" class="close-icon"></ion-icon>
+          </button>
         </div>
-          <textarea name="" id="" cols="30" rows="16" placeholder="Dodaj notatkę." class="textarea"></textarea>
+        <textarea name="" id="" cols="30" rows="16" placeholder="Dodaj notatkę." class="textarea"></textarea>
+      </div>
+       <!-- //suppliers container----------------------------->
+      <div class="suppliers-container">
+        <div class="suppliers-topbar">
+          <h3 class="info-title">Dostawcy materiałów</h3>
+          <button class="suppliers-close">
+            <ion-icon name="chevron-back-outline" class="close-icon"></ion-icon>
+          </button>
+        </div>
+        <div class="suppliers-add">
+          <form class="suppliers-form">
+                <div class="form-group">
+                    <label for="name-player">nazwa firmy</label><br>
+                    <input type="text" id="name-company">
+                </div>
+                <div class="form-group">
+                    <label for="nr-phone">nr. telefonu</label><br>
+                    <input type="text" id="nr-phone" pattern="[0-9]*">
+                </div>
+                <div class="form-group">
+                  <label for="email">email</label><br>
+                  <input type="text" id="email">
+              </div>
+              <div class="form-group">
+                <label for="www-address">www adres</label><br>
+                <input type="text" id="www-address">
+            </div>
+            <button type="submit" class="add-to-list" value="Dodaj">Dodaj</button>
+        </form>
+        </div>
+        <div class="suppliers-list-container">
+          <div class="suppliers-list-item">
+            <div class="name-company-item"><p>Zing</hp></div>
+            <div class="name-company-item"><p>504 568 269</hp></div>
+            <div class="name-company-item"><p>studioreklama@olejnik.com.pl</hp></div>
+            <div class="name-company-item"><p>www.zing.pl</hp></div>
+            <button class="delete-item"><ion-icon name="trash-outline"></ion-icon></button>
+          </div>
+          <div class="suppliers-list-item">
+            <div class="name-company-item"><p>Zing</hp></div>
+            <div class="name-company-item"><p>504 568 269</hp></div>
+            <div class="name-company-item"><p>studioreklama@olejnik.com.pl</hp></div>
+            <div class="name-company-item"><p>www.zing.pl</hp></div>
+            <button class="delete-item"><ion-icon name="trash-outline"></ion-icon></button>
+          </div>
+          <div class="suppliers-list-item">
+            <div class="name-company-item"><p>Zing</hp></div>
+            <div class="name-company-item"><p>504 568 269</hp></div>
+            <div class="name-company-item"><p>studioreklama@olejnik.com.pl</hp></div>
+            <div class="name-company-item"><p>www.zing.pl</hp></div>
+            <button class="delete-item"><ion-icon name="trash-outline"></ion-icon></button>
+          </div>
+          <div class="suppliers-list-item">
+            <div class="name-company-item"><p>Zing</hp></div>
+            <div class="name-company-item"><p>504 568 269</hp></div>
+            <div class="name-company-item"><p>studioreklama@olejnik.com.pl</hp></div>
+            <div class="name-company-item"><p>www.zing.pl</hp></div>
+            <button class="delete-item"><ion-icon name="trash-outline"></ion-icon></button>
+          </div>
+          <div class="suppliers-list-item">
+            <div class="name-company-item"><p>Zing</hp></div>
+            <div class="name-company-item"><p>504 568 269</hp></div>
+            <div class="name-company-item"><p>studioreklama@olejnik.com.pl</hp></div>
+            <div class="name-company-item"><p>www.zing.pl</hp></div>
+            <button class="delete-item"><ion-icon name="trash-outline"></ion-icon></button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
