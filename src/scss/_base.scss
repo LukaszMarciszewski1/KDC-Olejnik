@@ -58,6 +58,7 @@ button::selection {
 }
 
 .calculator {
+    box-sizing: content-box;
     position: relative;
     width: 100%;
     height: auto;
@@ -742,7 +743,7 @@ button::selection {
     }
 
     .checkbox {
-        min-width: 230px;
+        max-width: 220px;
     }
 
 
@@ -883,16 +884,15 @@ button::selection {
 
     .checkbox {
         align-self: flex-start;
+        min-width: 180px;
+        max-width: 180px;
+        font-size: 12px;
     }
 
     .select-price {
         width: 170px;
     }
 
-    .checkbox {
-        min-width: 170px;
-        font-size: 12px;
-    }
     .price-sum {
         max-width: 400px;
         padding: 20px 10px;
@@ -936,7 +936,7 @@ button::selection {
     }
 
     .checkbox {
-        min-width: 200px;
+        // min-width: 200px;
         font-size: 14px;
     }
 
@@ -1001,8 +1001,8 @@ button::selection {
     @include price-container-shadow;
     @include price-container;
     position: absolute;
-    left: 50px;
-    top: 120px;
+    left: 0;
+    top: 0;
     z-index: 900;
     width: 500px;
     min-width: 350px;
@@ -1029,13 +1029,18 @@ button::selection {
         }
         .save-notes{
             cursor: pointer;
+            color: $lightBg;
+        }
+        .save-notes:active{
+            transform: scale(1.15);
+            color: lighten($lightBg, 4%)
         }
         .save-icon{
             font-size: 25px;
-            color: $lightBg;
+             
         }
         .save-icon:hover{
-            opacity: .8;
+            opacity: .9;
         }
         .close {
             font-size: 35px;
@@ -1076,10 +1081,6 @@ button::selection {
           }
     }
 }
-.notes-container-position{
-    left: 50px;
-    top: 120px;
-}
 
 .top-bar:hover {
     cursor: grab;
@@ -1089,28 +1090,22 @@ button::selection {
     display: block;
 }
 
-@media screen and (max-width: 648px){
+@media screen and (max-width: 820px){
     .notes-container {
-        left: 50%;
-        transform: translateX(-50%);
+        left: 10px;
         top: 120px;
+        // transform: translateX(0);
         width: 450px;
     }
 }
 @media screen and (max-width: 548px){
     .notes-container {
-        left: 50%;
-        transform: translateX(-50%);
-        top: 120px;
         width: 350px;
         min-height: 350px;
     }
 }
 @media screen and (max-width: 420px){
     .notes-container {
-        left: 50%;
-        transform: translateX(-50%);
-        top: 120px;
         width: 300px;
         min-width: 300px;
         min-height: 350px;

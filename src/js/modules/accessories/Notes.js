@@ -8,12 +8,11 @@ export class Notes {
         this.saveBtn = document.querySelector('.save-notes')
         this.storedTxt = localStorage.getItem('notesTxt')
         
-
         this.active = false;
-        this.currentX = null;
-        this.currentY = null;
-        this.initialX = null;
-        this.initialY = null;
+        this.currentX;
+        this.currentY;
+        this.initialX;
+        this.initialY;
         this.xOffset = 0;
         this.yOffset = 0;
 
@@ -27,20 +26,24 @@ export class Notes {
         this.saveBtn.addEventListener("click", this.saveNotes.bind(this));
         this.displayNotes()
     }
+
     positionNotes(){
-        this.xOffset = 0;
-        this.yOffset = 0;
-        this.dragElement.style.transform = `translate3d(${0}px, ${0}px, 0)`;
+        if(innerWidth > 820){
+            this.xOffset = 0;
+            this.yOffset = 0;
+            this.dragElement.style.transform = `translate3d(${110}px, ${100}px, 0)`;
+        }
     }
-    openNotes() {
+    openNotes(e) {
         this.dragElement.classList.add('notes-container--active')
         this.notesBtn.classList.add('notes-btn--active')
+        // this.positionNotes()
     }
 
     closeNotes() {
         this.notesBtn.classList.remove('notes-btn--active')
         this.dragElement.classList.remove('notes-container--active')
-        this.positionNotes()
+    //     this.positionNotes()
     }
 
     dragStart(e) {
@@ -61,31 +64,40 @@ export class Notes {
     }
 
     drag(e) {
-        if (this.active && innerWidth > 648) {
+        if (this.active && innerWidth > 820) {
             e.preventDefault();
             this.currentX = e.clientX - this.initialX;
             this.currentY = e.clientY - this.initialY;
             this.xOffset = this.currentX;
             this.yOffset = this.currentY;
-       
-            
-            // const containerSize = parseInt(window.getComputedStyle(this.container).width)
-            // const dragElementSize = parseInt(window.getComputedStyle(this.dragElement).width)
-            
-            // // const containerSize = this.container.clientWidth
-            // // const dragElementSize = this.dragElement.clientWidth
 
-            // let left = this.container.getBoundingClientRect().left
-            // let leftEl = this.dragElement.getBoundingClientRect().left
+            const notesContainerWidth = this.dragElement.clientWidth
+            const containerWidth = this.container.clientWidth
+            const notesContainerHeight = this.dragElement.clientHeight
+            const containerHeight = this.container.clientHeight
 
-            // let posX = e.clientX - this.container.getBoundingClientRect().left
-            // let posY = e.clientY - this.container.getBoundingClientRect().top
-            
-            // console.log(leftEl)
-            // if(this.currentX < -80){
-            //     this.currentX -= -80
-            // }
-            this.setTranslate(this.currentX, this.currentY, this.dragElement);
+            //left side
+            if(this.currentX < 0){
+                this.currentX = 0
+            }
+
+            //top side
+            if(this.currentY < 0){
+                this.currentY = 0
+            }
+
+            // right side
+            if(this.currentX + notesContainerWidth > containerWidth){
+                this.currentX = containerWidth - notesContainerWidth 
+            }
+
+            // bottom side
+            if(this.currentY + notesContainerHeight > containerHeight){
+                this.currentY = containerHeight - notesContainerHeight
+            }
+
+            // this.setTranslate(this.currentX , this.currentY, this.dragElement);
+            this.dragElement.style.transform = `translate3d(${this.currentX}px, ${this.currentY}px, 0)`;
         }
         
     }
@@ -96,14 +108,12 @@ export class Notes {
         this.active = false;
     }
 
-    setTranslate(xPos, yPos, dragElement) {
-        dragElement.style.transform = `translate3d(${xPos}px, ${yPos}px, 0)`;
-    }
     displayNotes() {
         if(this.storedTxt){
             this.textarea.textContent = this.storedTxt
         }
     }
+
     saveNotes() {
         localStorage.setItem('notesTxt', this.textarea.value)
     }
