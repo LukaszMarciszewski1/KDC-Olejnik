@@ -145,15 +145,15 @@ button::selection {
 .icon-panel-btn {
     width: 80px;
     height: 60px;
-    border-radius: 12px;
+    border-radius: 10px;
     padding: 10px;
     @include flexCenter;
-    @include list-item-shadow;
+    @include btn-shadow;
     // @include price-container-shadow;
     margin-right: 20px;
     border: $border-standard;
     font-size: 35px;
-    background-color: $containerBg;
+    background-color: $buttonBg;
 }
 
 .icon-panel-btn:last-child {
@@ -203,15 +203,15 @@ button::selection {
     max-width: 300px;
     padding: 15px 20px;
     // @include price-container-shadow;
-    @include list-item-shadow;
+    @include btn-shadow;
     @include flexCenter;
     justify-content: flex-start;
-    border-radius: 15px;
+    border-radius: 12px;
     margin-bottom: 30px;
     color: $font-color;
     font-size: 17px;
     text-align: left;
-    background-color: $containerBg;;
+    background-color: $buttonBg;;
     border: $border-standard;
 
     img {
@@ -293,7 +293,7 @@ button::selection {
 
 .select-price {
     outline: none;
-    border: 1px solid #89bad3c7;
+    border: 1px solid #89bad3ce;
     font-size: 14px;
     padding: 0 6px;
     border-radius: 3px;
@@ -304,6 +304,8 @@ button::selection {
     cursor: pointer;
     font-family: 'Roboto', sans-serif;
     margin-top: 3px;
+    // -webkit-box-shadow: 0px 2px 5px -4px rgba(18, 51, 61, 0.3);
+    // box-shadow: 0px 2px 5px -4px rgba(18, 51, 61, 0.3);
 }
 
 .checkbox {
@@ -1205,10 +1207,12 @@ background-color: $standard;
 
 .suppliers-container{
     @include nav-container;
+    background-color: $containerBg;
     display: flex;
     flex-direction: column;
     position: absolute;
     left: -100%;
+    transform: translateX(-100%);
     top: 30px;
     width: 1001px;
     min-width: 400px;
@@ -1222,7 +1226,7 @@ background-color: $standard;
 }
 .suppliers-container--active{
     // transform: translateX(0);
-    // max-width: 100%;
+    transform: translateX(0);
     left: 30px;
 }
 .suppliers-btn--active{
@@ -1231,11 +1235,9 @@ background-color: $standard;
 .suppliers-topbar{
     width: 100%;
     height: 60px;
-    // border-bottom: $border-standard;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
     .suppliers-close{
         @include price-container-shadow;
         font-size: 40px;
@@ -1261,7 +1263,6 @@ background-color: $standard;
     margin-top: 20px;
     padding: 10px;
     border-radius: 12px;
-    // background-color: darken($containerBg, 2%);
 }
 .suppliers-form{
     width: 100%;
@@ -1278,7 +1279,7 @@ background-color: $standard;
       input {
         border-radius: 5px;
         padding: 10px;
-        background-color: darken($containerBg, 1%);
+        background-color: lighten($containerBg, 4%);
         border: 1px solid darken($standard, 10%);
         margin-top: 3px;
         // box-shadow: none;
@@ -1289,7 +1290,7 @@ background-color: $standard;
         
       }
       input:focus{
-        background-color: darken($containerBg, 1%);
+        background-color: lighten($containerBg, 4%);
       }
       .add-to-list{
         height: 40px;
@@ -1307,23 +1308,24 @@ background-color: $standard;
 }
 .suppliers-list-container{
     @include list-inside-shadow;
-    margin-top: 15px;
+    margin-top: 20px;
     border-radius: 10px;
     width: 100%;
     height: 100%;
     min-height: 300px;
     background-color: #222222;
+    background-color: $lightBg;
     padding: 15px;
     overflow-y: scroll;
     color: darken($font-color, 23%);
     &::-webkit-scrollbar {
         width: 10px;
-        background-color: grey;
+        background-color: darken($font-color, 3%);
         border-radius: 10px;
       }
     
       &::-webkit-scrollbar-thumb {
-        background-color: darken(grey, 20%);
+        background-color: darken($font-color, 30%);
         border-radius: 10px;
       }
 }
@@ -1331,8 +1333,9 @@ background-color: $standard;
     @include list-item-shadow;
     width: 100%;
     height: auto;
-    background-color: darken($containerBg, 3%);
-    margin-bottom: 10px;
+    // background-color: darken($containerBg, 3%);
+    background-color: darken($lightBg, 8%);
+    margin-bottom: 15px;
     padding: 15px;
     font-size: 15px;
     border-radius: 10px;
@@ -1340,6 +1343,8 @@ background-color: $standard;
     justify-content: flex-start;
     align-items: center;
     position: relative;
+    // color: $font-color-dark;
+    color: $font-color-dark;
 }
 .suppliers-list-item:last-child{
     margin-bottom: 0;
@@ -1349,11 +1354,16 @@ background-color: $standard;
     margin-right: 10px;
     padding:  8px 10px;
     min-width: 150px;
-    background-color: lighten($buttonBg, 2%);
+    // background-color: lighten($buttonBg, 2%);
+    // border: 1px solid #89bad3ce;
     @include flexCenter;
-    @include list-item-shadow;
+    background-color: darken($lightBg, 2%);
+    // border: 1px solid #89bad38f;
+    // background-color: #ebebeb;
     cursor: pointer;
     overflow-x: scroll;
+    -webkit-box-shadow: 0px 1px 5px -3px rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 1px 5px -3px rgba(0, 0, 0, 0.6);
     transition: .2;
     &::-webkit-scrollbar {
         display: none;
@@ -1368,18 +1378,22 @@ background-color: $standard;
     background-color: lighten($buttonBg, 8%); 
 }
 .delete-item{
-    @include list-item-shadow;
+    // @include list-item-shadow;
     font-size: 20px;
-    color: $font-color;
     padding: 5px;
     border-radius: 5px;
-    background-color: $buttonBg;
-    color: orangered;
+    background-color: darken($lightBg, 2%);
+    color: $standard;
     margin-left: 10px;
     position: absolute;
     right: 15px;
     top: 50%;
     transform: translateY(-50%);
+    -webkit-box-shadow: 0px 1px 5px -3px rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 1px 5px -3px rgba(0, 0, 0, 0.6);
+    ion-icon{
+        color: $font-color-dark;
+    }
 }
 
 .delete-item:hover{

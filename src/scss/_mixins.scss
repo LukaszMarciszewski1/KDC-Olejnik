@@ -54,6 +54,10 @@
     box-shadow: inset 0px 0px 7px -4px #000000;
 }
 @mixin list-item-shadow {
-    -webkit-box-shadow: 0px 1px 5px -1px rgba(0, 0, 0, 0.8);
-    box-shadow: 0px 1px 5px -1px rgba(0, 0, 0, 0.8);
+    -webkit-box-shadow: 0px 2px 5px -3px rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 2px 5px -3px rgba(0, 0, 0, 0.6);
+}
+@mixin btn-shadow {
+    -webkit-box-shadow: 1px 2px 7px -2px rgba(0, 0, 0, 0.7);
+    box-shadow: 1px 2px 7px -2px rgba(0, 0, 0, 0.7);
 }
