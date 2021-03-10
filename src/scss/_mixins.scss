@@ -1,14 +1,10 @@
 @import "_variables";
 
+//style------------------------->
 @mixin flexCenter {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-@mixin price-container-shadow {
-    -webkit-box-shadow: 0px 1px 7px -1px rgba(0, 0, 0, 0.6);
-    box-shadow: 0px 1px 7px -1px rgba(0, 0, 0, 0.6);
 }
 
 @mixin price-container {
@@ -16,55 +12,78 @@
     border-radius: 20px;
 }
 
-@mixin shadow-info{
-    -webkit-box-shadow: 0px 0px 6px -1px rgba(0, 0, 0, 0.4);
-    box-shadow: 0px 0px 6px -1px rgba(0, 0, 0, 0.4);
-}
-
-@mixin shadow-input {
-    -webkit-box-shadow: 2px 2px 5px 0px rgba(163, 163, 163, 0.15);
-    -moz-box-shadow: 2px 2px 5px 0px rgba(163, 163, 163, 0.15);
-    box-shadow: 2px 2px 5px 0px rgba(163, 163, 163, 0.15);
-}
-
 @mixin nav-container{
+    @include container-shadow;
     position: relative;
     background-color: $containerBg;
-    border-radius: 20px;
-    @include price-container-shadow;
     padding: 30px 20px;
+    border-radius: 20px;
+}
+
+@mixin sliding-container {
+    @include nav-container;
+    background-color: $containerBg;
     display: flex;
+    flex-direction: column;
+    position: absolute;
+    overflow: hidden;
+    color: gray;
+    transition: .7s ease-in-out;
+    padding:20px;
 }
-@mixin scroll-bar{
-    &::-webkit-scrollbar {
-        width: 10px;
-        background-color: darken($lightBg, 7%);
-        border-radius: 0 0 10px 10px;
-        cursor: pointer;
-      }
-    
-      &::-webkit-scrollbar-thumb {
-        background-color: darken($lightBg, 14%);
-        border-radius: 0 0 10px 10px;
-        
-      }
+
+@mixin sliding-panel-btn {
+    @include container-shadow;
+    font-size: 30px;
+    color: $font-color;
+    padding: 7px;
+    border-radius: 7px;
+    background-color: $buttonBg;
+    &:hover {
+        background-color: $standard;
+    }
+    &:active {
+        transform: scale(1.1)
+    }
 }
-@mixin list-inside-shadow {
-    -webkit-box-shadow: inset 0px 0px 7px -4px #000000;
-    box-shadow: inset 0px 0px 7px -4px #000000;
+
+@mixin sliding-panel-topbar {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
-@mixin list-item-shadow {
-    -webkit-box-shadow: 0px 2px 5px -3px rgba(0, 0, 0, 0.6);
-    box-shadow: 0px 2px 5px -3px rgba(0, 0, 0, 0.6);
+
+
+//shadows------------------------->
+@mixin container-shadow {
+    -webkit-box-shadow: 0px 1px 7px -1px rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 1px 7px -1px rgba(0, 0, 0, 0.6);
 }
-// @mixin btn-shadow {
-//     -webkit-box-shadow: 1px 2px 7px -2px rgba(0, 0, 0, 0.7);
-//     box-shadow: 1px 2px 7px -2px rgba(0, 0, 0, 0.7);
-// }
 @mixin btn-shadow {
     -webkit-box-shadow: 0px 1px 6px -1px rgba(0, 0, 0, 0.6);
     box-shadow: 0px 1px 6px -1px rgba(0, 0, 0, 0.6);
 }
-@mixin btn-hover{
-    background-color: $standard;
+@mixin shadow-info{
+    -webkit-box-shadow: 0px 0px 6px -1px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 0px 6px -1px rgba(0, 0, 0, 0.4);
 }
+@mixin input-shadow {
+    -webkit-box-shadow: inset 0px 0px 7px -4px #000000;
+    box-shadow: inset 0px 0px 7px -4px #000000;
+}
+@mixin suppliers-list-container-shadow {
+    -webkit-box-shadow: inset 0px 0px 7px -4px #000000;
+    box-shadow: inset 0px 0px 7px -4px #000000;
+}
+@mixin suppliers-items-shadow {
+    -webkit-box-shadow: 0px 2px 5px -3px rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 2px 5px -3px rgba(0, 0, 0, 0.6);
+}
+@mixin suppliers-item-shadow {
+    -webkit-box-shadow: 0px 1px 5px -3px rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 1px 5px -3px rgba(0, 0, 0, 0.6);
+}
+
+

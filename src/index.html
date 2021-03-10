@@ -13,7 +13,7 @@
   <div id="app">
     <div class="calculator">
       <div class="calculator-container">
-        <div class="navigation">
+        <div class="navigation-panel">
           <div class="nav-container logo-container">
             <a href="http://www.olejnik.com.pl/" target="_blank" id="logo">
               <img src="assets/logo.png" alt="logo">
@@ -23,32 +23,35 @@
           <div class="navigation-buttons-container">
             <div class="nav-container nav-container-print">
               <div class="select-print-container">
-                <button class="select-print-item select-print-item--active">
+                <button class="select-print-btn select-print-btn--active">
                   <img src="assets/open-book.svg" alt="books">
                   <p>Książki, <br> broszury, itp.</p>
                 </button>
-                <button class="select-print-item">
+                <button class="select-print-btn">
                   <img src="assets/menu.svg" alt="books">
                   <p>Druki akcydensowe</p>
                 </button>
               </div>
             </div>
-            <div class="nav-container container-icons">
-              <div class="container-icons-wrap">
-                <a href="mailto:example@olejnik.com.pl" class="icon-panel-btn">
-                  <ion-icon class="icon" name="mail-open-outline"></ion-icon>
-                </a>
-                <a href="https://calendar.google.com/calendar/u/0/r?pli=1" target="_blank"
-                  class="calendar icon-panel-btn">
-                  <ion-icon class="icon" name="calendar-outline"></ion-icon>
-                </a>
-              </div>
-              <div class="container-icons-wrap">
-                <button class="notes-btn icon-panel-btn">
-                  <ion-icon class="icon" name="reader-outline"></ion-icon>
+            <div class="nav-container nav-container-small-btn">
+              <div class="small-btn-wraper">
+                <button class="mail-btn small-btn">
+                  <a href="mailto:example@olejnik.com.pl">
+                    <ion-icon class="small-btn-icon" name="mail-open-outline"></ion-icon>
+                  </a>
                 </button>
-                <button class="suppliers-btn icon-panel-btn">
-                  <ion-icon class="icon" name="people-outline"></ion-icon>
+                <button class="calendar-btn small-btn">
+                  <a href="https://calendar.google.com/calendar/u/0/r?pli=1" target="_blank">
+                    <ion-icon class="small-btn-icon" name="calendar-outline"></ion-icon>
+                  </a>
+                </button>
+              </div>
+              <div class="small-btn-wraper">
+                <button class="notes-btn small-btn">
+                  <ion-icon class="small-btn-icon" name="reader-outline"></ion-icon>
+                </button>
+                <button class="suppliers-btn small-btn">
+                  <ion-icon class="small-btn-icon" name="people-outline"></ion-icon>
                 </button>
               </div>
             </div>
@@ -59,7 +62,7 @@
             <div class="product">
               <form action="" id="product-2" class="standard">
                 <div class="form-container">
-                  <h2 class="title form-item">Książki, broszury, itp.</h2>
+                  <h2 class="title-product form-item">Książki, broszury, itp.</h2>
                   <div class="form-inner form-inner-prod2">
                     <p class="form-item">
                       <label for="product-2-count">ilość sztuk</label><br>
@@ -196,7 +199,7 @@
                 </div>
                 <div class="product-2-price price-sum">
                   <div class="price-sum-result product-2-price-result">
-                    <h3>Razem: <span>0</span> zł</h3>
+                    <h3 class="price-sum-h3">Razem: <span>0</span> zł</h3>
                     <input type="reset" class="reset"></input>
                   </div>
                   <p class="price-sum-desc">Ceny wygenerowane przez kalkulator są cenami orientacyjnymi</p>
@@ -206,7 +209,7 @@
             <div class="product">
               <form action="" id="product-1" data-option="standard" class="standard">
                 <div class="form-container">
-                  <h2 class="title form-item">Druk akcydensów</h2>
+                  <h2 class="title-product form-item">Druk akcydensów</h2>
                   <div class="form-inner">
                     <p class="form-item">
                       <label for="product-1-count">ilość sztuk</label><br>
@@ -301,7 +304,7 @@
                 </div>
                 <div class="product-1-price price-sum">
                   <div class="price-sum-result product-1-price-result">
-                    <h3>Razem: <span>0</span> zł</h3>
+                    <h3 class="price-sum-h3">Razem: <span>0</span> zł</h3>
                     <input type="reset" class="reset"></input>
                   </div>
                   <p class="price-sum-desc">Ceny wygenerowane przez kalkulator są cenami orientacyjnymi</p>
@@ -356,22 +359,27 @@
       </div>
       <!-- //notes container----------------------------->
       <div class="notes-container">
-        <div class="top-bar">
-          <h3 class="notes-title">Notatki</h3>
-          <button class="save-notes">
-            <ion-icon name="save-outline" class="save-icon"></ion-icon>
-          </button>
-          <button class="close">
-            <ion-icon name="close-circle-outline" class="close-icon"></ion-icon>
+        <div class="notes-topbar">
+          <div class="notes-topbar-left-panel">
+            <h3 class="notes-title">Notatki</h3>
+            <button class="save-notes">
+              <ion-icon name="save-outline" class="save-icon"></ion-icon>
+            </button>
+            <button class="delete-notes">
+              <ion-icon name="trash-outline"></ion-icon>
+            </button>
+          </div>
+          <button class="close close-notes">
+            <ion-icon name="chevron-back-outline" class="close-icon"></ion-icon>
           </button>
         </div>
-        <textarea name="" id="" cols="30" rows="16" placeholder="Dodaj notatkę." class="textarea"></textarea>
+        <textarea name="" id="" cols="30" rows="16" placeholder="Dodaj notatkę." class="notes-textarea"></textarea>
       </div>
        <!-- //suppliers container----------------------------->
       <div class="suppliers-container">
         <div class="suppliers-topbar">
           <h3 class="info-title">Dostawcy materiałów</h3>
-          <button class="suppliers-close">
+          <button class="close suppliers-close">
             <ion-icon name="chevron-back-outline" class="close-icon"></ion-icon>
           </button>
         </div>
@@ -393,22 +401,22 @@
                 <label for="www-address">www adres</label><br>
                 <input type="text" id="www-address">
             </div>
-            <button type="submit" class="add-to-list" value="Dodaj">Dodaj</button>
+            <button type="submit" class="btn-add-to-list" value="Dodaj">Dodaj</button>
         </form>
         </div>
         <div class="suppliers-list-container">
-          <div class="suppliers-list-item">
-            <div class="name-company-item"><p>Zing</hp></div>
-            <div class="name-company-item"><p>504 568 269</hp></div>
-            <div class="name-company-item item-link"><p>studioreklama@olejnik.com.pl</hp></div>
-            <div class="name-company-item item-link"><p>www.zing.pl</hp></div>
+          <div class="suppliers-items">
+            <div class="suppliers-item"><p>Zing</hp></div>
+            <div class="suppliers-item"><p>504 568 269</hp></div>
+            <div class="suppliers-item suppliers-item-link"><p>studioreklama@olejnik.com.pl</hp></div>
+            <div class="suppliers-item suppliers-item-link"><p>www.zing.pl</hp></div>
             <button class="delete-item"><ion-icon name="trash-outline"></ion-icon></button>
           </div>
-          <div class="suppliers-list-item">
-            <div class="name-company-item"><p>Zing</hp></div>
-            <div class="name-company-item"><p>504 568 269</hp></div>
-            <div class="name-company-item item-link"><p>studioreklama@olejnik.com.pl</hp></div>
-            <div class="name-company-item item-link"><p>www.zing.pl</hp></div>
+          <div class="suppliers-items">
+            <div class="suppliers-item"><p>Zing</hp></div>
+            <div class="suppliers-item"><p>504 568 269</hp></div>
+            <div class="suppliers-item suppliers-item-link"><p>studioreklama@olejnik.com.pl</hp></div>
+            <div class="suppliers-item suppliers-item-link"><p>www.zing.pl</hp></div>
             <button class="delete-item"><ion-icon name="trash-outline"></ion-icon></button>
         </div>
       </div>
