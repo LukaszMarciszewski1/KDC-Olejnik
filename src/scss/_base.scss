@@ -145,13 +145,13 @@ button::selection {
 .icon-panel-btn {
     width: 80px;
     height: 60px;
-    border-radius: 10px;
+    border-radius: 9px;
     padding: 10px;
     @include flexCenter;
     @include btn-shadow;
     // @include price-container-shadow;
     margin-right: 20px;
-    border: $border-standard;
+    transition: .2s;
     font-size: 35px;
     background-color: $buttonBg;
 }
@@ -202,7 +202,7 @@ button::selection {
     width: auto;
     max-width: 300px;
     padding: 15px 20px;
-    // @include price-container-shadow;
+    transition: .2s;
     @include btn-shadow;
     @include flexCenter;
     justify-content: flex-start;
@@ -212,7 +212,7 @@ button::selection {
     font-size: 17px;
     text-align: left;
     background-color: $buttonBg;;
-    border: $border-standard;
+    // border: $border-standard;
 
     img {
         width: 60px;
@@ -420,7 +420,7 @@ button::selection {
     @include flexCenter;
     width: 45px;
     height: 45px;
-    border: 1px solid lighten($standard, 5%);
+    // border: 1px solid $border-standard;
     border-radius: 50%;
     background-color: $buttonBg;
     .icon-info{
@@ -1247,7 +1247,7 @@ background-color: $standard;
         background-color: $buttonBg;
     }
     .suppliers-close:hover{
-        opacity: .8;
+        @include btn-hover;
     }
     .suppliers-close:active{
         transform: scale(1.1);
@@ -1303,7 +1303,7 @@ background-color: $standard;
         color: $font-color;
       }
       .add-to-list:hover{
-        background-color: lighten($buttonBg, 4%)
+        @include btn-hover;
       }
 }
 .suppliers-list-container{
@@ -1330,6 +1330,7 @@ background-color: $standard;
       }
 }
 .suppliers-list-item{
+    pointer-events:none;
     @include list-item-shadow;
     width: 100%;
     height: auto;
@@ -1346,6 +1347,9 @@ background-color: $standard;
     // color: $font-color-dark;
     color: $font-color-dark;
 }
+.suppliers-list-item:hover{
+    background-color: #3f74864b;
+}
 .suppliers-list-item:last-child{
     margin-bottom: 0;
 }
@@ -1354,17 +1358,11 @@ background-color: $standard;
     margin-right: 10px;
     padding:  8px 10px;
     min-width: 150px;
-    // background-color: lighten($buttonBg, 2%);
-    // border: 1px solid #89bad3ce;
     @include flexCenter;
     background-color: darken($lightBg, 2%);
-    // border: 1px solid #89bad38f;
-    // background-color: #ebebeb;
-    cursor: pointer;
     overflow-x: scroll;
     -webkit-box-shadow: 0px 1px 5px -3px rgba(0, 0, 0, 0.6);
     box-shadow: 0px 1px 5px -3px rgba(0, 0, 0, 0.6);
-    transition: .2;
     &::-webkit-scrollbar {
         display: none;
       }
@@ -1374,11 +1372,17 @@ background-color: $standard;
         
       }
 }
-.name-company-item:hover{
-    background-color: lighten($buttonBg, 8%); 
+.item-link{
+    pointer-events:auto;
+    cursor: pointer;
+    transition: .2s;
+}
+.item-link:hover{
+    @include btn-hover;
+        color: $lightBg;
 }
 .delete-item{
-    // @include list-item-shadow;
+    pointer-events:auto;
     font-size: 20px;
     padding: 5px;
     border-radius: 5px;
@@ -1391,12 +1395,19 @@ background-color: $standard;
     transform: translateY(-50%);
     -webkit-box-shadow: 0px 1px 5px -3px rgba(0, 0, 0, 0.6);
     box-shadow: 0px 1px 5px -3px rgba(0, 0, 0, 0.6);
+    transition: .2s;
     ion-icon{
         color: $font-color-dark;
     }
 }
 
 .delete-item:hover{
-    background-color: lighten($buttonBg, 4%)
+    @include btn-hover;
+    ion-icon{
+        color: $lightBg;
+    }
   }
+//   .delete-item.suppliers-list-item:hover{
+// background-color: red;
+//   }
 
