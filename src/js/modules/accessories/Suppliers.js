@@ -16,19 +16,19 @@ export class Suppliers {
         this.suppliersBtnOpen.addEventListener('click', this.openSuppliers.bind(this));
         this.suppliersBtnClose.addEventListener('click', this.closeSuppliers.bind(this));
 
-        //arrays
         this.containerList = document.querySelector('.suppliers-list-container');
         this.itemsList = [];
         this.storeItems = this.storeGetItem()
 
         //display items from local storage
         this.displayItems()
+
         // Add item to list
         document.querySelector('#suppliers-form-to-do').addEventListener('submit', (e) => {
-            const nameCompany = document.getElementById('name-company').value;
-            const nrPhone = document.getElementById('nr-phone').value;
-            const email = document.getElementById('email').value;
-            const www = document.getElementById('www-address').value;
+            const nameCompany = document.getElementById('name-company').value.trim();
+            const nrPhone = document.getElementById('nr-phone').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const www = document.getElementById('www-address').value.trim();
             const item = {
                 nameCompany,
                 nrPhone,
@@ -38,21 +38,24 @@ export class Suppliers {
             e.preventDefault();
             this.addItemToList(item)
             this.storeAddItem(item)
-            // localStorage.clear()
         });
+
         //remove from list
         this.containerList.addEventListener('click', (e) => this.deleteItem(e.target))
 
     }
+
     openSuppliers() {
         this.suppliersContainer.classList.add('suppliers-container--active')
         this.suppliersBtnOpen.classList.add('suppliers-btn--active')
 
     }
+
     closeSuppliers() {
         this.suppliersContainer.classList.remove('suppliers-container--active')
         this.suppliersBtnOpen.classList.remove('suppliers-btn--active')
     }
+
     //-------------------------------->
     //display items from localStorage
     displayItems() {
@@ -66,6 +69,7 @@ export class Suppliers {
             this.containerList.appendChild(item);
         })
     }
+
     //clear inputs
     clearFields() {
         document.getElementById('name-company').value = '';
@@ -84,7 +88,7 @@ export class Suppliers {
                         <div class="suppliers-item"><p>${item.nameCompany}</p></div>
                         <div class="suppliers-item"><p>${item.nrPhone}</p></div>
                         <div class="suppliers-item suppliers-item-link"><a href="mailto:${item.email}">${item.email}</a></div>
-                        <div class="suppliers-item suppliers-item-link"><a href="https://${item.www}/" target="_blank">${item.www.slice(7, -1)}</a></div>
+                        <div class="suppliers-item suppliers-item-link"><a href="${item.www}" target="_blank">${item.www}</a></div>
                         <button class="delete-item"><ion-icon name="trash-outline" class="delete"></ion-icon></button>
                        `;
             this.itemsList.push(row);
@@ -102,7 +106,6 @@ export class Suppliers {
         } else {
             storeItems = JSON.parse(localStorage.getItem('storeItems'))
         }
-        console.log(storeItems)
         return storeItems
     }
 
@@ -126,4 +129,5 @@ export class Suppliers {
         }
         localStorage.setItem('storeItems', JSON.stringify(this.storeItems))
     }
+
 }
