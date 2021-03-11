@@ -55,32 +55,37 @@
     justify-content: space-between;
 }
 
-
 //shadows------------------------->
 @mixin container-shadow {
     -webkit-box-shadow: 0px 1px 7px -1px rgba(0, 0, 0, 0.6);
     box-shadow: 0px 1px 7px -1px rgba(0, 0, 0, 0.6);
 }
+
 @mixin btn-shadow {
     -webkit-box-shadow: 0px 1px 6px -1px rgba(0, 0, 0, 0.6);
     box-shadow: 0px 1px 6px -1px rgba(0, 0, 0, 0.6);
 }
+
 @mixin shadow-info{
     -webkit-box-shadow: 0px 0px 6px -1px rgba(0, 0, 0, 0.4);
     box-shadow: 0px 0px 6px -1px rgba(0, 0, 0, 0.4);
 }
+
 @mixin input-shadow {
     -webkit-box-shadow: inset 0px 0px 7px -4px #000000;
     box-shadow: inset 0px 0px 7px -4px #000000;
 }
+
 @mixin suppliers-list-container-shadow {
     -webkit-box-shadow: inset 0px 0px 7px -4px #000000;
     box-shadow: inset 0px 0px 7px -4px #000000;
 }
+
 @mixin suppliers-items-shadow {
     -webkit-box-shadow: 0px 2px 5px -3px rgba(0, 0, 0, 0.6);
     box-shadow: 0px 2px 5px -3px rgba(0, 0, 0, 0.6);
 }
+
 @mixin suppliers-item-shadow {
     -webkit-box-shadow: 0px 1px 5px -3px rgba(0, 0, 0, 0.6);
     box-shadow: 0px 1px 5px -3px rgba(0, 0, 0, 0.6);

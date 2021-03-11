@@ -16,12 +16,12 @@ export class Notes {
 
     openNotes(){
         this.container.classList.add('notes-container--active')
-        // this.notesBtn.classList.add('notes-btn--active')
+        this.notesBtnOpen.classList.add('notes-btn--active')
         
     }
     closeNotes(){
         this.container.classList.remove('notes-container--active')
-        // this.notesBtn.classList.remove('notes-btn--active')
+        this.notesBtnOpen.classList.remove('notes-btn--active')
     }
 
     displayNotes() {
