@@ -6,12 +6,6 @@
 //         this.www = www;
 //     }
 // }
-const itemData = {
-    nameCompany: null,
-    nrPhone: null,
-    email: null,
-    www: null,
-}
 
 export class Suppliers {
     constructor() {
@@ -35,12 +29,19 @@ export class Suppliers {
             const nrPhone = document.getElementById('nr-phone').value;
             const email = document.getElementById('email').value;
             const www = document.getElementById('www-address').value;
-            const item = {nameCompany, nrPhone, email, www}
+            const item = {
+                nameCompany,
+                nrPhone,
+                email,
+                www
+            }
             e.preventDefault();
-            localStorage.clear()
             this.addItemToList(item)
             this.storeAddItem(item)
+            // localStorage.clear()
         });
+        //remove from list
+        this.containerList.addEventListener('click', (e) => this.deleteItem(e.target))
 
     }
     openSuppliers() {
@@ -53,9 +54,24 @@ export class Suppliers {
         this.suppliersBtnOpen.classList.remove('suppliers-btn--active')
     }
     //-------------------------------->
+    //display items from localStorage
     displayItems() {
         this.storeItems.forEach(item => this.addItemToList(item))
-        console.log(this.storeItems)
+    }
+
+    //set key data for player item
+    renderList() {
+        this.itemsList.forEach((item, key) => {
+            item.dataset.key = key;
+            this.containerList.appendChild(item);
+        })
+    }
+    //clear inputs
+    clearFields() {
+        document.getElementById('name-company').value = '';
+        document.getElementById('nr-phone').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('www-address').value = '';
     }
 
     //add item to list
@@ -67,16 +83,14 @@ export class Suppliers {
             row.innerHTML = `
                         <div class="suppliers-item"><p>${item.nameCompany}</p></div>
                         <div class="suppliers-item"><p>${item.nrPhone}</p></div>
-                        <div class="suppliers-item suppliers-item-link"><p>${item.email}</p></div>
-                        <div class="suppliers-item suppliers-item-link"><p>${item.www}</p></div>
-                        <button class="delete-item"><ion-icon name="trash-outline"></ion-icon></button>
+                        <div class="suppliers-item suppliers-item-link"><a href="mailto:${item.email}">${item.email}</a></div>
+                        <div class="suppliers-item suppliers-item-link"><a href="https://${item.www}/" target="_blank">${item.www.slice(7, -1)}</a></div>
+                        <button class="delete-item"><ion-icon name="trash-outline" class="delete"></ion-icon></button>
                        `;
-
-
             this.itemsList.push(row);
-            // this.renderList();
+            this.renderList();
             this.containerList.appendChild(row);
-            // this.clearFields();
+            this.clearFields();
         }
     }
 
@@ -98,10 +112,18 @@ export class Suppliers {
             this.storeItems.push(item);
             localStorage.setItem('storeItems', JSON.stringify(this.storeItems))
         }
-        console.log(this.storeItems)
+    }
+
+    //remove item from list
+    deleteItem(el) {
+        const index = el.parentElement.dataset.key;
+        if (el.classList.contains('delete-item')) {
+            this.renderList()
+            el.parentElement.remove();
+            this.itemsList.splice(index, 1);
+            this.storeItems.splice(index, 1);
+            localStorage.removeItem(index)
+        }
+        localStorage.setItem('storeItems', JSON.stringify(this.storeItems))
     }
 }
-
-// if (localStorage.getItem("textareaValue") !== null) {
-//     textarea.value = localStorage.getItem("textareaValue");
-// }
