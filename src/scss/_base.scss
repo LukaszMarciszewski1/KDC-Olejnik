@@ -387,6 +387,7 @@ button {
 }
 
 .suppliers-topbar {
+    position: relative;
     @include sliding-panel-topbar;
 
     .close {
@@ -756,10 +757,12 @@ button {
     }
 
     .nav-container {
-        padding: 20px;
+        padding:25px 20px;
         margin-bottom: 20px;
     }
-
+    .logo-container{
+        padding: 30px 20px;
+    }
     .bottom-panel {
         margin-top: 15px;
         height: 80px;
@@ -786,7 +789,6 @@ button {
     .suppliers-container {
         top: 15px;
         max-width: 900px;
-        // max-height: 630px;
         padding: 15px;
     }
 
@@ -816,6 +818,9 @@ button {
 }
 
 @media screen and (max-width: 1280px) {
+    .logo-container{
+        padding: 35px 20px;
+    }
     .nav-container {
         width: 270px;
         min-width: 270px;
@@ -838,7 +843,6 @@ button {
         width: 800px;
     }
 
-
     .form-item {
         margin: 10px 7px;
     }
@@ -857,10 +861,6 @@ button {
         margin: 20px 12px 0;
         padding: 20px 20px 10px;
     }
-
-    // .suppliers-container {
-    //     max-height: 600px;
-    // }
 }
 
 @media screen and (max-width: 1124px) {
@@ -1471,4 +1471,47 @@ button {
     .product {
         padding: 20px 15px;
     }
+}
+.alert{
+    color: $font-color-dark;
+    background-color: #fae8e6;
+    padding: 5px 10px;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    min-width: 320px;
+    height: auto;
+    display:none;
+    flex-wrap: wrap;
+    align-items: center;
+    z-index: 999;
+    font-size: 13px;
+    border-radius: 5px;
+    .alert-icon{
+        color: red;
+        font-size: 22px;
+        margin-right: 7px;
+    }
+    .alert-txt{
+        @include flexCenter;
+
+    }
+    .acept-alert{
+        border: $border-standard;
+        background-color: white;
+        padding: 2px 15px;
+        margin: 5px;
+        box-shadow: none;
+        border-radius: 5px;
+        margin-left: 10px;
+        &:hover{
+            background-color: $standard;
+            color: white;
+        }
+    }
+}
+.alert--active{
+    display: flex;
 }

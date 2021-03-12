@@ -1,12 +1,12 @@
-// class ItemData {
-//     constructor(nameCompany, nrPhone, email, www) {
-//         this.nameCompany = nameCompany;
-//         this.nrPhone = nrPhone;
-//         this.email = email;
-//         this.www = www;
-//     }
-// }
 
+class Item {
+    constructor(nameCompany, nrPhone, email, www){
+        this.nameCompany = nameCompany;
+        this.nrPhone = nrPhone;
+        this.email = email;
+        this.www = www
+    }
+}
 export class Suppliers {
     constructor() {
         //button operation
@@ -24,24 +24,13 @@ export class Suppliers {
         this.displayItems()
 
         // Add item to list
-        document.querySelector('#suppliers-form-to-do').addEventListener('submit', (e) => {
-            const nameCompany = document.getElementById('name-company').value.trim();
-            const nrPhone = document.getElementById('nr-phone').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const www = document.getElementById('www-address').value.trim();
-            const item = {
-                nameCompany,
-                nrPhone,
-                email,
-                www
-            }
-            e.preventDefault();
-            this.addItemToList(item)
-            this.storeAddItem(item)
-        });
+        document.querySelector('#suppliers-form-to-do').addEventListener('submit', this.addItemToDoList.bind(this));
 
         //remove from list
         this.containerList.addEventListener('click', (e) => this.deleteItem(e.target))
+
+        //acept alert
+        document.querySelector('.acept-alert').addEventListener('click', e => e.target.parentElement.classList.remove('alert--active'))
 
     }
 
@@ -56,10 +45,43 @@ export class Suppliers {
         this.suppliersBtnOpen.classList.remove('suppliers-btn--active')
     }
 
-    //-------------------------------->
     //display items from localStorage
     displayItems() {
         this.storeItems.forEach(item => this.addItemToList(item))
+    }
+
+    
+    addItemToDoList(e) {
+        e.preventDefault();
+        const alert = document.querySelector('.alert')
+        const alertTxt = document.querySelector('.alert-txt')
+        const nameCompany = document.getElementById('name-company').value.trim();
+        const nrPhone = document.getElementById('nr-phone').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const www = document.getElementById('www-address').value.trim();
+        const item = {
+            nameCompany,
+            nrPhone,
+            email,
+            www
+        }
+        //checking if an item already exists in a list
+        for (const i in this.storeItems) {
+            if (item.nrPhone === this.storeItems[i].nrPhone) {
+                alertTxt.textContent = `Numer telefonu ${item.nrPhone} już istnieje`;
+                alert.classList.add('alert--active')
+                return;
+            } else if (item.email === this.storeItems[i].email) {
+                alertTxt.textContent = `Adre email ${item.email} już istnieje`;
+                alert.classList.add('alert--active');
+                return
+            }else{
+                alertTxt.textContent = " ";
+                alert.classList.remove('alert--active');
+            }
+        }
+        this.addItemToList(item)
+        this.storeAddItem(item)
     }
 
     //set key data for player item
@@ -79,9 +101,8 @@ export class Suppliers {
     }
 
     //add item to list
-    addItemToList(item) {
+    addItem(item) {
         if (item) {
-            const containerList = this.containerList
             const row = document.createElement('div');
             row.className = 'suppliers-items';
             row.innerHTML = `
@@ -91,6 +112,7 @@ export class Suppliers {
                         <div class="suppliers-item suppliers-item-link"><a href="${item.www}" target="_blank">${item.www}</a></div>
                         <button class="delete-item"><ion-icon name="trash-outline" class="delete"></ion-icon></button>
                        `;
+
             this.itemsList.push(row);
             this.renderList();
             this.containerList.appendChild(row);
