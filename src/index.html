@@ -314,7 +314,6 @@
           </div>
         </div>
       </div>
-
       <!-- //bottom panel----------------------------->
       <div class="bottom-panel">
         <div class="description-app">
@@ -375,7 +374,7 @@
         </div>
         <textarea name="" id="" cols="30" rows="16" placeholder="Dodaj notatkę." class="notes-textarea"></textarea>
       </div>
-       <!-- //suppliers container----------------------------->
+      <!-- //suppliers container----------------------------->
       <div class="suppliers-container">
         <div class="suppliers-topbar">
           <div class="alert">
@@ -390,24 +389,24 @@
         </div>
         <div class="suppliers-add">
           <form class="suppliers-form" id="suppliers-form-to-do">
-                <div class="form-group">
-                    <label for="name-company">nazwa firmy</label><br>
-                    <input type="text" id="name-company" placeholder="nazwa firmy">
-                </div>
-                <div class="form-group">
-                    <label for="nr-phone">nr. telefonu</label><br>
-                    <input type="tel" pattern="[0-9]{9}" id="nr-phone" placeholder="nr. telefonu">
-                </div>
-                <div class="form-group">
-                  <label for="email">email</label><br>
-                  <input type="email" id="email" placeholder="email">
-              </div>
-              <div class="form-group">
-                <label for="www-address">www adres</label><br>
-                <input type="url" id="www-address" placeholder="https://www.adres.pl/">
+            <div class="form-group">
+              <label for="name-company">nazwa firmy</label><br>
+              <input type="text" id="name-company" placeholder="nazwa firmy" required>
+            </div>
+            <div class="form-group">
+              <label for="nr-phone">nr. telefonu</label><br>
+              <input type="tel" pattern="[0-9]{9}" id="nr-phone" placeholder="nr. telefonu" required>
+            </div>
+            <div class="form-group">
+              <label for="email">email</label><br>
+              <input type="email" id="email" placeholder="email" required>
+            </div>
+            <div class="form-group">
+              <label for="www-address">www adres</label><br>
+              <input type="url" id="www-address" placeholder="https://www.adres.pl/" required>
             </div>
             <button type="submit" class="btn-add-to-list" value="Dodaj">Dodaj</button>
-        </form>
+          </form>
         </div>
         <div class="suppliers-list-container">
           <!-- <div class="suppliers-items">
@@ -417,9 +416,9 @@
             <div class="suppliers-item suppliers-item-link"><a href="https://www.olejnik.com.pl/" target="_blank">www.zing.pl</a></div>
             <button class="delete-item"><ion-icon name="trash-outline" class="delete"></ion-icon></button>
           </div> -->
+        </div>
       </div>
     </div>
-  </div>
 </body>
 
 </html>

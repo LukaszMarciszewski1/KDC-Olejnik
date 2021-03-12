@@ -1,4 +1,3 @@
-
 class Item {
     constructor(nameCompany, nrPhone, email, www){
         this.nameCompany = nameCompany;
@@ -9,37 +8,68 @@ class Item {
 }
 export class Suppliers {
     constructor() {
-        //button operation
         this.suppliersBtnClose = document.querySelector('.suppliers-close');
         this.suppliersBtnOpen = document.querySelector('.suppliers-btn');
         this.suppliersContainer = document.querySelector('.suppliers-container');
         this.suppliersBtnOpen.addEventListener('click', this.openSuppliers.bind(this));
         this.suppliersBtnClose.addEventListener('click', this.closeSuppliers.bind(this));
-
+        this.nameCompany = document.getElementById('name-company');
+        this.nrPhone = document.getElementById('nr-phone');
+        this.email = document.getElementById('email');
+        this.www = document.getElementById('www-address');
+        this.alert = document.querySelector('.alert')
+        this.alertTxt = document.querySelector('.alert-txt')
         this.containerList = document.querySelector('.suppliers-list-container');
         this.itemsList = [];
-        this.storeItems = this.storeGetItem()
+        this.storeItems = this.storeGetItem();
 
         //display items from local storage
         this.displayItems()
 
         // Add item to list
-        document.querySelector('#suppliers-form-to-do').addEventListener('submit', this.addItemToDoList.bind(this));
+        document.querySelector('#suppliers-form-to-do').addEventListener('submit', e => {
+        e.preventDefault();
+        const nameCompany = this.nameCompany.value;
+        const nrPhone = this.nrPhone.value;
+        const email = this.email.value;
+        const www = this.www.value;
+        const item = new Item(nameCompany, nrPhone, email, www);
+
+        //this.acces = retun z wunkcji checking
+        for (const i in this.storeItems) {
+            if (item.nrPhone === this.storeItems[i].nrPhone) {
+                this.alertTxt.textContent = `Numer telefonu ${item.nrPhone} już istnieje`;
+                this.alert.classList.add('alert--active')
+                return;
+            } else if (item.email === this.storeItems[i].email) {
+                this.alertTxt.textContent = `Adre email ${item.email} już istnieje`;
+                this.alert.classList.add('alert--active');
+                return
+            } else{
+                this.alertTxt.textContent = " ";
+                this.alert.classList.remove('alert--active');
+            }
+        }
+
+        this.addItemToList(item)
+        this.storeAddItem(item)
+        });
 
         //remove from list
-        this.containerList.addEventListener('click', (e) => this.deleteItem(e.target))
+        this.containerList.addEventListener('click', e => this.deleteItem(e.target))
 
         //acept alert
         document.querySelector('.acept-alert').addEventListener('click', e => e.target.parentElement.classList.remove('alert--active'))
 
     }
-
+    //open containers suppliers
     openSuppliers() {
         this.suppliersContainer.classList.add('suppliers-container--active')
         this.suppliersBtnOpen.classList.add('suppliers-btn--active')
 
     }
 
+    //close containers suppliers
     closeSuppliers() {
         this.suppliersContainer.classList.remove('suppliers-container--active')
         this.suppliersBtnOpen.classList.remove('suppliers-btn--active')
@@ -48,40 +78,6 @@ export class Suppliers {
     //display items from localStorage
     displayItems() {
         this.storeItems.forEach(item => this.addItemToList(item))
-    }
-
-    
-    addItemToDoList(e) {
-        e.preventDefault();
-        const alert = document.querySelector('.alert')
-        const alertTxt = document.querySelector('.alert-txt')
-        const nameCompany = document.getElementById('name-company').value.trim();
-        const nrPhone = document.getElementById('nr-phone').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const www = document.getElementById('www-address').value.trim();
-        const item = {
-            nameCompany,
-            nrPhone,
-            email,
-            www
-        }
-        //checking if an item already exists in a list
-        for (const i in this.storeItems) {
-            if (item.nrPhone === this.storeItems[i].nrPhone) {
-                alertTxt.textContent = `Numer telefonu ${item.nrPhone} już istnieje`;
-                alert.classList.add('alert--active')
-                return;
-            } else if (item.email === this.storeItems[i].email) {
-                alertTxt.textContent = `Adre email ${item.email} już istnieje`;
-                alert.classList.add('alert--active');
-                return
-            }else{
-                alertTxt.textContent = " ";
-                alert.classList.remove('alert--active');
-            }
-        }
-        this.addItemToList(item)
-        this.storeAddItem(item)
     }
 
     //set key data for player item
@@ -94,14 +90,14 @@ export class Suppliers {
 
     //clear inputs
     clearFields() {
-        document.getElementById('name-company').value = '';
-        document.getElementById('nr-phone').value = '';
-        document.getElementById('email').value = '';
-        document.getElementById('www-address').value = '';
+        this.nameCompany.value = ''
+        this.nrPhone.value = ''
+        this.email.value = ''
+        this.www.value = ''
     }
 
     //add item to list
-    addItem(item) {
+    addItemToList(item) {
         if (item) {
             const row = document.createElement('div');
             row.className = 'suppliers-items';
