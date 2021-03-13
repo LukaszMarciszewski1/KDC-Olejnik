@@ -35,6 +35,14 @@
             </div>
             <div class="nav-container nav-container-small-btn">
               <div class="small-btn-wraper">
+                <button class="notes-btn small-btn">
+                  <ion-icon class="small-btn-icon" name="reader-outline"></ion-icon>
+                </button>
+                <button class="suppliers-btn small-btn">
+                  <ion-icon class="small-btn-icon" name="people-outline"></ion-icon>
+                </button>
+              </div>
+              <div class="small-btn-wraper">
                 <button class="mail-btn small-btn">
                   <a href="mailto:example@olejnik.com.pl">
                     <ion-icon class="small-btn-icon" name="mail-open-outline"></ion-icon>
@@ -44,14 +52,6 @@
                   <a href="https://calendar.google.com/calendar/u/0/r?pli=1" target="_blank">
                     <ion-icon class="small-btn-icon" name="calendar-outline"></ion-icon>
                   </a>
-                </button>
-              </div>
-              <div class="small-btn-wraper">
-                <button class="notes-btn small-btn">
-                  <ion-icon class="small-btn-icon" name="reader-outline"></ion-icon>
-                </button>
-                <button class="suppliers-btn small-btn">
-                  <ion-icon class="small-btn-icon" name="people-outline"></ion-icon>
                 </button>
               </div>
             </div>
@@ -82,18 +82,18 @@
                     <p class="form-item">
                       <label for="product-2-material">media środek</label><br>
                       <select name="product-2-material" id="product-2-material" class="select-price">
-                        <option value="product-2-b1" class="enable" selected="selected">creamy 60g</option>
-                        <option value="product-2-b2" class="enable">creamy 70g</option>
-                        <option value="product-2-b3" class="enable">creamy 80g</option>
-                        <option value="product-2-b4" class="enable">lux cream 70g</option>
-                        <option value="product-2-b5" class="enable">lux cream 80g</option>
-                        <option value="product-2-b6" class="enable">lux cream 90g</option>
-                        <option value="product-2-b7" class="enable">offset 70g</option>
-                        <option value="product-2-b8" class="enable">offset 80g</option>
-                        <option value="product-2-b9" class="enable">offset 90g</option>
-                        <option value="product-2-b10" class="enable">offset 100g</option>
+                        <option value="product-2-b1" class="condition">creamy 60g</option>
+                        <option value="product-2-b2" class="condition">creamy 70g</option>
+                        <option value="product-2-b3" class="condition">creamy 80g</option>
+                        <option value="product-2-b4" class="condition">lux cream 70g</option>
+                        <option value="product-2-b5" class="condition">lux cream 80g</option>
+                        <option value="product-2-b6" class="condition">lux cream 90g</option>
+                        <option value="product-2-b7" class="condition">offset 70g</option>
+                        <option value="product-2-b8" class="condition">offset 80g</option>
+                        <option value="product-2-b9" class="condition">offset 90g</option>
+                        <option value="product-2-b10" class="condition">offset 100g</option>
                         <option value="product-2-b11">kreda 90g</option>
-                        <option value="product-2-b12">kreda 100g</option>
+                        <option value="product-2-b12" selected>kreda 100g</option>
                         <option value="product-2-b13">kreda 115g</option>
                         <option value="product-2-b14">kreda 130g</option>
                         <option value="product-2-b15">kreda 150g</option>
@@ -155,17 +155,17 @@
                     <p class="form-item">
                       <label for="product-2-sheets-cover">arkusze okładka</label><br>
                       <select name="product-2-sheets-cover" id="product-2-sheets-cover" class="select-price">
-                        <option value="product-2-g1" selected="selected">SRA3</option>
-                        <option value="product-2-g2">arkusz B1</option>
-                        <option value="product-2-g3">arkusz A1</option>
+                        <option class="sheet-2 sheet-2-sra3" value="product-2-g1" selected="selected">SRA3</option>
+                        <option class="sheet-2 sheet-2-B1" value="product-2-g2">arkusz B1</option>
+                        <option class="sheet-2 sheet-2-A1" value="product-2-g3">arkusz A1</option>
                       </select>
                     </p>
                     <p class="form-item">
                       <label for="product-2-sheets-inner">arkusze środek</label><br>
                       <select name="product-2-sheets-inner" id="product-2-sheets-inner" class="select-price">
-                        <option value="product-2-f1" class="enable-sheets">SRA3</option>
-                        <option value="product-2-f2" selected="selected">arkusz B1</option>
-                        <option value="product-2-f3">arkusz A1</option>
+                        <option class="sheet-2 sheet-2-sra3 inner-condition" value="product-2-f1" class="enable-sheets" selected>SRA3</option>
+                        <option class="sheet-2 sheet-2-B1" value="product-2-f2">arkusz B1</option>
+                        <option class="sheet-2 sheet-2-A1" value="product-2-f3">arkusz A1</option>
                       </select>
                     </p>
                     <p class="checkbox">
@@ -290,9 +290,9 @@
                     <p class="form-item">
                       <label for="product-1-sheets">arkusze</label><br>
                       <select name="product-1-sheets" id="product-1-sheets" class="select-price">
-                        <option value="product-1-f1" selected="selected">SRA3</option>
-                        <option value="product-1-f2">arkusz B1</option>
-                        <option value="product-1-f3">arkusz A1</option>
+                        <option class="sheet-1 sheet-1-sra3" value="product-1-f1" selected="selected">SRA3</option>
+                        <option class="sheet-1 sheet-1-B1" value="product-1-f2">arkusz B1</option>
+                        <option class="sheet-1 sheet-1-A1" value="product-1-f3">arkusz A1</option>
                       </select>
                     </p>
                     <p class="checkbox">
@@ -333,24 +333,87 @@
             </div>
             <div class="info-text-container">
               <p class="info-txt">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis ipsam assumenda excepturi pariatur
-                quam. Cupiditate, laudantium magni dolore est saepe, architecto molestiae ipsum ad repellendus dolorum,
-                atque dolorem commodi? Fugiat.
-                Asperiores autem ad totam exercitationem quibusdam doloremque recusandae labore eius molestias,
-                repellendus laboriosam iusto corporis libero quam doloribus quisquam veritatis soluta quis dolore
-                explicabo? Placeat distinctio atque at praesentium quam.
-                Hic itaque soluta, aspernatur reprehenderit eaque fugiat sapiente maiores saepe ducimus velit architecto
-                tempora. Enim aut cum dolor mollitia aperiam nostrum, aliquam eveniet magni et alias odio iure suscipit
-                placeat.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis ipsam assumenda excepturi pariatur
-                quam. Cupiditate, laudantium magni dolore est saepe, architecto molestiae ipsum ad repellendus dolorum,
-                atque dolorem commodi? Fugiat.
-                Asperiores autem ad totam exercitationem quibusdam doloremque recusandae labore eius molestias,
-                repellendus laboriosam iusto corporis libero quam doloribus quisquam veritatis soluta quis dolore
-                explicabo? Placeat distinctio atque at praesentium quam.
-                Hic itaque soluta, aspernatur reprehenderit eaque fugiat sapiente maiores saepe ducimus velit architecto
-                tempora. Enim aut cum dolor mollitia aperiam nostrum, aliquam eveniet magni et alias odio iure suscipit
-                placeat.
+                <ul><strong>Drukarka kolorowa x 1 klik</strong>
+                  <li>format A3 4 + 0 = 0,12 zł, do formatu B4 włącznie = 0,12 zł / 2</li>
+                  <li>format A3 1 + 0 = 0,072 zł, do formatu B4 włącznie = 0,072 zł / 2</li>
+                </ul>
+                <ul><strong>Drukarka czarnobiała x 1 klik</strong>
+                  <li>format A4 lub B4 1 + 0 = 0,01 zł, formaty mniejsze od A4 = 0,01 zł / 2</li>
+                </ul>
+                <ul><strong>Foliowanie</strong>
+                  <li>Do formatu SRA3 lub B4 = 0,3 zł <br>
+                    <small>(Jeżeli użytek nie będzie w pełnym formacie SRA3 lub B4
+                      to cena będzie taka jak za format SRA3)</small> </li>
+                </ul>
+                <ul><strong>Bigowanie</strong>
+                  <li>big x 1 = 0,1 zł</li>
+                </ul>
+                <ul><strong>Zaokrąglanie narożników</strong>
+                  <li>narożnik x 1 = 0,1 zł</li>
+                </ul>
+                <ul><strong>Oprawa okładki</strong>
+                  <li>zszywana x 1 = 0,3 zł</li>
+                  <li>klejona x 1 = 0,5 zł</li>
+                  <li>spiralna x 1 = 0,3 zł</li>
+                </ul>
+                <ul><strong>Formaty arkuszy papieru</strong>
+                  <li>SRA3 - 320 mm x 450 mm</li>
+                  <li>A1 - 610 mm x 860 mm</li>
+                  <li>B1 - 700 mm x 1000 mm</li>
+                </ul>
+                <ul><strong>Papiery satynowe PRO-DESIGN</strong>
+                  <li>90g SRA3 x 1 arkusz - 0,123 zł</li>
+                  <li>100g SRA3 x 1 arkusz - 0,136 zł</li>
+                  <li>120g SRA3 x 1 arkusz - 0,164 zł</li>
+                  <li>160g SRA3 x 1 arkusz - 0,219 zł</li>
+                  <li>200g SRA3 x 1 arkusz - 0,300 zł</li>
+                  <li>250g SRA3 x 1 arkusz - 0,394 zł</li>
+                  <li>300g SRA3 x 1 arkusz - 0,473 zł</li>
+                  <li>350g SRA3 x 1 arkusz - 0,592 zł</li>
+                </ul>
+                <ul><strong>Papier DNS</strong>
+                  <li>SRA3 300g x 1 arkusz - 0,592 zł</li>
+                </ul>
+                <ul><strong>Papiery kredowe Experia</strong>
+                  <li>90g SRA3 x 1 ark - 0,09 zł, A1 x 1 ark - 0,169 zł, B1 x 1 ark - 0,23 zł</li>
+                  <li>100g SRA3 x 1 ark - 0,10 zł, A1 x 1 ark - 0,18 zł, B1 x 1 ark - 0,25 zł</li>
+                  <li>115g SRA3 x 1 ark - 0,118 zł, A1 x 1 ark - 0,21 zł, B1 x 1 ark - 0,28 zł</li>
+                  <li>130g SRA3 x 1 ark - 0,133 zł, A1 x 1 ark - 0,23 zł, B1 x 1 ark - 0,32 zł</li>
+                  <li>150g SRA3 x 1 ark - 0,154 zł, A1 x 1 ark - 0,27 zł, B1 x 1 ark - 0,37 zł</li>
+                  <li>170g SRA3 x 1 ark - 0,174 zł, A1 x 1 ark - 0,303 zł, B1 x 1 ark - 0,42 zł</li>
+                  <li>200g SRA3 x 1 ark - 0,205 zł, A1 x 1 ark - 0,357 zł, B1 x 1 ark - 0,49 zł</li>
+                  <li>250g SRA3 x 1 ark - 0,264 zł, A1 x 1 ark - 0,459 zł, B1 x 1 ark - 0,63 zł</li>
+                  <li>300g SRA3 x 1 ark - 0,326 zł, A1 x 1 ark - 0,567 zł, B1 x 1 ark - 0,78 zł</li>
+                  <li>350g SRA3 x 1 ark - 0,386 zł, A1 x 1 ark - 0,679 zł, B1 x 1 ark - 0,92 zł</li>
+                </ul>
+                <ul><strong>Papiery offsetowe</strong>
+                  <li>70g A1 x 1 ark - 0,12 zł, B1 x 1 ark - 0,16 zł</li><!-- ok -->
+                  <li>80g A1 x 1 ark - 0,15 zł, B1 x 1 ark - 0,19 zł</li><!-- ok -->
+                  <li>90g A1 x 1 ark - 0,16 zł, B1 x 1 ark - 0,20 zł</li><!-- ok -->
+                  <li>100g A1 x 1 ark - 0,17 zł, B1 x 1 ark - 0,23 zł</li><!-- ok -->
+                </ul>
+                <ul><strong>Papiery wolumenowe creamy</strong>
+                  <li>60g A1 x 1 ark - 0,12 zł, B1 x 1 ark - 0,17 zł</li> <!-- ok -->
+                  <li>70g A1 x 1 ark - 0,14 zł, B1 x 1 ark - 0,20 zł</li><!-- ok -->
+                  <li>80g A1 x 1 ark - 0,16 zł, B1 x 1 ark - 0,23 zł</li><!-- ok -->
+                </ul>
+                <ul><strong>Papiery wolumenowe Lux cream</strong>
+                  <li>70g A1 x 1 ark - 0,16 zł, B1 x 1 ark - 0,22 zł</li><!-- ok -->
+                  <li>80g A1 x 1 ark - 0,19 zł, B1 x 1 ark - 0,26 zł</li><!-- ok -->
+                  <li>90g A1 x 1 ark - 0,21 zł, B1 x 1 ark - 0,28 zł</li><!-- ok -->
+                </ul>
+                <ul><strong>Papiery wolumenowe karton Neo Board</strong>
+                  <li>230g A1 x 1 ark - 0,57 zł, B1 x 1 ark - 0,77 zł</li><!-- ok -->
+                  <li>250g A1 x 1 ark - 0,60 zł, B1 x 1 ark - 0,80 zł</li><!-- ok -->
+                  <li>300g A1 x 1 ark - 0,72 zł, B1 x 1 ark - 0,97 zł</li><!-- ok -->
+                </ul>
+                <ul><strong>Dodatkowe informacje</strong>
+                  <li><strong>druk środka</strong> wybierając arkusze środka trzeba mieć na uwadze że dwie strony środka to jeden arkusz papieru zadrukowany dwustronnie np.
+                    dwie strony środka w formacie A4 to jeden arkusz papieru A4 zadrukowany dwustronnie.
+                  </li>
+                  <li><strong>cena środka papieru</strong> żeby sprawdzić jaka jest cena papieru za arkusz SRA3, A1 lub B1, można ustawić format druku i podwojoną ilość stron środka jw. mieszczącą się na danym arkuszu papieru.
+                  </li>
+                </ul>
               </p>
             </div>
           </div>

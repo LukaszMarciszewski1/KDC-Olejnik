@@ -1,7 +1,15 @@
-import {priceList} from './prices/productPriceList.js';
-import {Foil} from './Foil.js';
-import {PrintStandard} from './PrintStandard.js';
-import {PrintInner} from './PrintInner.js';
+import {
+    priceList
+} from './prices/productPriceList.js';
+import {
+    Foil
+} from './Foil.js';
+import {
+    PrintStandard
+} from './PrintStandard.js';
+import {
+    PrintInner
+} from './PrintInner.js';
 
 class Product1 {
     constructor() {
@@ -16,32 +24,57 @@ class Product1 {
         this.corners = document.getElementById('card-corners').addEventListener('click', this.getProductPrice.bind(this))
         this.printPrice = document.getElementById('product-1-print').addEventListener('change', this.getProductPrice.bind(this));
         this.foilPrice = document.getElementById('product-1-foil').addEventListener('change', this.getProductPrice.bind(this));
+
         this.result = document.querySelector('.product-1-price-result span')
         this.refreshPage()
         this.getProductPrice()
     }
     getProductCount() {
-        let count = parseInt(document.getElementById('product-1-count').value);
+        const count = parseInt(document.getElementById('product-1-count').value);
         return count
     }
     getProductSize() {
-        let selected = this.theFormProduct.elements['product-1-size'];
-        let price = priceList.productSize[selected.value];
+        const selected = this.theFormProduct.elements['product-1-size'];
+        const price = priceList.productSize[selected.value];
+        const sheets = [...document.querySelectorAll('.sheet-1')]
+        if (selected) {
+            sheets.forEach(sheet => {
+                if (selected.value === 'product-1-a1' || selected.value === 'product-1-a2' || selected.value === 'product-1-a3' || selected.value === 'product-1-a3') {
+                    if (sheet.classList.contains('sheet-1-B1')) {
+                        sheet.classList.add('disable-element')
+                        sheet.disabled = true
+                    } else {
+                        sheet.classList.remove('disable-element')
+                        sheet.disabled = false
+                    }
+                }
+                if (selected.value === 'product-1-a4' || selected.value === 'product-1-a5' || selected.value === 'product-1-a6') {
+                    if (sheet.classList.contains('sheet-1-A1')) {
+                        sheet.classList.add('disable-element')
+                        sheet.disabled = true
+                    } else {
+                        sheet.classList.remove('disable-element')
+                        sheet.disabled = false
+                    }
+                }
+            })
+        }
         return price
     }
     getProductMaterial() {
-        let selected = this.theFormProduct.elements['product-1-material'];
-        let price = priceList.productMaterial[selected.value];
+        const selected = this.theFormProduct.elements['product-1-material'];
+        const price = priceList.productMaterial[selected.value];
+        
         return price
     }
     getProductCrease() {
-        let selected = this.theFormProduct.elements['product-1-crease'];
-        let price = priceList.productCrease[selected.value];
+        const selected = this.theFormProduct.elements['product-1-crease'];
+        const price = priceList.productCrease[selected.value];
         return price;
     }
     getProductSheets() {
-        let selected = this.theFormProduct.elements['product-1-sheets'];
-        let price = priceList.productSheets[selected.value];
+        const selected = this.theFormProduct.elements['product-1-sheets'];
+        const price = priceList.productSheets[selected.value];
         return price;
     }
     getCardCorners() {
@@ -67,14 +100,14 @@ class Product1 {
         const foilProd = this.foil.getPriceFoil(count, sizeProd)
 
         const productPrice = ((((sizeProd * materialProd) * sheetsProd) + creaseProd + cornersProd) * count) + printProd + foilProd;
-        this.result.textContent = productPrice.toFixed(2)
+        this.result.textContent = productPrice.toFixed(3)
     }
     refreshPage() {
-        let priceSize = priceList.productSize['product-1-a1'];
-        let priceMaterial = priceList.productMaterial['product-1-b1'];
+        const priceSize = priceList.productSize['product-1-a1'];
+        const priceMaterial = priceList.productMaterial['product-1-b1'];
         let result = priceSize * priceMaterial
         const reset = document.querySelectorAll('.reset')
-        reset.forEach(res => res.addEventListener('click', () => this.result.textContent = result.toFixed(2)))
+        reset.forEach(res => res.addEventListener('click', () => this.result.textContent = result.toFixed(3)))
     }
 }
 
@@ -104,60 +137,75 @@ class Product2 {
         this.result = document.querySelector('.product-2-price-result span')
         this.resetPage()
         this.getProductPrice()
+
     }
 
     getProductCount() {
-        let count = parseInt(document.getElementById('product-2-count').value);
+        const count = parseInt(document.getElementById('product-2-count').value);
         return count
     }
     getProductSize() {
-        let selected = this.theFormProduct.elements['product-2-size'];
-        let price = priceList.productSize[selected.value];
-        console.log()
-        return price
-    }
-    getProductMaterial() {
-        const enableSheets = document.querySelector('.enable-sheets')
-        let selected = this.theFormProduct.elements['product-2-material'];
-        let price = priceList.productMaterial[selected.value];
-        const element = selected.options.selectedIndex
-        if (element >= 10) {
-            enableSheets.disabled = false
-            enableSheets.classList.remove('enable-sheets--active')
-        } else {
-            enableSheets.disabled = true
-            enableSheets.classList.add('enable-sheets--active')
+        const selected = this.theFormProduct.elements['product-2-size'];
+        const price = priceList.productSize[selected.value];
+        const sheets = [...document.querySelectorAll('.sheet-2')]
+        if (selected) {
+            sheets.forEach(sheet => {
+                if (selected.value === 'product-2-a1' || selected.value === 'product-2-a2' || selected.value === 'product-2-a3') {
+                    if (sheet.classList.contains('sheet-2-B1')) {
+                        sheet.classList.add('disable-element')
+                        sheet.disabled = true
+                    } else {
+                        sheet.classList.remove('disable-element')
+                        sheet.disabled = false
+                    }
+                }
+                if (selected.value === 'product-2-a4' || selected.value === 'product-2-a5' || selected.value === 'product-2-a6') {
+                    if (sheet.classList.contains('sheet-2-A1')) {
+                        sheet.classList.add('disable-element')
+                        sheet.disabled = true
+                    } else {
+                        sheet.classList.remove('disable-element')
+                        sheet.disabled = false
+                    }
+                }
+            })
         }
         return price
     }
+    getProductMaterial() {
+        const selected = this.theFormProduct.elements['product-2-material'];
+        const price = priceList.productMaterial[selected.value];
+        return price
+    }
     getProductCover() {
-        let selected = this.theFormProduct.elements['product-2-cover'];
-        let price = priceList.productCover[selected.value];
+        const selected = this.theFormProduct.elements['product-2-cover'];
+        const price = priceList.productCover[selected.value];
         return price
     }
     getProductBinding() {
-        let selected = this.theFormProduct.elements['product-2-binding'];
-        let price = priceList.productBinding[selected.value];
+        const selected = this.theFormProduct.elements['product-2-binding'];
+        const price = priceList.productBinding[selected.value];
         return price
     }
     getProductSheetsForCover() {
-        let selected = this.theFormProduct.elements['product-2-sheets-cover'];
-        let price = priceList.productSheets[selected.value];
+        const selected = this.theFormProduct.elements['product-2-sheets-cover'];
+        const price = priceList.productSheets[selected.value];
         return price;
     }
     getProductSheetsForInner() {
-        let selected = this.theFormProduct.elements['product-2-sheets-inner'];
-        let price = priceList.productSheets[selected.value];
-        const enableMaterial = [...document.querySelectorAll('.enable')]
-        if (selected.value === 'product-2-f1') {
-            enableMaterial.forEach(el => {
-                el.disabled = true
-                el.classList.add('enable-sheets--active')
-            })
-        } else {
-            enableMaterial.forEach(el => {
-                el.disabled = false
-                el.classList.remove('enable-sheets--active')
+        const selected = this.theFormProduct.elements['product-2-sheets-inner'];
+        const price = priceList.productSheets[selected.value];
+        const enabeleMaterialForInner = [...document.querySelectorAll('.condition')]
+        if(selected){
+            enabeleMaterialForInner.forEach(el =>{
+                if(selected.value === 'product-2-f1'){
+                   el.classList.add('disable-element')
+                   el.disabled = true
+                }
+                else{
+                    el.classList.remove('disable-element')
+                    el.disabled = false
+                }
             })
         }
         return price;
@@ -165,7 +213,7 @@ class Product2 {
 
     getProductWings(count, size, material, print, sheetsForCover, foil) {
         let price = 0;
-        let selected = this.theFormProduct.elements['product-2-wings'];
+        const selected = this.theFormProduct.elements['product-2-wings'];
         if (selected.checked == true && this.getProductCover() > 0) {
             price = (((size * material) * sheetsForCover) * count) + print + foil
         } else {

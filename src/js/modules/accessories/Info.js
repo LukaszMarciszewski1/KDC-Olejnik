@@ -8,7 +8,7 @@ export class Info {
         this.infoBtnClose.addEventListener('click', this.closeInfo.bind(this))
     }
     openInfo(){
-        this.infoContainer.classList.add('info-container--active')
+        this.infoContainer.classList.toggle('info-container--active')
         this.infoBtnOpen.classList.add('info-btn--active')
     }
     closeInfo(){

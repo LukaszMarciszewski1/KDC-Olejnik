@@ -2,7 +2,6 @@ import printPrice from './prices/printPrice.js';
 
 export class PrintInner {
   constructor(pages, black, color, empty) {
-    //one sheet side is double-sided printing
     this.pages = document.getElementById(pages)
     this.pagesBlack = document.getElementById(black)
     this.pagesColor = document.getElementById(color)
@@ -70,7 +69,8 @@ export class PrintInner {
         priceColor = 0
       }
     }
-    price = ((((materialEl * sizeEl) / 2) * sheetsEL) * count) + priceBlack + priceColor
+    //one sheet side is double-sided printing  -> / 2
+    price = ((((materialEl * sizeEl) / 2 ) * sheetsEL) * count) + priceBlack + priceColor
     return price
   }
 }
