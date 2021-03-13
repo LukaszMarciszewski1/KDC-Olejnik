@@ -786,12 +786,8 @@ button {
         font-weight: lighter;
     }
 }
-.disable-element:hover::after{
-    content:"niedostępny w tym arkuszu"
-}
-
 .disable-element {
-    background-color: rgb(216, 216, 216);
+    background-color: rgb(223, 223, 223);
 }
 
 ///////////////////////////////////////////////////

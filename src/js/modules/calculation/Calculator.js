@@ -37,6 +37,7 @@ class Product1 {
         const selected = this.theFormProduct.elements['product-1-size'];
         const price = priceList.productSize[selected.value];
         const sheets = [...document.querySelectorAll('.sheet-1')]
+        //access conditions
         if (selected) {
             sheets.forEach(sheet => {
                 if (selected.value === 'product-1-a1' || selected.value === 'product-1-a2' || selected.value === 'product-1-a3' || selected.value === 'product-1-a3') {
@@ -64,7 +65,19 @@ class Product1 {
     getProductMaterial() {
         const selected = this.theFormProduct.elements['product-1-material'];
         const price = priceList.productMaterial[selected.value];
-        
+        const selectedIndex = selected.options.selectedIndex
+        const B1A1 = [...document.querySelectorAll('.B1-A1-condition-1')]
+        //access conditions
+        B1A1.forEach(el => {
+            if (selectedIndex > 8) {
+                el.disabled = true
+                el.classList.add('disable-element')
+            }
+            else{
+                el.disabled = false
+                el.classList.remove('disable-element')
+            }
+        })
         return price
     }
     getProductCrease() {
@@ -75,6 +88,19 @@ class Product1 {
     getProductSheets() {
         const selected = this.theFormProduct.elements['product-1-sheets'];
         const price = priceList.productSheets[selected.value];
+        const enabeleMaterial = [...document.querySelectorAll('.condition-satin')]
+        //access conditions
+        if (selected) {
+            enabeleMaterial.forEach(el => {
+                if (selected.value === 'product-1-f2' || selected.value === 'product-1-f3') {
+                    el.classList.add('disable-element')
+                    el.disabled = true
+                } else {
+                    el.classList.remove('disable-element')
+                    el.disabled = false
+                }
+            })
+        }
         return price;
     }
     getCardCorners() {
@@ -100,14 +126,14 @@ class Product1 {
         const foilProd = this.foil.getPriceFoil(count, sizeProd)
 
         const productPrice = ((((sizeProd * materialProd) * sheetsProd) + creaseProd + cornersProd) * count) + printProd + foilProd;
-        this.result.textContent = productPrice.toFixed(3)
+        this.result.textContent = productPrice.toFixed(2)
     }
     refreshPage() {
         const priceSize = priceList.productSize['product-1-a1'];
         const priceMaterial = priceList.productMaterial['product-1-b1'];
         let result = priceSize * priceMaterial
         const reset = document.querySelectorAll('.reset')
-        reset.forEach(res => res.addEventListener('click', () => this.result.textContent = result.toFixed(3)))
+        reset.forEach(res => res.addEventListener('click', () => this.result.textContent = result.toFixed(2)))
     }
 }
 
@@ -148,6 +174,7 @@ class Product2 {
         const selected = this.theFormProduct.elements['product-2-size'];
         const price = priceList.productSize[selected.value];
         const sheets = [...document.querySelectorAll('.sheet-2')]
+        //access conditions
         if (selected) {
             sheets.forEach(sheet => {
                 if (selected.value === 'product-2-a1' || selected.value === 'product-2-a2' || selected.value === 'product-2-a3') {
@@ -175,11 +202,54 @@ class Product2 {
     getProductMaterial() {
         const selected = this.theFormProduct.elements['product-2-material'];
         const price = priceList.productMaterial[selected.value];
+        const selectedIndex = selected.options.selectedIndex
+        const sra3 = document.querySelector('.sra3-condition-inner-2')
+        const B1A1 = [...document.querySelectorAll('.B1-A1-condition-inner-2')]
+        //access conditions
+        if (selectedIndex < 10) {
+            sra3.disabled = true
+            sra3.classList.add('disable-element')
+        } else {
+            sra3.disabled = false
+            sra3.classList.remove('disable-element')
+        }
+        B1A1.forEach(el => {
+            if (selectedIndex > 15) {
+                el.disabled = true
+                el.classList.add('disable-element')
+            }
+            else{
+                el.disabled = false
+                el.classList.remove('disable-element')
+            }
+        })
         return price
     }
     getProductCover() {
         const selected = this.theFormProduct.elements['product-2-cover'];
         const price = priceList.productCover[selected.value];
+        const selectedIndex = selected.options.selectedIndex
+        const sra3 = document.querySelector('.sra3-condition-cover-2')
+        const B1A1 = [...document.querySelectorAll('.B1-A1-condition-cover-2')]
+        //access conditions
+        B1A1.forEach(el => {
+            if (selectedIndex > 8) {
+                el.disabled = true
+                el.classList.add('disable-element')
+            }
+            else{
+                el.disabled = false
+                el.classList.remove('disable-element')
+            }
+        })
+        if(selectedIndex > 0 && selectedIndex < 5){
+            sra3.disabled = true;
+            sra3.classList.add('disable-element')
+        }
+        else{
+            sra3.disabled = false;
+            sra3.classList.remove('disable-element')
+        }
         return price
     }
     getProductBinding() {
@@ -190,19 +260,42 @@ class Product2 {
     getProductSheetsForCover() {
         const selected = this.theFormProduct.elements['product-2-sheets-cover'];
         const price = priceList.productSheets[selected.value];
+        const enabeleMaterialForInner = [...document.querySelectorAll('.condition-cover')]
+        //access conditions
+        if (selected) {
+            enabeleMaterialForInner.forEach(el => {
+                if (selected.value === 'product-2-g1') {
+                    el.classList.add('disable-element')
+                    el.disabled = true
+                } else {
+                    el.classList.remove('disable-element')
+                    el.disabled = false
+                }
+            })
+        }
         return price;
     }
     getProductSheetsForInner() {
         const selected = this.theFormProduct.elements['product-2-sheets-inner'];
         const price = priceList.productSheets[selected.value];
-        const enabeleMaterialForInner = [...document.querySelectorAll('.condition')]
-        if(selected){
-            enabeleMaterialForInner.forEach(el =>{
-                if(selected.value === 'product-2-f1'){
-                   el.classList.add('disable-element')
-                   el.disabled = true
+        const enabeleMaterialForInner = [...document.querySelectorAll('.condition-inner')]
+        const enabeleMaterialForInnerSatin = [...document.querySelectorAll('.condition-inner-satin')]
+        //access conditions
+        if (selected) {
+            enabeleMaterialForInner.forEach(el => {
+                if (selected.value === 'product-2-f1') {
+                    el.classList.add('disable-element')
+                    el.disabled = true
+                } else {
+                    el.classList.remove('disable-element')
+                    el.disabled = false
                 }
-                else{
+            })
+            enabeleMaterialForInnerSatin.forEach(el => {
+                if(selected.value === 'product-2-f2' || selected.value === 'product-2-f3'){
+                    el.classList.add('disable-element')
+                    el.disabled = true
+                } else{
                     el.classList.remove('disable-element')
                     el.disabled = false
                 }
