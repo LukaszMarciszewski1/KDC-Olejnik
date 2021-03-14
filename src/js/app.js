@@ -5,7 +5,7 @@ import {Suppliers} from './modules/Suppliers.js';
 import {Calculator} from './modules/calculation/Calculator.js';
 import '../scss/style.scss';
 
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("DOMContentLoaded", function() {
     const slider = new Slider();
     const info = new Info();
     const suppliers = new Suppliers();

@@ -3,9 +3,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 ion-icon {
-    pointer-events :none;
-    }
+    pointer-events: none;
+}
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -53,10 +55,12 @@ button:active {
 button::selection {
     outline: none;
 }
-select{
+
+select {
     cursor: pointer;
     outline: none;
 }
-label{
+
+label {
     font-weight: lighter;
 }

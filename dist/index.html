@@ -13,41 +13,45 @@
   <div id="app">
     <div class="calculator">
       <div class="calculator-container">
-        <div class="navigation">
+        <div class="navigation-panel">
           <div class="nav-container logo-container">
-            <a href="http://www.olejnik.com.pl/" target="_blank" id="logo">
-              <img src="assets/logo.png" alt="logo">
+            <a href="http://www.olejnik.com.pl/" target="_blank" id="logo" title="www.olejnik.com.pl">
+              <img src="images/logo.png" alt="logo">
               <h1 class="logo-h1">Olejnik</h1>
             </a>
           </div>
           <div class="navigation-buttons-container">
             <div class="nav-container nav-container-print">
               <div class="select-print-container">
-                <button class="select-print-item select-print-item--active">
-                  <img src="assets/open-book.svg" alt="books">
+                <button class="select-print-btn select-print-btn--active">
+                  <img src="images/open-book.svg" alt="books">
                   <p>Książki, <br> broszury, itp.</p>
                 </button>
-                <button class="select-print-item">
-                  <img src="assets/menu.svg" alt="books">
+                <button class="select-print-btn">
+                  <img src="images/vacancies.svg" alt="books">
                   <p>Druki akcydensowe</p>
                 </button>
               </div>
             </div>
-            <div class="nav-container container-icons">
-              <div class="container-icons-wrap">
-                  <a href="mailto:example@olejnik.com.pl" class="mail icon-panel-btn">
-                    <ion-icon class="icon" name="mail-open-outline"></ion-icon>
-                  </a>
-                <a href="https://calendar.google.com/calendar/u/0/r?pli=1" target="_blank" class="calendar icon-panel-btn">
-                  <ion-icon class="icon" name="calendar-outline"></ion-icon>
-                </a>
-              </div>
-              <div class="container-icons-wrap">
-                <button class="notes-btn icon-panel-btn">
-                  <ion-icon class="icon" name="reader-outline"></ion-icon>
+            <div class="nav-container nav-container-small-btn">
+              <div class="small-btn-wraper">
+                <button class="notes-btn small-btn" title="Notes">
+                  <ion-icon class="small-btn-icon" name="reader-outline"></ion-icon>
                 </button>
-                <button class="info icon-panel-btn">
-                  <ion-icon name="information-outline" class="icon"></ion-icon>
+                <button class="suppliers-btn small-btn" title="Dostawcy">
+                  <ion-icon class="small-btn-icon" name="people-outline"></ion-icon>
+                </button>
+              </div>
+              <div class="small-btn-wraper">
+                <button class="mail-btn small-btn" title="Email">
+                  <a href="mailto:lmarciszewski1@gmail.com">
+                    <ion-icon class="small-btn-icon" name="mail-open-outline"></ion-icon>
+                  </a>
+                </button>
+                <button class="calendar-btn small-btn" title="Google kalendarz">
+                  <a href="https://calendar.google.com/calendar/u/0/r?pli=1" target="_blank">
+                    <ion-icon class="small-btn-icon" name="calendar-outline"></ion-icon>
+                  </a>
                 </button>
               </div>
             </div>
@@ -58,7 +62,7 @@
             <div class="product">
               <form action="" id="product-2" class="standard">
                 <div class="form-container">
-                  <h2 class="title form-item">Książki, broszury, itp.</h2>
+                  <h2 class="title-product form-item">Książki, broszury, itp.</h2>
                   <div class="form-inner form-inner-prod2">
                     <p class="form-item">
                       <label for="product-2-count">ilość sztuk</label><br>
@@ -78,34 +82,34 @@
                     <p class="form-item">
                       <label for="product-2-material">media środek</label><br>
                       <select name="product-2-material" id="product-2-material" class="select-price">
-                        <option value="product-2-b1" class="enable" selected="selected">creamy 60g</option>
-                        <option value="product-2-b2" class="enable">creamy 70g</option>
-                        <option value="product-2-b3" class="enable">creamy 80g</option>
-                        <option value="product-2-b4" class="enable">lux cream 70g</option>
-                        <option value="product-2-b5" class="enable">lux cream 80g</option>
-                        <option value="product-2-b6" class="enable">lux cream 90g</option>
-                        <option value="product-2-b7" class="enable">offset 70g</option>
-                        <option value="product-2-b8" class="enable">offset 80g</option>
-                        <option value="product-2-b9" class="enable">offset 90g</option>
-                        <option value="product-2-b10" class="enable">offset 100g</option>
+                        <option value="product-2-b1" class="condition-inner">creamy 60g</option>
+                        <option value="product-2-b2" class="condition-inner">creamy 70g</option>
+                        <option value="product-2-b3" class="condition-inner">creamy 80g</option>
+                        <option value="product-2-b4" class="condition-inner">lux cream 70g</option>
+                        <option value="product-2-b5" class="condition-inner">lux cream 80g</option>
+                        <option value="product-2-b6" class="condition-inner">lux cream 90g</option>
+                        <option value="product-2-b7" class="condition-inner">offset 70g</option>
+                        <option value="product-2-b8" class="condition-inner">offset 80g</option>
+                        <option value="product-2-b9" class="condition-inner">offset 90g</option>
+                        <option value="product-2-b10" class="condition-inner">offset 100g</option>
                         <option value="product-2-b11">kreda 90g</option>
-                        <option value="product-2-b12">kreda 100g</option>
+                        <option value="product-2-b12" selected>kreda 100g</option>
                         <option value="product-2-b13">kreda 115g</option>
                         <option value="product-2-b14">kreda 130g</option>
                         <option value="product-2-b15">kreda 150g</option>
-                        <option value="product-2-b16">satyna 90g</option>
-                        <option value="product-2-b17">satyna 100g</option>
-                        <option value="product-2-b18">satyna 120g</option>
-                        <option value="product-2-b19">satyna 160g</option>
+                        <option value="product-2-b16" class="condition-inner-satin">satyna 90g</option>
+                        <option value="product-2-b17" class="condition-inner-satin">satyna 100g</option>
+                        <option value="product-2-b18" class="condition-inner-satin">satyna 120g</option>
+                        <option value="product-2-b19" class="condition-inner-satin">satyna 160g</option>
                       </select>
                     </p>
                     <p class="form-item">
                       <label for="product-2-cover">media okładka</label><br>
                       <select name="product-2-cover" id="product-2-cover" class="select-price">
                         <option value="product-2-h1" selected>brak</option>
-                        <option value="product-2-h2">karton GC1 230g</option>
-                        <option value="product-2-h3">karton GC1 250g</option>
-                        <option value="product-2-h4">karton GC1 300g</option>
+                        <option value="product-2-h2" class="condition-cover">karton GC1 230g</option>
+                        <option value="product-2-h3" class="condition-cover">karton GC1 250g</option>
+                        <option value="product-2-h4" class="condition-cover">karton GC1 300g</option>
                         <option value="product-2-h5">kreda 200g</option>
                         <option value="product-2-h6">kreda 250g</option>
                         <option value="product-2-h7">kreda 300g</option>
@@ -120,11 +124,13 @@
                       <label for="product-2-print">druk okładki</label><br>
                       <select name="product-2-print" id="product-2-print" class="select-price">
                         <option value="product-2-c1" selected="selected">brak</option>
-                        <option value="product-2-c2">4 + 0 kolor</option>
-                        <option value="product-2-c3">4 + 1 kolor</option>
-                        <option value="product-2-c4">4 + 4 kolor</option>
-                        <option value="product-2-c5">1 + 0</option>
-                        <option value="product-2-c6">1 + 1</option>
+                        <option value="product-2-c2">4 + 0 kolorowa</option>
+                        <option value="product-2-c3">4 + 1 kolorowa</option>
+                        <option value="product-2-c4">4 + 4 kolorowa</option>
+                        <option value="product-2-c5">1 + 0 kolorowa</option>
+                        <option value="product-2-c6">1 + 1 kolorowa</option>
+                        <option value="product-2-c7">1 + 0 czarno-biała</option>
+                        <option value="product-2-c8">1 + 1 czarno-biała</option>
                       </select>
                     </p>
                     <p class="form-item">
@@ -151,17 +157,23 @@
                     <p class="form-item">
                       <label for="product-2-sheets-cover">arkusze okładka</label><br>
                       <select name="product-2-sheets-cover" id="product-2-sheets-cover" class="select-price">
-                        <option value="product-2-g1" selected="selected">SRA3</option>
-                        <option value="product-2-g2">arkusz B1</option>
-                        <option value="product-2-g3">arkusz A1</option>
+                        <option class="sheet-2 sheet-2-sra3 sra3-condition-cover-2" value="product-2-g1"
+                          selected="selected">SRA3</option>
+                        <option class="sheet-2 sheet-2-B1 B1-A1-condition-cover-2" value="product-2-g2">arkusz B1
+                        </option>
+                        <option class="sheet-2 sheet-2-A1 B1-A1-condition-cover-2" value="product-2-g3">arkusz A1
+                        </option>
                       </select>
                     </p>
                     <p class="form-item">
                       <label for="product-2-sheets-inner">arkusze środek</label><br>
                       <select name="product-2-sheets-inner" id="product-2-sheets-inner" class="select-price">
-                        <option value="product-2-f1" class="enable-sheets">SRA3</option>
-                        <option value="product-2-f2" selected="selected">arkusz B1</option>
-                        <option value="product-2-f3">arkusz A1</option>
+                        <option class="sheet-2 sheet-2-sra3 sra3-condition-inner-2" value="product-2-f1"
+                          class="enable-sheets" selected>SRA3</option>
+                        <option class="sheet-2 sheet-2-B1 B1-A1-condition-inner-2" value="product-2-f2">arkusz B1
+                        </option>
+                        <option class="sheet-2 sheet-2-A1 B1-A1-condition-inner-2" value="product-2-f3">arkusz A1
+                        </option>
                       </select>
                     </p>
                     <p class="checkbox">
@@ -195,17 +207,17 @@
                 </div>
                 <div class="product-2-price price-sum">
                   <div class="price-sum-result product-2-price-result">
-                    <h3>Razem: <span>0</span> zł</h3>
+                    <h3 class="price-sum-h3">Razem: <span>0</span> zł</h3>
                     <input type="reset" class="reset"></input>
                   </div>
-                  <p class="price-sum-desc">Ceny wygenerowane przez kalkulator są cenami orientacyjnymi</p>
+                  <p class="price-sum-desc">Kalkulator oblicza bazowe koszty wybranych pozycji w produkcie</p>
                 </div>
               </form>
             </div>
             <div class="product">
               <form action="" id="product-1" data-option="standard" class="standard">
                 <div class="form-container">
-                  <h2 class="title form-item">Druk akcydensów</h2>
+                  <h2 class="title-product form-item">Druk akcydensów</h2>
                   <div class="form-inner">
                     <p class="form-item">
                       <label for="product-1-count">ilość sztuk</label><br>
@@ -236,28 +248,28 @@
                         <option value="product-1-b7">kreda 250 g</option>
                         <option value="product-1-b8">kreda 300 g</option>
                         <option value="product-1-b9">kreda 350 g</option>
-                        <option value="product-1-b10">satyna 90 g</option>
-                        <option value="product-1-b11">satyna 100 g</option>
-                        <option value="product-1-b12">satyna 120 g</option>
-                        <option value="product-1-b13">satyna 160 g</option>
-                        <option value="product-1-b14">satyna 200 g</option>
-                        <option value="product-1-b15">satyna 250 g</option>
-                        <option value="product-1-b16">satyna 300 g</option>
-                        <option value="product-1-b17">satyna 350 g</option>
-                        <option value="product-1-b18">DNS 300 g</option>
+                        <option value="product-1-b10" class="condition-satin">satyna 90 g</option>
+                        <option value="product-1-b11" class="condition-satin">satyna 100 g</option>
+                        <option value="product-1-b12" class="condition-satin">satyna 120 g</option>
+                        <option value="product-1-b13" class="condition-satin">satyna 160 g</option>
+                        <option value="product-1-b14" class="condition-satin">satyna 200 g</option>
+                        <option value="product-1-b15" class="condition-satin">satyna 250 g</option>
+                        <option value="product-1-b16" class="condition-satin">satyna 300 g</option>
+                        <option value="product-1-b17" class="condition-satin">satyna 350 g</option>
+                        <option value="product-1-b18" class="condition-satin">DNS 300 g</option>
                       </select>
                     </p>
                     <p class="form-item">
                       <label for="product-1-print">druk</label><br>
                       <select name="product-1-print" id="product-1-print" class="select-price">
                         <option value="product-1-c1" selected="selected">brak</option>
-                        <option value="product-1-c2">4 + 0 kolor</option>
-                        <option value="product-1-c3">4 + 1 kolor</option>
-                        <option value="product-1-c4">4 + 4 kolor</option>
-                        <option value="product-1-c5">1 + 0 kolor</option>
-                        <option value="product-1-c6">1 + 1 kolor</option>
-                        <option value="product-1-c7">1 + 0 czarno-biały</option>
-                        <option value="product-1-c8">1 + 1 czarno-biały</option>
+                        <option value="product-1-c2">4 + 0 kolorowa</option>
+                        <option value="product-1-c3">4 + 1 kolorowa</option>
+                        <option value="product-1-c4">4 + 4 kolorowa</option>
+                        <option value="product-1-c5">1 + 0 kolorowa</option>
+                        <option value="product-1-c6">1 + 1 kolorowa</option>
+                        <option value="product-1-c7">1 + 0 czarno-biała</option>
+                        <option value="product-1-c8">1 + 1 czarno-biała</option>
                       </select>
                     </p>
                     <p class="form-item">
@@ -286,9 +298,10 @@
                     <p class="form-item">
                       <label for="product-1-sheets">arkusze</label><br>
                       <select name="product-1-sheets" id="product-1-sheets" class="select-price">
-                        <option value="product-1-f1" selected="selected">SRA3</option>
-                        <option value="product-1-f2">arkusz B1</option>
-                        <option value="product-1-f3">arkusz A1</option>
+                        <option class="sheet-1 sheet-1-sra3 sra3-condition-1" value="product-1-f1" selected="selected">
+                          SRA3</option>
+                        <option class="sheet-1 sheet-1-B1 B1-A1-condition-1" value="product-1-f2">arkusz B1</option>
+                        <option class="sheet-1 sheet-1-A1 B1-A1-condition-1" value="product-1-f3">arkusz A1</option>
                       </select>
                     </p>
                     <p class="checkbox">
@@ -300,37 +313,187 @@
                 </div>
                 <div class="product-1-price price-sum">
                   <div class="price-sum-result product-1-price-result">
-                    <h3>Razem: <span>0</span> zł</h3>
+                    <h3 class="price-sum-h3">Razem: <span>0</span> zł</h3>
                     <input type="reset" class="reset"></input>
                   </div>
-                  <p class="price-sum-desc">Ceny wygenerowane przez kalkulator są cenami orientacyjnymi</p>
+                  <p class="price-sum-desc">Kalkulator oblicza bazowe koszty wybranych pozycji w produkcie</p>
                 </div>
               </form>
             </div>
           </div>
         </div>
       </div>
-
       <!-- //bottom panel----------------------------->
       <div class="bottom-panel">
         <div class="description-app">
           <h1 class="description-app-h1">KALKULATOR CEN FIRMY OLEJNIK</h1>
         </div>
-        <div class="clock">
-          <h2></h2>
+        <button class="info-btn" title="Informacje">
+          <ion-icon name="information-outline" class="icon-info"></ion-icon>
+        </button>
+        <!-- //info container----------------------------->
+        <div class="info-container">
+          <div class="info-content">
+            <div class="info-topbar">
+              <h3 class="info-title">Informacje</h3>
+              <button class="info-close">
+                <ion-icon name="close-circle-outline" class="close-icon"></ion-icon>
+              </button>
+            </div>
+            <div class="info-text-container">
+              <p class="info-txt">
+                <ul><strong>Drukarka kolorowa x 1 klik</strong>
+                  <li>format A3 4 + 0 = 0,12 zł, do formatu B4 włącznie = 0,12 zł / 2</li>
+                  <li>format A3 1 + 0 = 0,072 zł, do formatu B4 włącznie = 0,072 zł / 2</li>
+                </ul>
+                <ul><strong>Drukarka czarnobiała x 1 klik</strong>
+                  <li>format A4 lub B4 1 + 0 = 0,01 zł, formaty mniejsze od A4 = 0,01 zł / 2</li>
+                </ul>
+                <ul><strong>Foliowanie</strong>
+                  <li>Do formatu SRA3 lub B4 = 0,3 zł <br>
+                    <small>(Jeżeli użytek nie będzie w pełnym formacie SRA3 lub B4
+                      to cena będzie taka jak za format SRA3)</small> </li>
+                </ul>
+                <ul><strong>Bigowanie</strong>
+                  <li>big x 1 = 0,1 zł</li>
+                </ul>
+                <ul><strong>Zaokrąglanie narożników</strong>
+                  <li>narożnik x 1 = 0,1 zł</li>
+                </ul>
+                <ul><strong>Oprawa okładki</strong>
+                  <li>zszywana x 1 = 0,3 zł</li>
+                  <li>klejona x 1 = 0,5 zł</li>
+                  <li>spiralna x 1 = 0,3 zł</li>
+                </ul>
+                <ul><strong>Formaty arkuszy papieru</strong>
+                  <li>SRA3 - 320 mm x 450 mm</li>
+                  <li>A1 - 610 mm x 860 mm</li>
+                  <li>B1 - 700 mm x 1000 mm</li>
+                </ul>
+                <ul><strong>Papiery satynowe PRO-DESIGN</strong>
+                  <li>90g SRA3 x 1 arkusz - 0,123 zł</li>
+                  <li>100g SRA3 x 1 arkusz - 0,136 zł</li>
+                  <li>120g SRA3 x 1 arkusz - 0,164 zł</li>
+                  <li>160g SRA3 x 1 arkusz - 0,219 zł</li>
+                  <li>200g SRA3 x 1 arkusz - 0,300 zł</li>
+                  <li>250g SRA3 x 1 arkusz - 0,394 zł</li>
+                  <li>300g SRA3 x 1 arkusz - 0,473 zł</li>
+                  <li>350g SRA3 x 1 arkusz - 0,592 zł</li>
+                </ul>
+                <ul><strong>Papier DNS</strong>
+                  <li>SRA3 300g x 1 arkusz - 0,592 zł</li>
+                </ul>
+                <ul><strong>Papiery kredowe Experia</strong>
+                  <li>90g SRA3 x 1 ark - 0,09 zł, A1 x 1 ark - 0,169 zł, B1 x 1 ark - 0,23 zł</li>
+                  <li>100g SRA3 x 1 ark - 0,10 zł, A1 x 1 ark - 0,18 zł, B1 x 1 ark - 0,25 zł</li>
+                  <li>115g SRA3 x 1 ark - 0,118 zł, A1 x 1 ark - 0,21 zł, B1 x 1 ark - 0,28 zł</li>
+                  <li>130g SRA3 x 1 ark - 0,133 zł, A1 x 1 ark - 0,23 zł, B1 x 1 ark - 0,32 zł</li>
+                  <li>150g SRA3 x 1 ark - 0,154 zł, A1 x 1 ark - 0,27 zł, B1 x 1 ark - 0,37 zł</li>
+                  <li>170g SRA3 x 1 ark - 0,174 zł, A1 x 1 ark - 0,303 zł, B1 x 1 ark - 0,42 zł</li>
+                  <li>200g SRA3 x 1 ark - 0,205 zł, A1 x 1 ark - 0,357 zł, B1 x 1 ark - 0,49 zł</li>
+                  <li>250g SRA3 x 1 ark - 0,264 zł, A1 x 1 ark - 0,459 zł, B1 x 1 ark - 0,63 zł</li>
+                  <li>300g SRA3 x 1 ark - 0,326 zł, A1 x 1 ark - 0,567 zł, B1 x 1 ark - 0,78 zł</li>
+                  <li>350g SRA3 x 1 ark - 0,386 zł, A1 x 1 ark - 0,679 zł, B1 x 1 ark - 0,92 zł</li>
+                </ul>
+                <ul><strong>Papiery offsetowe</strong>
+                  <li>70g A1 x 1 ark - 0,12 zł, B1 x 1 ark - 0,16 zł</li>
+                  <li>80g A1 x 1 ark - 0,15 zł, B1 x 1 ark - 0,19 zł</li>
+                  <li>90g A1 x 1 ark - 0,16 zł, B1 x 1 ark - 0,20 zł</li>
+                  <li>100g A1 x 1 ark - 0,17 zł, B1 x 1 ark - 0,23 zł</li>
+                </ul>
+                <ul><strong>Papiery wolumenowe creamy</strong>
+                  <li>60g A1 x 1 ark - 0,12 zł, B1 x 1 ark - 0,17 zł</li>
+                  <li>70g A1 x 1 ark - 0,14 zł, B1 x 1 ark - 0,20 zł</li>
+                  <li>80g A1 x 1 ark - 0,16 zł, B1 x 1 ark - 0,23 zł</li>
+                </ul>
+                <ul><strong>Papiery wolumenowe Lux cream</strong>
+                  <li>70g A1 x 1 ark - 0,16 zł, B1 x 1 ark - 0,22 zł</li>
+                  <li>80g A1 x 1 ark - 0,19 zł, B1 x 1 ark - 0,26 zł</li>
+                  <li>90g A1 x 1 ark - 0,21 zł, B1 x 1 ark - 0,28 zł</li>
+                </ul>
+                <ul><strong>Papiery wolumenowe karton Neo Board</strong>
+                  <li>230g A1 x 1 ark - 0,57 zł, B1 x 1 ark - 0,77 zł</li>
+                  <li>250g A1 x 1 ark - 0,60 zł, B1 x 1 ark - 0,80 zł</li>
+                  <li>300g A1 x 1 ark - 0,72 zł, B1 x 1 ark - 0,97 zł</li>
+                </ul>
+                <ul><strong>Dodatkowe informacje</strong>
+                  <li><strong class="add-indormation-txt">druk środka</strong> wybierając arkusze środka trzeba mieć na
+                    uwadze że dwie strony środka
+                    to jeden arkusz papieru zadrukowany dwustronnie np.
+                    dwie strony środka w formacie A4 to jeden arkusz papieru A4 zadrukowany dwustronnie.
+                  </li>
+                  <li><strong class="add-indormation-txt">cena środka papieru</strong> żeby sprawdzić jaka jest cena
+                    papieru za arkusz SRA3, A1 lub
+                    B1, można ustawić format druku i podwojoną ilość stron środka jw. mieszczącą się na danym arkuszu
+                    papieru.
+                  </li>
+                  <li><strong class="add-indormation-txt">elementy wyszarzone</strong> informacja o braku materiału w
+                    danym arkuszu lub braku
+                    arkusza w danym maretiale. Formaty A wyłącznie mogą być drukowane na arkuszach A1 i SRA3, formaty
+                    B na arkuszach B i SRA3
+                  </li>
+                </ul>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
       <!-- //notes container----------------------------->
       <div class="notes-container">
-        <div class="top-bar">
-          <h3 class="notes-title">Notatki</h3>
-          <button class="save-notes"><ion-icon name="save-outline" class="save-icon"></ion-icon></button> 
-          <button class="close"><ion-icon name="close-circle-outline" class="close-icon"></ion-icon></button>
+        <div class="notes-topbar">
+          <div class="notes-topbar-left-panel">
+            <h3 class="notes-title">Notatki</h3>
+            <button class="save-notes">
+              <ion-icon name="save-outline" class="save-icon"></ion-icon>
+            </button>
+            <button class="delete-notes">
+              <ion-icon name="trash-outline"></ion-icon>
+            </button>
+          </div>
+          <button class="close close-notes">
+            <ion-icon name="chevron-back-outline" class="close-icon"></ion-icon>
+          </button>
         </div>
-          <textarea name="" id="" cols="30" rows="16" placeholder="Dodaj notatkę." class="textarea"></textarea>
+        <textarea name="" id="" cols="30" rows="16" placeholder="Dodaj notatkę." class="notes-textarea"></textarea>
+      </div>
+      <!-- //suppliers container----------------------------->
+      <div class="suppliers-container">
+        <div class="suppliers-topbar">
+          <div class="alert">
+            <ion-icon name="alert-circle-outline" class="alert-icon"></ion-icon>
+            <p class="alert-txt"></p>
+            <button class="acept-alert">OK</button>
+          </div>
+          <h3 class="info-title">Dostawcy materiałów</h3>
+          <button class="close suppliers-close">
+            <ion-icon name="chevron-back-outline" class="close-icon"></ion-icon>
+          </button>
+        </div>
+        <div class="suppliers-add">
+          <form class="suppliers-form" id="suppliers-form-to-do">
+            <div class="form-group">
+              <label for="name-company">nazwa firmy</label><br>
+              <input type="text" id="name-company" placeholder="nazwa firmy" required>
+            </div>
+            <div class="form-group">
+              <label for="nr-phone">nr. telefonu</label><br>
+              <input type="tel" pattern="[0-9]{9}" id="nr-phone" placeholder="nr. telefonu" required>
+            </div>
+            <div class="form-group">
+              <label for="email">email</label><br>
+              <input type="email" id="email" placeholder="email" required>
+            </div>
+            <div class="form-group">
+              <label for="www-address">www adres</label><br>
+              <input type="url" id="www-address" placeholder="https://www.adres.pl/" required>
+            </div>
+            <button type="submit" class="btn-add-to-list" value="Dodaj">Dodaj</button>
+          </form>
+        </div>
+        <div class="suppliers-list-container">
+        </div>
       </div>
     </div>
-  </div>
 <script type="text/javascript" src="main.bundle.js"></script></body>
 
 </html>

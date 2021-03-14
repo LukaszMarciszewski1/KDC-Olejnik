@@ -1,9 +1,7 @@
 @import "_mixins";
 @import "_variables";
-@import "_animations";
 @import "_normalize";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
-
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -154,7 +152,6 @@ button {
     padding: 10px;
     margin-right: 20px;
     font-size: 35px;
-
     &:last-child {
         margin-right: 0;
     }
@@ -166,6 +163,7 @@ button {
     .small-btn-icon {
         color: $font-color;
     }
+
 }
 
 //bottom panel--------------------------------------->
