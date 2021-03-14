@@ -16,6 +16,7 @@ productSize['product-2-a4'] = 0.088; //b4
 productSize['product-2-a5'] = 0.044; //b5
 productSize['product-2-a6'] = 0.022; //b6
 
+//MATERIAL
 // SIZE(A3) * productMaterial(modifier) = MATERIAL PRICE --- for example -> 115g kreda SRA3 0,118 - the price of chalk in sra3 format is 0,118 --->
 // size(0.12474) * productMaterial(0.946) = 0,118 )
 const productMaterial = new Array();
@@ -57,6 +58,9 @@ productMaterial['product-2-b17'] = 1.090; //100g satyna SRA3-0,136
 productMaterial['product-2-b18'] = 1.315; //120g satyna SRA3-0,164
 productMaterial['product-2-b19'] = 1.756; //160g satyna SRA3-0,219
 
+//SHEETS
+// modificator(productSheets) * ( y * size) = price
+// price / modificator(productSheets) = result => result / size(format(B1 or A1) / A3) = result => result / A3 = modificator(productCover)
 const productSheets = new Array();
 productSheets['product-1-f1'] = 1; //SRA3
 productSheets['product-1-f2'] = 0.4237; //B1 0.389
@@ -68,6 +72,7 @@ productSheets['product-2-g1'] = 1; //SRA3 okładka
 productSheets['product-2-g2'] = 0.4237; //B1 okładka 
 productSheets['product-2-g3'] = 0.4410; //A1 okładka 0.4346  0.4480;
 
+//MATERIAL COVER
 const productCover = new Array();
 productCover['product-2-h1'] = 0; //brak
 productCover['product-2-h2'] = 2.5813; //SRA3 karton gc1 230g
@@ -82,22 +87,27 @@ productCover['product-2-h10'] = 3.159; //250g satyna SRA3 0,394
 productCover['product-2-h11'] = 3.792; //300g satyna SRA3 0,473
 productCover['product-2-h12'] = 4.746; //350g satyna SRA3 0,592
 
-// modificator(productSheets) * ( y * size) = price
-// price / modificator(productSheets) = result => result / size(format(B1 or A1) / A3) = result => result / A3 = modificator(productCover)
-
+//CREASE
 const productCrease = new Array();
 productCrease['product-1-e1'] = 0;
 productCrease['product-1-e2'] = 0.1;
 productCrease['product-1-e3'] = 0.2;
 productCrease['product-1-e4'] = 0.3;
 productCrease['product-1-e5'] = 0.4;
-productCrease['product-1-e5'] = 0.5;
+productCrease['product-1-e6'] = 0.5;
 
+//BINDING
 const productBinding = new Array();
 productBinding ['product-2-e1'] = 0;
 productBinding ['product-2-e2'] = 0.3;
 productBinding ['product-2-e3'] = 0.5;
 productBinding ['product-2-e4'] = 0.6;
+
+//FOIL
+const foilPrice = 0.3
+
+//CORNERS
+const corners = 0.1
 
 export const priceList = {
     productSize,
@@ -106,4 +116,6 @@ export const priceList = {
     productCover,
     productCrease,
     productBinding,
+    foilPrice,
+    corners,
 }

@@ -3,6 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+ion-icon {
+    pointer-events :none;
+    }
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,

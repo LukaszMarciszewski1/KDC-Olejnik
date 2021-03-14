@@ -1,5 +1,5 @@
 export class Foil {
-  constructor(theProductForm, selectForm, sel1, sel2, sel3, sel4, sel5, sel6, sel7) {
+  constructor(theProductForm, selectForm, sel1, sel2, sel3, sel4, sel5, sel6, sel7, foilPrice) {
     this.sel1 = sel1
     this.sel2 = sel2
     this.sel3 = sel3
@@ -9,7 +9,7 @@ export class Foil {
     this.sel7 = sel7
     this.theProductForm = theProductForm
     this.selected = this.theProductForm.elements[selectForm]
-    this.price = 0.3
+    this.price = foilPrice
   }
   getPriceFoil(countEl, sizeEl) {
     const sizeSRA3 = 0.12474

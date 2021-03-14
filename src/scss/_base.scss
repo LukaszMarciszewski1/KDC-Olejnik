@@ -198,7 +198,9 @@ button {
     &:hover {
         background-color: $standard;
     }
-
+    &:active{
+        transform: scale(1.1);
+    }
     .icon-info {
         font-size: 32px;
         color: $font-color;
@@ -248,10 +250,10 @@ button {
         justify-content: space-between;
         align-items: center;
         margin-bottom: 15px;
-        color: $standard;
+        color: $font-color-dark;
         .info-close {
             @include flexCenter;
-            color: $standard;
+            color: $font-color-dark;
             background-color: transparent;
 
             &:active {
@@ -263,42 +265,40 @@ button {
             }
         }
     }
+}
+.info-text-container {
+    max-height: 400px;
+    overflow-y: scroll;
+    padding-right: 10px;
+  
+    &::-webkit-scrollbar {
+        width: 8px;
+        background-color: darken($lightBg, 7%);
+        border-radius: 10px;
+        cursor: pointer;
+    }
 
-    .info-text-container {
-        max-height: 400px;
-        overflow-y: scroll;
-        padding-right: 10px;
-      
-        &::-webkit-scrollbar {
-            width: 8px;
-            background-color: darken($lightBg, 7%);
-            border-radius: 10px;
-            cursor: pointer;
-        }
-
-        &::-webkit-scrollbar-thumb {
-            background-color: darken($lightBg, 14%);
-            border-radius: 10px;
-
-        }
-        ul{
-            margin-top: 7px;
-            // strong{
-            //     color: $standard;
-            // }
-        }
-        ul , li{
-            font-size: 14px;
-            letter-spacing: 0px;
-        }
+    &::-webkit-scrollbar-thumb {
+        background-color: darken($lightBg, 14%);
+        border-radius: 10px;
 
     }
+    ul{
+        margin-top: 7px;
+    }
+    ul , li{
+        font-size: 14px;
+        letter-spacing: 0px;
+    }
+
 }
 
 .info-container--active {
     display: block;
 }
-
+.add-indormation-txt{
+    color: $font-color-dark;
+}
 //notes----------------------------------------------------->
 .notes-container {
     @include sliding-container;
@@ -344,7 +344,7 @@ button {
     background-color: $lightBg;
     width: 100%;
     height: 100%;
-    border-radius: 7px;
+    border-radius: 5px;
     padding: 6px 10px;
     overflow-x: hidden;
     min-height: 400px;
@@ -1218,6 +1218,11 @@ button {
         max-width: 520px;
         height: 700px;
     }
+    .info-container {
+        right: 110px;
+        bottom: 0;
+        width: 500px;
+    }
 }
 
 @media screen and (max-width: 748px) {
@@ -1257,14 +1262,13 @@ button {
             align-self: flex-start;
         }
     }
+    .info-container {
+        width: 400px;
+    }
 
 }
 
 @media screen and (max-width: 648px) {
-    .bottom-panel {
-        justify-content: center;
-    }
-
     //form------>
     .select-price {
         width: 190px;
@@ -1290,6 +1294,15 @@ button {
     //notes--->
     .notes-container {
         max-width: 500px;
+    }
+    .info-container {
+        width: 400px;
+        bottom: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+        &:before{
+            display: none;
+        }
     }
 
 }
@@ -1414,6 +1427,26 @@ button {
     .notes-container {
         max-width: 330px;
     }
+        .bottom-panel {
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+        height: auto;
+    }
+    .info-btn{
+        margin-bottom: 15px;
+    }
+    .info-container {
+        width: 350px;
+        bottom: 120px;
+    }
+    .info-text-container {
+        ul , li{
+            font-size: 13px;
+        }
+    }
+    .description-app-h1{
+        text-align: center;
+    }
 }
 
 @media screen and (max-width: 470px) {
@@ -1503,6 +1536,9 @@ button {
 
     .notes-container--active {
         left: 0;
+    }
+    .info-container {
+        width: 310px;
     }
 }
 

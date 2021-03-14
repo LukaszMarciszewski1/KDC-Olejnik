@@ -15,7 +15,7 @@
       <div class="calculator-container">
         <div class="navigation-panel">
           <div class="nav-container logo-container">
-            <a href="http://www.olejnik.com.pl/" target="_blank" id="logo">
+            <a href="http://www.olejnik.com.pl/" target="_blank" id="logo" title="www.olejnik.com.pl">
               <img src="assets/logo.png" alt="logo">
               <h1 class="logo-h1">Olejnik</h1>
             </a>
@@ -35,20 +35,20 @@
             </div>
             <div class="nav-container nav-container-small-btn">
               <div class="small-btn-wraper">
-                <button class="notes-btn small-btn">
+                <button class="notes-btn small-btn" title="Notes">
                   <ion-icon class="small-btn-icon" name="reader-outline"></ion-icon>
                 </button>
-                <button class="suppliers-btn small-btn">
+                <button class="suppliers-btn small-btn" title="Dostawcy">
                   <ion-icon class="small-btn-icon" name="people-outline"></ion-icon>
                 </button>
               </div>
               <div class="small-btn-wraper">
-                <button class="mail-btn small-btn">
-                  <a href="mailto:example@olejnik.com.pl">
+                <button class="mail-btn small-btn" title="Email">
+                  <a href="mailto:lmarciszewski1@gmail.com">
                     <ion-icon class="small-btn-icon" name="mail-open-outline"></ion-icon>
                   </a>
                 </button>
-                <button class="calendar-btn small-btn">
+                <button class="calendar-btn small-btn" title="Google kalendarz">
                   <a href="https://calendar.google.com/calendar/u/0/r?pli=1" target="_blank">
                     <ion-icon class="small-btn-icon" name="calendar-outline"></ion-icon>
                   </a>
@@ -124,11 +124,13 @@
                       <label for="product-2-print">druk okładki</label><br>
                       <select name="product-2-print" id="product-2-print" class="select-price">
                         <option value="product-2-c1" selected="selected">brak</option>
-                        <option value="product-2-c2">4 + 0 kolor</option>
-                        <option value="product-2-c3">4 + 1 kolor</option>
-                        <option value="product-2-c4">4 + 4 kolor</option>
-                        <option value="product-2-c5">1 + 0</option>
-                        <option value="product-2-c6">1 + 1</option>
+                        <option value="product-2-c2">4 + 0 kolorowa</option>
+                        <option value="product-2-c3">4 + 1 kolorowa</option>
+                        <option value="product-2-c4">4 + 4 kolorowa</option>
+                        <option value="product-2-c5">1 + 0 kolorowa</option>
+                        <option value="product-2-c6">1 + 1 kolorowa</option>
+                        <option value="product-2-c7">1 + 0 czarno-biała</option>
+                        <option value="product-2-c8">1 + 1 czarno-biała</option>
                       </select>
                     </p>
                     <p class="form-item">
@@ -155,17 +157,23 @@
                     <p class="form-item">
                       <label for="product-2-sheets-cover">arkusze okładka</label><br>
                       <select name="product-2-sheets-cover" id="product-2-sheets-cover" class="select-price">
-                        <option class="sheet-2 sheet-2-sra3 sra3-condition-cover-2" value="product-2-g1" selected="selected">SRA3</option>
-                        <option class="sheet-2 sheet-2-B1 B1-A1-condition-cover-2" value="product-2-g2">arkusz B1</option>
-                        <option class="sheet-2 sheet-2-A1 B1-A1-condition-cover-2" value="product-2-g3">arkusz A1</option>
+                        <option class="sheet-2 sheet-2-sra3 sra3-condition-cover-2" value="product-2-g1"
+                          selected="selected">SRA3</option>
+                        <option class="sheet-2 sheet-2-B1 B1-A1-condition-cover-2" value="product-2-g2">arkusz B1
+                        </option>
+                        <option class="sheet-2 sheet-2-A1 B1-A1-condition-cover-2" value="product-2-g3">arkusz A1
+                        </option>
                       </select>
                     </p>
                     <p class="form-item">
                       <label for="product-2-sheets-inner">arkusze środek</label><br>
                       <select name="product-2-sheets-inner" id="product-2-sheets-inner" class="select-price">
-                        <option class="sheet-2 sheet-2-sra3 sra3-condition-inner-2" value="product-2-f1" class="enable-sheets" selected>SRA3</option>
-                        <option class="sheet-2 sheet-2-B1 B1-A1-condition-inner-2" value="product-2-f2">arkusz B1</option>
-                        <option class="sheet-2 sheet-2-A1 B1-A1-condition-inner-2" value="product-2-f3">arkusz A1</option>
+                        <option class="sheet-2 sheet-2-sra3 sra3-condition-inner-2" value="product-2-f1"
+                          class="enable-sheets" selected>SRA3</option>
+                        <option class="sheet-2 sheet-2-B1 B1-A1-condition-inner-2" value="product-2-f2">arkusz B1
+                        </option>
+                        <option class="sheet-2 sheet-2-A1 B1-A1-condition-inner-2" value="product-2-f3">arkusz A1
+                        </option>
                       </select>
                     </p>
                     <p class="checkbox">
@@ -255,13 +263,13 @@
                       <label for="product-1-print">druk</label><br>
                       <select name="product-1-print" id="product-1-print" class="select-price">
                         <option value="product-1-c1" selected="selected">brak</option>
-                        <option value="product-1-c2">4 + 0 kolor</option>
-                        <option value="product-1-c3">4 + 1 kolor</option>
-                        <option value="product-1-c4">4 + 4 kolor</option>
-                        <option value="product-1-c5">1 + 0 kolor</option>
-                        <option value="product-1-c6">1 + 1 kolor</option>
-                        <option value="product-1-c7">1 + 0 czarno-biały</option>
-                        <option value="product-1-c8">1 + 1 czarno-biały</option>
+                        <option value="product-1-c2">4 + 0 kolorowa</option>
+                        <option value="product-1-c3">4 + 1 kolorowa</option>
+                        <option value="product-1-c4">4 + 4 kolorowa</option>
+                        <option value="product-1-c5">1 + 0 kolorowa</option>
+                        <option value="product-1-c6">1 + 1 kolorowa</option>
+                        <option value="product-1-c7">1 + 0 czarno-biała</option>
+                        <option value="product-1-c8">1 + 1 czarno-biała</option>
                       </select>
                     </p>
                     <p class="form-item">
@@ -290,7 +298,8 @@
                     <p class="form-item">
                       <label for="product-1-sheets">arkusze</label><br>
                       <select name="product-1-sheets" id="product-1-sheets" class="select-price">
-                        <option class="sheet-1 sheet-1-sra3 sra3-condition-1" value="product-1-f1" selected="selected">SRA3</option>
+                        <option class="sheet-1 sheet-1-sra3 sra3-condition-1" value="product-1-f1" selected="selected">
+                          SRA3</option>
                         <option class="sheet-1 sheet-1-B1 B1-A1-condition-1" value="product-1-f2">arkusz B1</option>
                         <option class="sheet-1 sheet-1-A1 B1-A1-condition-1" value="product-1-f3">arkusz A1</option>
                       </select>
@@ -319,7 +328,7 @@
         <div class="description-app">
           <h1 class="description-app-h1">KALKULATOR CEN FIRMY OLEJNIK</h1>
         </div>
-        <button class="info-btn">
+        <button class="info-btn" title="Informacje">
           <ion-icon name="information-outline" class="icon-info"></ion-icon>
         </button>
         <!-- //info container----------------------------->
@@ -387,31 +396,38 @@
                   <li>350g SRA3 x 1 ark - 0,386 zł, A1 x 1 ark - 0,679 zł, B1 x 1 ark - 0,92 zł</li>
                 </ul>
                 <ul><strong>Papiery offsetowe</strong>
-                  <li>70g A1 x 1 ark - 0,12 zł, B1 x 1 ark - 0,16 zł</li><!-- ok -->
-                  <li>80g A1 x 1 ark - 0,15 zł, B1 x 1 ark - 0,19 zł</li><!-- ok -->
-                  <li>90g A1 x 1 ark - 0,16 zł, B1 x 1 ark - 0,20 zł</li><!-- ok -->
-                  <li>100g A1 x 1 ark - 0,17 zł, B1 x 1 ark - 0,23 zł</li><!-- ok -->
+                  <li>70g A1 x 1 ark - 0,12 zł, B1 x 1 ark - 0,16 zł</li>
+                  <li>80g A1 x 1 ark - 0,15 zł, B1 x 1 ark - 0,19 zł</li>
+                  <li>90g A1 x 1 ark - 0,16 zł, B1 x 1 ark - 0,20 zł</li>
+                  <li>100g A1 x 1 ark - 0,17 zł, B1 x 1 ark - 0,23 zł</li>
                 </ul>
                 <ul><strong>Papiery wolumenowe creamy</strong>
-                  <li>60g A1 x 1 ark - 0,12 zł, B1 x 1 ark - 0,17 zł</li> <!-- ok -->
-                  <li>70g A1 x 1 ark - 0,14 zł, B1 x 1 ark - 0,20 zł</li><!-- ok -->
-                  <li>80g A1 x 1 ark - 0,16 zł, B1 x 1 ark - 0,23 zł</li><!-- ok -->
+                  <li>60g A1 x 1 ark - 0,12 zł, B1 x 1 ark - 0,17 zł</li>
+                  <li>70g A1 x 1 ark - 0,14 zł, B1 x 1 ark - 0,20 zł</li>
+                  <li>80g A1 x 1 ark - 0,16 zł, B1 x 1 ark - 0,23 zł</li>
                 </ul>
                 <ul><strong>Papiery wolumenowe Lux cream</strong>
-                  <li>70g A1 x 1 ark - 0,16 zł, B1 x 1 ark - 0,22 zł</li><!-- ok -->
-                  <li>80g A1 x 1 ark - 0,19 zł, B1 x 1 ark - 0,26 zł</li><!-- ok -->
-                  <li>90g A1 x 1 ark - 0,21 zł, B1 x 1 ark - 0,28 zł</li><!-- ok -->
+                  <li>70g A1 x 1 ark - 0,16 zł, B1 x 1 ark - 0,22 zł</li>
+                  <li>80g A1 x 1 ark - 0,19 zł, B1 x 1 ark - 0,26 zł</li>
+                  <li>90g A1 x 1 ark - 0,21 zł, B1 x 1 ark - 0,28 zł</li>
                 </ul>
                 <ul><strong>Papiery wolumenowe karton Neo Board</strong>
-                  <li>230g A1 x 1 ark - 0,57 zł, B1 x 1 ark - 0,77 zł</li><!-- ok -->
-                  <li>250g A1 x 1 ark - 0,60 zł, B1 x 1 ark - 0,80 zł</li><!-- ok -->
-                  <li>300g A1 x 1 ark - 0,72 zł, B1 x 1 ark - 0,97 zł</li><!-- ok -->
+                  <li>230g A1 x 1 ark - 0,57 zł, B1 x 1 ark - 0,77 zł</li>
+                  <li>250g A1 x 1 ark - 0,60 zł, B1 x 1 ark - 0,80 zł</li>
+                  <li>300g A1 x 1 ark - 0,72 zł, B1 x 1 ark - 0,97 zł</li>
                 </ul>
                 <ul><strong>Dodatkowe informacje</strong>
-                  <li><strong>druk środka</strong> wybierając arkusze środka trzeba mieć na uwadze że dwie strony środka to jeden arkusz papieru zadrukowany dwustronnie np.
+                  <li><strong  class="add-indormation-txt">druk środka</strong> wybierając arkusze środka trzeba mieć na uwadze że dwie strony środka
+                    to jeden arkusz papieru zadrukowany dwustronnie np.
                     dwie strony środka w formacie A4 to jeden arkusz papieru A4 zadrukowany dwustronnie.
                   </li>
-                  <li><strong>cena środka papieru</strong> żeby sprawdzić jaka jest cena papieru za arkusz SRA3, A1 lub B1, można ustawić format druku i podwojoną ilość stron środka jw. mieszczącą się na danym arkuszu papieru.
+                  <li><strong  class="add-indormation-txt">cena środka papieru</strong> żeby sprawdzić jaka jest cena papieru za arkusz SRA3, A1 lub
+                    B1, można ustawić format druku i podwojoną ilość stron środka jw. mieszczącą się na danym arkuszu
+                    papieru.
+                  </li>
+                  <li><strong  class="add-indormation-txt">elementy wyszarzone</strong> informacja o braku materiału w danym arkuszu lub braku
+                    arkusza w danym maretiale. Formaty A wyłącznie mogą być drukowane na arkuszach A1 i SRA3, formaty
+                    B na arkuszach B i SRA3
                   </li>
                 </ul>
               </p>

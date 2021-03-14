@@ -106,7 +106,7 @@ export class Suppliers {
                         <div class="suppliers-item"><p>${item.nrPhone}</p></div>
                         <div class="suppliers-item suppliers-item-link"><a href="mailto:${item.email}">${item.email}</a></div>
                         <div class="suppliers-item suppliers-item-link"><a href="${item.www}" target="_blank">${item.www}</a></div>
-                        <button class="delete-item"><ion-icon name="trash-outline" class="delete"></ion-icon></button>
+                        <button class="delete-item" title="Usuń"><ion-icon name="trash-outline" class="delete"></ion-icon></button>
                        `;
 
             this.itemsList.push(row);

@@ -15,7 +15,7 @@ class Product1 {
     constructor() {
         this.theFormProduct = document.forms['product-1'];
         this.printStandard = new PrintStandard(this.theFormProduct, 'product-1-print', 'product-1-c1', 'product-1-c2', 'product-1-c3', 'product-1-c4', 'product-1-c5', 'product-1-c6', 'product-1-c7', 'product-1-c8')
-        this.foil = new Foil(this.theFormProduct, 'product-1-foil', 'product-1-d1', 'product-1-d2', 'product-1-d3', 'product-1-d4', 'product-1-d5', 'product-1-d6', 'product-1-d7')
+        this.foil = new Foil(this.theFormProduct, 'product-1-foil', 'product-1-d1', 'product-1-d2', 'product-1-d3', 'product-1-d4', 'product-1-d5', 'product-1-d6', 'product-1-d7', priceList.foilPrice)
         this.count = document.getElementById('product-1-count').addEventListener('change', this.getProductPrice.bind(this))
         this.size = document.getElementById('product-1-size').addEventListener('change', this.getProductPrice.bind(this))
         this.material = document.getElementById('product-1-material').addEventListener('change', this.getProductPrice.bind(this))
@@ -65,6 +65,7 @@ class Product1 {
     getProductMaterial() {
         const selected = this.theFormProduct.elements['product-1-material'];
         const price = priceList.productMaterial[selected.value];
+        //index of the select element
         const selectedIndex = selected.options.selectedIndex
         const B1A1 = [...document.querySelectorAll('.B1-A1-condition-1')]
         //access conditions
@@ -105,10 +106,9 @@ class Product1 {
     }
     getCardCorners() {
         let cornersPrice = 0;
-        const priceForOneCorner = 0.1
         const selectedCorners = this.theFormProduct.elements["card-corners"];
         if (selectedCorners.checked == true) {
-            cornersPrice = priceForOneCorner;
+            cornersPrice = priceList.corners;
         } else {
             cornersPrice = 0;
         }
@@ -141,8 +141,8 @@ class Product2 {
     constructor() {
         this.theFormProduct = document.forms['product-2'];
         this.printInner = new PrintInner('product-2-pages-count', 'product-2-pages-black', 'product-2-pages-color', 'product-2-pages-empty')
-        this.printStandard = new PrintStandard(this.theFormProduct, 'product-2-print', 'product-2-c1', 'product-2-c2', 'product-2-c3', 'product-2-c4', 'product-2-c5', 'product-2-c6')
-        this.foil = new Foil(this.theFormProduct, 'product-2-foil', 'product-2-d1', 'product-2-d2', 'product-2-d3', 'product-2-d4', 'product-2-d5', 'product-2-d6', 'product-2-d7')
+        this.printStandard = new PrintStandard(this.theFormProduct, 'product-2-print', 'product-2-c1', 'product-2-c2', 'product-2-c3', 'product-2-c4', 'product-2-c5', 'product-2-c6', 'product-2-c7', 'product-2-c8')
+        this.foil = new Foil(this.theFormProduct, 'product-2-foil', 'product-2-d1', 'product-2-d2', 'product-2-d3', 'product-2-d4', 'product-2-d5', 'product-2-d6', 'product-2-d7', priceList.foilPrice)
 
         this.pages = document.getElementById('product-2-pages-count').addEventListener('change', this.getProductPrice.bind(this));
         this.pagesBlack = document.getElementById('product-2-pages-black').addEventListener('change', this.getProductPrice.bind(this));
@@ -202,6 +202,7 @@ class Product2 {
     getProductMaterial() {
         const selected = this.theFormProduct.elements['product-2-material'];
         const price = priceList.productMaterial[selected.value];
+        //index of the select element
         const selectedIndex = selected.options.selectedIndex
         const sra3 = document.querySelector('.sra3-condition-inner-2')
         const B1A1 = [...document.querySelectorAll('.B1-A1-condition-inner-2')]
@@ -228,6 +229,7 @@ class Product2 {
     getProductCover() {
         const selected = this.theFormProduct.elements['product-2-cover'];
         const price = priceList.productCover[selected.value];
+        //index of the select element
         const selectedIndex = selected.options.selectedIndex
         const sra3 = document.querySelector('.sra3-condition-cover-2')
         const B1A1 = [...document.querySelectorAll('.B1-A1-condition-cover-2')]
