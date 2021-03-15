@@ -21,7 +21,9 @@
     "webpack",
     "sass"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "mini-css-extract-plugin": "^1.3.9"
+  },
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-core": "^6.24.1",
