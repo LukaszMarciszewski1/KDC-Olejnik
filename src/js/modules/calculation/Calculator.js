@@ -36,29 +36,25 @@ class Product1 {
     getProductSize() {
         const selected = this.theFormProduct.elements['product-1-size'];
         const price = priceList.productSize[selected.value];
-        const sheets = [...document.querySelectorAll('.sheet-1')]
+        const sheetB1 = document.querySelector('.sheet-1-B1')
+        const sheetA1 = document.querySelector('.sheet-1-A1')
+
         //access conditions
         if (selected) {
-            sheets.forEach(sheet => {
-                if (selected.value === 'product-1-a1' || selected.value === 'product-1-a2' || selected.value === 'product-1-a3' || selected.value === 'product-1-a3') {
-                    if (sheet.classList.contains('sheet-1-B1')) {
-                        sheet.classList.add('disable-element')
-                        sheet.disabled = true
-                    } else {
-                        sheet.classList.remove('disable-element')
-                        sheet.disabled = false
-                    }
-                }
-                if (selected.value === 'product-1-a4' || selected.value === 'product-1-a5' || selected.value === 'product-1-a6') {
-                    if (sheet.classList.contains('sheet-1-A1')) {
-                        sheet.classList.add('disable-element')
-                        sheet.disabled = true
-                    } else {
-                        sheet.classList.remove('disable-element')
-                        sheet.disabled = false
-                    }
-                }
-            })
+            if (selected.value === 'product-1-a6' || selected.value === 'product-1-a6') {
+                sheetA1.classList.add('disable-sheets')
+                sheetA1.disabled = true
+            } else {
+                sheetA1.classList.remove('disable-sheets')
+                sheetA1.disabled = false
+            }
+            if (selected.value === 'product-1-a1' || selected.value === 'product-1-a2' || selected.value === 'product-1-a3' || selected.value === 'product-1-a4') {
+                sheetB1.classList.add('disable-sheets')
+                sheetB1.disabled = true
+            } else {
+                sheetB1.classList.remove('disable-sheets')
+                sheetB1.disabled = false
+            }
         }
         return price
     }
@@ -73,8 +69,7 @@ class Product1 {
             if (selectedIndex > 8) {
                 el.disabled = true
                 el.classList.add('disable-element')
-            }
-            else{
+            } else {
                 el.disabled = false
                 el.classList.remove('disable-element')
             }
@@ -173,29 +168,34 @@ class Product2 {
     getProductSize() {
         const selected = this.theFormProduct.elements['product-2-size'];
         const price = priceList.productSize[selected.value];
-        const sheets = [...document.querySelectorAll('.sheet-2')]
+        const innerB1 = document.querySelector('.sheet-2-inner-B1')
+        const innerA1 = document.querySelector('.sheet-2-inner-A1')
+        const coverB1 = document.querySelector('.sheet-2-cover-B1')
+        const coverA1 = document.querySelector('.sheet-2-cover-A1')
         //access conditions
         if (selected) {
-            sheets.forEach(sheet => {
-                if (selected.value === 'product-2-a1' || selected.value === 'product-2-a2' || selected.value === 'product-2-a3') {
-                    if (sheet.classList.contains('sheet-2-B1')) {
-                        sheet.classList.add('disable-element')
-                        sheet.disabled = true
-                    } else {
-                        sheet.classList.remove('disable-element')
-                        sheet.disabled = false
-                    }
-                }
-                if (selected.value === 'product-2-a4' || selected.value === 'product-2-a5' || selected.value === 'product-2-a6') {
-                    if (sheet.classList.contains('sheet-2-A1')) {
-                        sheet.classList.add('disable-element')
-                        sheet.disabled = true
-                    } else {
-                        sheet.classList.remove('disable-element')
-                        sheet.disabled = false
-                    }
-                }
-            })
+            if (selected.value === 'product-2-a1' || selected.value === 'product-2-a2' || selected.value === 'product-2-a3') {
+                innerB1.classList.add('disable-element')
+                innerB1.disabled = true
+                coverB1.classList.add('disable-element')
+                coverB1.disabled = true
+            } else {
+                innerB1.classList.remove('disable-element')
+                innerB1.disabled = false
+                coverB1.classList.remove('disable-element')
+                coverB1.disabled = false
+            }
+            if (selected.value === 'product-2-a4' || selected.value === 'product-2-a5' || selected.value === 'product-2-a6') {
+                innerA1.classList.add('disable-element')
+                innerA1.disabled = true
+                coverA1.classList.add('disable-element')
+                coverA1.disabled = true
+            } else {
+                innerA1.classList.remove('disable-element')
+                innerA1.disabled = false
+                coverA1.classList.remove('disable-element')
+                coverA1.disabled = false
+            }
         }
         return price
     }
@@ -204,26 +204,27 @@ class Product2 {
         const price = priceList.productMaterial[selected.value];
         //index of the select element
         const selectedIndex = selected.options.selectedIndex
-        const sra3 = document.querySelector('.sra3-condition-inner-2')
+        const sra3 = document.querySelector('.sheet-2-inner-sra3')
         const B1A1 = [...document.querySelectorAll('.B1-A1-condition-inner-2')]
         //access conditions
         if (selectedIndex < 10) {
             sra3.disabled = true
-            sra3.classList.add('disable-element')
+            sra3.classList.add('disable-sheets')
         } else {
             sra3.disabled = false
-            sra3.classList.remove('disable-element')
+            sra3.classList.remove('disable-sheets')
         }
-        B1A1.forEach(el => {
-            if (selectedIndex > 15) {
-                el.disabled = true
-                el.classList.add('disable-element')
-            }
-            else{
-                el.disabled = false
-                el.classList.remove('disable-element')
+
+        B1A1.forEach(sheet => {
+            if (selectedIndex > 14) {
+                sheet.classList.add('disable-sheets')
+                sheet.disabled = true
+            }else{
+                sheet.classList.remove('disable-sheets')
+                sheet.disabled = false
             }
         })
+
         return price
     }
     getProductCover() {
@@ -232,25 +233,13 @@ class Product2 {
         //index of the select element
         const selectedIndex = selected.options.selectedIndex
         const sra3 = document.querySelector('.sra3-condition-cover-2')
-        const B1A1 = [...document.querySelectorAll('.B1-A1-condition-cover-2')]
         //access conditions
-        B1A1.forEach(el => {
-            if (selectedIndex > 8) {
-                el.disabled = true
-                el.classList.add('disable-element')
-            }
-            else{
-                el.disabled = false
-                el.classList.remove('disable-element')
-            }
-        })
-        if(selectedIndex > 0 && selectedIndex < 5){
+        if (selectedIndex > 0 && selectedIndex < 4) {
             sra3.disabled = true;
-            sra3.classList.add('disable-element')
-        }
-        else{
+            sra3.classList.add('disable-sheets')
+        } else {
             sra3.disabled = false;
-            sra3.classList.remove('disable-element')
+            sra3.classList.remove('disable-sheets')
         }
         return price
     }
@@ -294,10 +283,10 @@ class Product2 {
                 }
             })
             enabeleMaterialForInnerSatin.forEach(el => {
-                if(selected.value === 'product-2-f2' || selected.value === 'product-2-f3'){
+                if (selected.value === 'product-2-f2' || selected.value === 'product-2-f3') {
                     el.classList.add('disable-element')
                     el.disabled = true
-                } else{
+                } else {
                     el.classList.remove('disable-element')
                     el.disabled = false
                 }
