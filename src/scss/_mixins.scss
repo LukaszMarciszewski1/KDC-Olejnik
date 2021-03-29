@@ -16,7 +16,7 @@
     @include container-shadow;
     position: relative;
     background-color: $containerBg;
-    padding: 30px 20px;
+    padding: 27px 20px;
     border-radius: 20px;
 }
 
@@ -62,8 +62,8 @@
 }
 
 @mixin btn-shadow {
-    -webkit-box-shadow: 0px 1px 6px -1px rgba(0, 0, 0, 0.6);
-    box-shadow: 0px 1px 6px -1px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0px 1px 7px -1px rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 1px 7px -1px rgba(0, 0, 0, 0.6);
 }
 
 @mixin shadow-info{

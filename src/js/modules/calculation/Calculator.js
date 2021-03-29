@@ -1,6 +1,4 @@
-import {
-    priceList
-} from './prices/productPriceList.js';
+import {priceList} from './prices/productPriceList.js';
 import {
     Foil
 } from './Foil.js';
