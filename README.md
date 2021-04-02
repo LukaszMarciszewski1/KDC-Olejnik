@@ -10,7 +10,7 @@ App is not finished yet.
 
 ## To do
 * saving product prices in the database
-* the ability to change the prices of products by the user
+* the ability to change the prices of products by the users
 * Google Calendar Integration
 
 ## Installation
