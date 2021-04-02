@@ -6,7 +6,6 @@ export class PrintInner {
     this.pagesBlack = document.getElementById(black)
     this.pagesColor = document.getElementById(color)
     this.pagesEmpty = document.getElementById(empty)
-    // this.pricePrint = pricePrint
   }
 
   getPriceInnerPrint(countEl, sizeEl, materialEl, sheetsEL) {
@@ -18,7 +17,7 @@ export class PrintInner {
     this.pagesBlack.value = countBlack
     let priceBlack = 0
     let priceColor = 0
-    const sizeA4 = 0.06237
+    const sizeA4 = 0.06237 //per square meter (0.297 * 0.210)mm
     let numberEl = sizeEl / sizeA4
 
     if (numberEl > 0.5 && numberEl < 1) numberEl = 0.5

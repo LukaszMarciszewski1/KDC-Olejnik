@@ -1,6 +1,4 @@
-import 
-printPrice
- from './prices/printPrice.js';
+import printPrice from './prices/printPrice.js';
 
 export class PrintStandard {
     constructor(theProductForm, selectForm, prodC1, prodC2, prodC3, prodC4, prodC5, prodC6, prodC7, prodC8) {
@@ -14,11 +12,11 @@ export class PrintStandard {
       this.prodC8 = prodC8 //1 + 1 black and white
       this.theProductForm = theProductForm
       this.selected = this.theProductForm.elements[selectForm]
-      // this.pricePrint = pricePrint
     }
+
     getPricePrint(countEl, sizeEl) {
       let price = 0
-      const sizeSRA3 = 0.12474;
+      const sizeSRA3 = 0.12474;  //per square meter (0.320 * 0.450)mm
       let numberEl = sizeEl / sizeSRA3
       let modifier = numberEl * countEl
      

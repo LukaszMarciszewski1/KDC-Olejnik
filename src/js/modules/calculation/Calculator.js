@@ -1,14 +1,9 @@
 import {priceList} from './prices/productPriceList.js';
-import {
-    Foil
-} from './Foil.js';
-import {
-    PrintStandard
-} from './PrintStandard.js';
-import {
-    PrintInner
-} from './PrintInner.js';
+import {Foil} from './Foil.js';
+import {PrintStandard} from './PrintStandard.js';
+import {PrintInner} from './PrintInner.js';
 
+//standard prints
 class Product1 {
     constructor() {
         this.theFormProduct = document.forms['product-1'];
@@ -130,6 +125,8 @@ class Product1 {
     }
 }
 
+
+//books and brochures
 class Product2 {
     constructor() {
         this.theFormProduct = document.forms['product-2'];

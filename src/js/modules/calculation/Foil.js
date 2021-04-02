@@ -12,7 +12,7 @@ export class Foil {
     this.price = foilPrice
   }
   getPriceFoil(countEl, sizeEl) {
-    const sizeSRA3 = 0.12474
+    const sizeSRA3 = 0.12474 //per square meter (0.320 * 0.450)mm
     let numberEl = sizeEl / sizeSRA3
     if (numberEl > 0.5 && numberEl < 1) numberEl = 1 //if the b4 format has been selected, its value is equal to A3
     if (numberEl > 0.25 && numberEl < 0.5) numberEl = 0.5
