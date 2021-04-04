@@ -7,12 +7,6 @@ Here is a working live: https://cennik-druku.netlify.app/
 Application for calculating base prices for printing products with option
 adding a list of suppliers and entering notes stored in localstorage.
 App is not finished yet.
-## Technologies
-* HTML5
-* SASS
-* JavaScript ES6
-* npm
-* Webpack
 
 ## To do
 * saving product prices in the database
