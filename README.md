@@ -1,5 +1,5 @@
-# Digital printing calculator
 
+<<<<<<< HEAD
 ## Demo
 Here is a working live: https://cennik-druku.netlify.app/
 
@@ -24,8 +24,5 @@ After that just run to start server:
 
 To build project:
 
-<<<<<<< HEAD
 `npm run build`
-=======
-`npm run build`
->>>>>>> 41f42ccaf1f8b2cd87c1365425aeaede61c0ea06
+
