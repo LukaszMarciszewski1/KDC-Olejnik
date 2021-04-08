@@ -1,7 +1,16 @@
-import {priceList} from './prices/productPriceList.js';
-import {Foil} from './Foil.js';
-import {PrintStandard} from './PrintStandard.js';
-import {PrintInner} from './PrintInner.js';
+import {
+    priceList
+} from './prices/productPriceList.js';
+import {
+    Foil
+} from './Foil.js';
+import {
+    PrintStandard
+} from './PrintStandard.js';
+import {
+    PrintInner
+} from './PrintInner.js';
+import Decimal from 'decimal.js';
 
 //standard prints
 class Product1 {
@@ -113,7 +122,8 @@ class Product1 {
         const printProd = this.printStandard.getPricePrint(count, sizeProd)
         const foilProd = this.foil.getPriceFoil(count, sizeProd)
 
-        const productPrice = ((((sizeProd * materialProd) * sheetsProd) + creaseProd + cornersProd) * count) + printProd + foilProd;
+        const sumOfvalues = ((((sizeProd * materialProd) * sheetsProd) + creaseProd + cornersProd) * count) + printProd + foilProd;
+        const productPrice = new Decimal(sumOfvalues)
         this.result.textContent = productPrice.toFixed(2)
     }
     refreshPage() {
@@ -214,7 +224,7 @@ class Product2 {
             if (selectedIndex > 14) {
                 sheet.classList.add('disable-sheets')
                 sheet.disabled = true
-            }else{
+            } else {
                 sheet.classList.remove('disable-sheets')
                 sheet.disabled = false
             }
@@ -313,7 +323,8 @@ class Product2 {
         const foilForCover = this.foil.getPriceFoil(count, (sizeProd * 2))
         const wings = this.getProductWings(count, sizeProd, coverMaterial, (printForCover / 2), sheetsForCover, (foilForCover / 2))
         const printInner = this.printInner.getPriceInnerPrint(count, sizeProd, materialProd, sheetsForInner)
-        let productPrice = (((((sizeProd * 2) * coverMaterial) * sheetsForCover) + printInner + binding) * count) + foilForCover + printForCover + wings
+        const sumOfvalues = (((((sizeProd * 2) * coverMaterial) * sheetsForCover) + printInner + binding) * count) + foilForCover + printForCover + wings
+        const productPrice = new Decimal(sumOfvalues)
         this.result.textContent = productPrice.toFixed(2)
     }
 
