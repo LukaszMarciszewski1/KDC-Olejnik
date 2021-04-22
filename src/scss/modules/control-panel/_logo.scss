@@ -1,0 +1,24 @@
+#logo {
+    width: auto;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $lightBg;
+    opacity: .7;
+    user-select: none;
+
+    .logo-h1 {
+        font-size: 27px;
+    }
+
+    img {
+        width: 35px;
+        height: 35px;
+        margin-right: 10px;
+    }
+
+    &:hover {
+        opacity: .9
+    }
+}

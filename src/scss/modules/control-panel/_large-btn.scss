@@ -1,0 +1,39 @@
+.select-print-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.select-print-btn {
+    @include btn-shadow;
+    @include flexCenter;
+    justify-content: flex-start;
+    width: auto;
+    max-width: 300px;
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    color: $font-color;
+    font-size: 17px;
+    text-align: left;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &:hover {
+        background-color: $standard;
+    }
+
+    img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        margin-right: 20px;
+    }
+}
+
+.select-print-btn--active {
+    background-color: $standard;
+}
+

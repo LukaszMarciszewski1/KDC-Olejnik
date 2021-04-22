@@ -1,6 +1,6 @@
-import printPrice from './prices/printPrice.js';
+import printPrice from '../prices/printPrice.js';
 
-export class PrintInner {
+ class PrintInner {
   constructor(pages, black, color, empty) {
     this.pages = document.getElementById(pages)
     this.pagesBlack = document.getElementById(black)
@@ -73,3 +73,5 @@ export class PrintInner {
     return price
   }
 }
+
+export default PrintInner

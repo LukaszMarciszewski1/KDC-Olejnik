@@ -1,6 +1,6 @@
-import printPrice from './prices/printPrice.js';
+import printPrice from '../prices/printPrice.js';
 
-export class PrintStandard {
+class PrintStandard {
     constructor(theProductForm, selectForm, prodC1, prodC2, prodC3, prodC4, prodC5, prodC6, prodC7, prodC8) {
       this.prodC1 = prodC1 //none print
       this.prodC2 = prodC2 //4 + 0 color
@@ -89,3 +89,5 @@ export class PrintStandard {
       return price
     }
   }
+
+  export default PrintStandard

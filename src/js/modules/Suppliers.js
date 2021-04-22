@@ -147,5 +147,4 @@ export class Suppliers {
         }
         localStorage.setItem('storeItems', JSON.stringify(this.storeItems))
     }
-
 }

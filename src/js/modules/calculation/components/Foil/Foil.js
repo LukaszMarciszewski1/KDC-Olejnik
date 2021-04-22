@@ -1,12 +1,12 @@
-export class Foil {
+class Foil {
   constructor(theProductForm, selectForm, sel1, sel2, sel3, sel4, sel5, sel6, sel7, foilPrice) {
-    this.sel1 = sel1
-    this.sel2 = sel2
-    this.sel3 = sel3
-    this.sel4 = sel4
-    this.sel5 = sel5
-    this.sel6 = sel6
-    this.sel7 = sel7
+    this.sel1 = sel1 //none foil
+    this.sel2 = sel2 //gloss one-sided
+    this.sel3 = sel3 //mat one-sided
+    this.sel4 = sel4 //soft-tuch one-sided
+    this.sel5 = sel5 //gloss two-sided
+    this.sel6 = sel6 //mat two-sided
+    this.sel7 = sel7 //soft-tuch two-sided
     this.theProductForm = theProductForm
     this.selected = this.theProductForm.elements[selectForm]
     this.price = foilPrice
@@ -29,3 +29,4 @@ export class Foil {
     return price
   }
 }
+export default Foil

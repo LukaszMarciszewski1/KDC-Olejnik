@@ -109,7 +109,7 @@ const foilPrice = 0.3
 //CORNERS
 const corners = 0.1
 
-export const priceList = {
+const priceList = {
     productSize,
     productMaterial,
     productSheets,
@@ -119,3 +119,4 @@ export const priceList = {
     foilPrice,
     corners,
 }
+export default priceList
