@@ -2,7 +2,7 @@ import {Slider} from './modules/Slider.js';
 import {Info} from './modules/Info.js';
 import {Notes} from './modules/Notes.js';
 import {Suppliers} from './modules/Suppliers.js';
-import {Calculator} from './modules/calculation/Calculator.js';
+import {Calculator} from './modules/Calculator.js';
 import '../scss/style.scss';
 
 window.addEventListener("DOMContentLoaded", function() {

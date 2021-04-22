@@ -1,9 +1,9 @@
-import priceList from '../components/prices/productPriceList';
-import Foil from '../components/Foil/Foil';
-import PrintStandard from '../components/Overprint/PrintStandard';
-import getCorners from '../components/ingredients/corners.js';
-import getAmount from '../components/ingredients/amount.js';
-import getService from '../components/ingredients/general.js';
+import priceList from './components/prices/productPriceList';
+import Foil from './components/Foil/Foil';
+import PrintStandard from './components/Overprint/PrintStandard';
+import getCorners from './components/ingredients/corners.js';
+import getAmount from './components/ingredients/amount.js';
+import getService from './components/ingredients/general.js';
 import Decimal from 'decimal.js';
 
 //standard prints

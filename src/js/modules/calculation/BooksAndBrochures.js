@@ -1,10 +1,10 @@
-import priceList from '../components/prices/productPriceList';
-import Foil from '../components/Foil/Foil';
-import PrintStandard from '../components/Overprint/PrintStandard';
-import PrintInner from '../components/Overprint/PrintInner';
-import getAmount from '../components/ingredients/amount';
-import getService from '../components/ingredients/general';
-import getWings from '../components/ingredients/wings';
+import priceList from './components/prices/productPriceList';
+import Foil from './components/Foil/Foil';
+import PrintStandard from './components/Overprint/PrintStandard';
+import PrintInner from './components/Overprint/PrintInner';
+import getAmount from './components/ingredients/amount';
+import getService from './components/ingredients/general';
+import getWings from './components/ingredients/wings';
 import Decimal from 'decimal.js';
 
 //books and brochures

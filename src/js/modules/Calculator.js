@@ -1,5 +1,5 @@
-import {NormalProducts} from './Products/NormalProducts';
-import {BooksAndBrochures} from './Products/BooksAndBrochures';
+import {NormalProducts} from './calculation/NormalProducts';
+import {BooksAndBrochures} from './calculation/BooksAndBrochures';
 
 export class Calculator {
     constructor() {
