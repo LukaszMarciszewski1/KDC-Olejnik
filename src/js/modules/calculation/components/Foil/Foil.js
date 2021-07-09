@@ -1,5 +1,16 @@
 class Foil {
-  constructor(theProductForm, selectForm, sel1, sel2, sel3, sel4, sel5, sel6, sel7, foilPrice) {
+  constructor(
+    theProductForm,
+    selectForm,
+    sel1,
+    sel2,
+    sel3,
+    sel4,
+    sel5,
+    sel6,
+    sel7,
+    foilPrice
+  ) {
     this.sel1 = sel1 //none foil
     this.sel2 = sel2 //gloss one-sided
     this.sel3 = sel3 //mat one-sided
@@ -19,10 +30,18 @@ class Foil {
     let modifier = Math.ceil(numberEl * countEl)
     let price = 0
 
-    if (this.selected.value === this.sel2 || this.selected.value === this.sel3 || this.selected.value === this.sel4) {
+    if (
+      this.selected.value === this.sel2 ||
+      this.selected.value === this.sel3 ||
+      this.selected.value === this.sel4
+    ) {
       price = this.price * modifier
-    } else if (this.selected.value === this.sel5 || this.selected.value === this.sel6 || this.selected.value === this.sel7) {
-      price = (this.price * 2) * modifier
+    } else if (
+      this.selected.value === this.sel5 ||
+      this.selected.value === this.sel6 ||
+      this.selected.value === this.sel7
+    ) {
+      price = this.price * 2 * modifier
     } else {
       price = 0
     }

@@ -1,6 +1,6 @@
-import printPrice from '../prices/printPrice.js';
+import printPrice from '../prices/printPrice.js'
 
- class PrintInner {
+class PrintInner {
   constructor(pages, black, color, empty) {
     this.pages = document.getElementById(pages)
     this.pagesBlack = document.getElementById(black)
@@ -49,15 +49,18 @@ import printPrice from '../prices/printPrice.js';
           this.pagesEmpty.disabled = true
           this.pagesBlack.value = 0
           countBlack = 0
-
         } else if (countEmpty >= count) {
           this.pagesEmpty.value = count - countColor
           countEmpty = this.pagesEmpty.value
           this.pagesColor.disabled = true
           this.pagesBlack.value = 0
           countBlack = 0
-        } else if (countColor > count || countEmpty > count || countColor + countEmpty > count) return;
-
+        } else if (
+          countColor > count ||
+          countEmpty > count ||
+          countColor + countEmpty > count
+        )
+          return
       } else {
         this.pagesColor.disabled = true
         this.pagesEmpty.disabled = true
@@ -69,7 +72,8 @@ import printPrice from '../prices/printPrice.js';
       }
     }
     //one sheet side is double-sided printing  -> / 2
-    price = ((((materialEl * sizeEl) / 2 ) * sheetsEL) * count) + priceBlack + priceColor
+    price =
+      ((materialEl * sizeEl) / 2) * sheetsEL * count + priceBlack + priceColor
     return price
   }
 }
