@@ -1,5 +1,3 @@
-
-<<<<<<< HEAD
 ## Demo
 Here is a working live: https://cennik-druku.netlify.app/
 
