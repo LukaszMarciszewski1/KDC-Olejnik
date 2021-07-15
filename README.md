@@ -6,11 +6,6 @@ Application for calculating base prices for printing products with option
 adding a list of suppliers and entering notes stored in localstorage.
 App is not finished yet.
 
-## To do
-* saving product prices in the database
-* the ability to change the prices of products by the users
-* Google Calendar Integration
-
 ## Installation
 
 Node version
