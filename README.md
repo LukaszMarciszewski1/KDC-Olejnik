@@ -1,5 +1,3 @@
-## Demo
-Here is a working live: https://cennik-druku.netlify.app/
 
 ## Description
 Application for calculating base prices for printing products with option
