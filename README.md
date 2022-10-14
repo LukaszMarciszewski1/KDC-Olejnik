@@ -4,6 +4,11 @@ Application for calculating base prices for printing products with option
 adding a list of suppliers and entering notes stored in localstorage.
 App is not finished yet.
 
+
+## Demo
+
+- 👉 Heroku : [https://ptvs-app.herokuapp.com](https://ptvs-app.herokuapp.com)
+
 ## Installation
 
 Node version
