@@ -7,7 +7,7 @@ App is not finished yet.
 
 ## Demo
 
-- 👉 Heroku : [https://ptvs-app.herokuapp.com](https://ptvs-app.herokuapp.com)
+ 👉 Heroku : [https://cennik-druku.netlify.app/](https://cennik-druku.netlify.app/)
 
 ## Installation
 
