@@ -8,7 +8,7 @@ App is not finished yet.
 
 ## Demo
 
- 👉 https://cennik-druku.netlify.app/](https://cennik-druku.netlify.app/)
+ 👉 https://cennik-druku.netlify.app/
 
 ## Installation
 
