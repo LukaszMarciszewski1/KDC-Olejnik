@@ -1,5 +1,6 @@
 
 ## Description
+This is a project for a printing company named Olejnik.
 Application for calculating base prices for printing products with option
 adding a list of suppliers and entering notes stored in localstorage.
 App is not finished yet.
